@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Argunet Browser Demo</title>
+<style>
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+</style>
+<link rel="stylesheet" href="lib/ArgunetBrowser.min.css" type="text/css" />
+<link rel="stylesheet" href="css/main.css" type="text/css" />
+
+</head>
+<body>
+	<h1>Argunet Browser Demo</h1>
+	<div id="content1">
+		<h2>1. Argunet in a 16:9 format</h2>
+		<p>
+			This is a Demo page for Argunet Browser. The size of this Widget is
+			640x385px, which is Youtube's <a
+				href="http://support.google.com/youtube/bin/answer.py?hl=en&answer=178264">recommended
+				size</a> for 16:9 content. 640px is also a common width of blog content,
+			but many blogs have smaller widths.
+		</p>
+	</div>
+	<div id="content2">
+		<h2>2. Argunet in a 4:3 format</h2>
+		<p>
+			The size of this Widget is 480x385px, which is Youtube's <a
+				href="http://support.google.com/youtube/bin/answer.py?hl=en&answer=178264">recommended
+				size</a> for 4:3 content. This should fit into nearly every blog layout.
+		</p>
+		<div id="argunetBrowser2"></div>
+	</div>
+	<div id="content3">
+		<h2>2. Argunet in Widescreen format</h2>
+		<p>
+			The size of this Widget is 853,505px, which is also a Youtube <a
+				href="http://support.google.com/youtube/bin/answer.py?hl=en&answer=178264">
+				format</a>.
+		</p>
+		<div id="argunetBrowser2"></div>
+	</div>	
+
+<!-- 
+	<script src="src/lib/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script src="src/lib/easeljs-NEXT.min.js" type="text/javascript"></script>
+	
+	<script src="src/lib/jquery-ui-1.10.0.custom.js" type="text/javascript"></script>
+	<script src="src/lib/jquery.xcolor.min.js" type="text/javascript"></script>
+	<script src="src/lib/JQuery zTree/js/jquery.ztree.core-3.5.js" type="text/javascript"></script>
+	<script src="src/lib/JQuery zTree/js/jquery.ztree.excheck-3.5.js" type="text/javascript"></script>
+	<script src="src/lib/arbor.js" type="text/javascript"></script>
+	<script src="src/lib/graphics.js" type="text/javascript"></script>
+
+-->	
+
+
+
+
+
+	<!-- Views 
+	<script src="src/view/TooltipCanvasView.js" type="text/javascript"></script>
+	<script src="src/view/GroupCanvasView.js" type="text/javascript"></script>
+	<script src="src/view/ArgumentHtmlView.js" type="text/javascript"></script>
+	<script src="src/view/ThesisHtmlView.js" type="text/javascript"></script>
+	<script src="src/view/ArrowCanvasView.js" type="text/javascript"></script>
+	-->
+	<!--	<script src="src/view/SelectableView.js" type="text/javascript"></script>
+
+	<script src="src/view/ArgumentCanvasView.js" type="text/javascript"></script>
+
+	<script src="src/view/ThesisCanvasView.js" type="text/javascript"></script>
+ 
+	<script src="src/view/NavigationBarView.js" type="text/javascript"></script>
+	<script src="src/view/DebateListView.js" type="text/javascript"></script>
+	<script src="src/view/ArgunetBrowserView.js" type="text/javascript"></script>
+	<script src="src/view/ArborView.js" type="text/javascript"></script>
+	 -->
+			
+	<script src="lib/ArgunetBrowser.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$(function() {
+		new argunet.ArgunetBrowser("greatmap.graphml",$("#content1"));
+		//new argunet.ArgunetBrowser("greatmap.graphml",$("#content2"),null,480,385);
+		//new argunet.ArgunetBrowser("greatmap.graphml",$("#content3"),null,1280,754);
+	    });	
+	</script>
+</body>
+</html>

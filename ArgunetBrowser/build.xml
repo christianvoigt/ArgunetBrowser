@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<project name="Map ant target" default="compress">
+
+	<target name="compress">
+		<antcall target="compressJs">
+		</antcall>
+		<antcall target="compressCss">
+		</antcall>
+	</target>
+
+	<target name="compressJs" depends="cleanJs"> 
+		<filelist id="filelist" dir="${basedir}/src">
+			<file name="lib/jquery-1.8.3.min.js" />
+			<file name="lib/jquery-ui-1.10.0.custom.js" />
+			<file name="lib/jquery.xcolor.min.js" />
+			<file name="lib/jquery.ztree.core-3.5.js" />
+			<file name="lib/jquery.ztree.excheck-3.5.js" />
+			<file name="lib/easeljs-NEXT.min.js" />
+			<file name="lib/arbor.js" />
+			<file name="lib/graphics.js" />
+
+			<file name="model/Argument.js" />
+			<file name="model/DebateManager.js" />
+			<file name="model/Edge.js" />
+			<file name="model/Group.js" />
+			<file name="model/HistoryState.js" />
+			<file name="model/Sentence.js" />
+			<file name="model/Thesis.js" />
+				
+			<file name="controller/ArborController.js" />
+			<file name="controller/BrowserRegistry.js" />
+			<file name="controller/DebateListController.js" />
+			<file name="controller/History.js" />
+				
+			<file name="view/SelectableView.js" />
+			<file name="view/ArgunetBrowserView.js" />
+			<file name="view/ArrowCanvasView.js" />
+			<file name="view/ArgumentCanvasView.js" />
+			<file name="view/ThesisCanvasView.js" />
+			<file name="view/ArborView.js" />
+			<file name="view/TooltipCanvasView.js" />
+			<file name="view/NavigationBarView.js" />
+			<file name="view/DebateListView.js" />
+			<file name="view/GroupCanvasView.js" />
+				
+			
+			<file name="ArgunetBrowser.js" />
+				
+		</filelist>
+		<pathconvert refid="filelist" property="converted" pathsep=" " />
+
+		<echo>Starting compressing JS... </echo>
+		<exec executable="/opt/local/bin/yuicompress" failonerror="true">
+			<arg line="-o ${basedir}/lib/ArgunetBrowser.min.js" />
+			<arg line="-f" />
+			<arg line="${converted}" />
+		</exec>
+		<echo>Done!</echo>
+	</target>
+
+	<target name="compressCss" depends="cleanCss">
+		<fileset id="fileset" dir="${basedir}/css">
+			<include name="ArgunetBrowser.css" />
+			<include name="jquery-ui-1.10.0.custom.css" />
+			<include name="zTreeStyle.css" />
+		</fileset>
+		<pathconvert refid="fileset" property="converted" pathsep=" " />
+
+		<echo>Starting compressing CSS... </echo>
+		<exec executable="/opt/local/bin/yuicompress" failonerror="true">
+			<arg line="-o ${basedir}/lib/ArgunetBrowser.min.css" />
+			<arg line="${converted}" />
+		</exec>
+		<echo>Done!</echo>
+	</target>
+
+	<target name="cleanJs">
+		<echo>Deleting JS file...</echo>
+		<delete file="${basedir}/lib/ArgunetBrowser.min.js" />
+		<echo>done!</echo>
+	</target>
+
+	<target name="cleanCss">
+		<echo>Deleting CSS file...</echo>
+		<delete file="${basedir}/lib/ArgunetBrowser.min.css" />
+		<echo>done!</echo>
+	</target>
+
+</project>
