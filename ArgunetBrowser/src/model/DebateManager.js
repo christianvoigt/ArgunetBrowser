@@ -65,11 +65,6 @@ p.loadDebate= function(xml){
 				   }
 
 				   var argument= new argunet.Argument(argunetId,title,description, colorIndex, group, relations);
-				   
-				   
-
-				   //console.log("Argument: "+nodeId+" "+title+" "+description+" "+colorIndex);
-				   
 				   that.nodes[argunetId]=argument;
 			   }else if($(this).children("data:first").children("arg\\:thesis").length){ //Theses
 				   var thesisXML= $(this).children("data:first").children("arg\\:thesis:first");

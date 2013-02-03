@@ -14,12 +14,12 @@ argunet.DebateListView = function(htmlElement, browserId){
 	createjs.EventDispatcher.initialize(p); // inject EventDispatcher methods.
 	
 	this.zTreeId = browserId+"-ztree";
-	console.log("zTreeId: "+this.zTreeId);
 	
 	htmlElement.append("<div class='debateList'><div class='buttons'><div class='checkAll'>Show All Groups</div><div class='uncheckAll'>Unpack all Group Members</div></div><div id='"+this.zTreeId+"' class='tree ztree'></div></div>");
 	this.htmlElement = $(htmlElement).children(".debateList").get(0);
 	
 	var that = this;
+	$(this.htmlElement).hide();
 };
 argunet.DebateListView.prototype.initialize = function(title,subtitle,zNodes){
 	if(subtitle)$(this.htmlElement).prepend("<h4>"+subtitle+"</h4>");

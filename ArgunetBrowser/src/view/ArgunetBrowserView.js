@@ -7,11 +7,9 @@ argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
 	var cWidth = width || 640;
 	var cHeight = height || 385;
 	
-	console.log("Canvas width: "+cWidth);
-	
 	//canvas
 	if (typeof(htmlElement)=="string") { htmlElement = $(htmlElement);}
-	$(htmlElement).append("<div class='argunetBrowser'><canvas width='"+cWidth+"' height='"+cHeight+"'></canvas></div>");
+	$(htmlElement).append("<div class='argunetBrowser loading' width='"+cWidth+"' height='"+cHeight+"'><canvas width='"+cWidth+"' height='"+cHeight+"'></canvas></div>");
 	this.canvas = $(htmlElement).children(".argunetBrowser").children("canvas").get(0);
 	
 	//createjs stage
@@ -63,23 +61,19 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 			this.stage.update();
 		}
 	}else if(evt.type == "mouseover" && evt.target == this.tooltip){
-		console.log("mouseover");
 		this.mouseOverTooltip = true;
 	}else if(evt.type == "mouseout" && evt.target == this.tooltip){
-		console.log("mouseout");
 		this.mouseOverTooltip = false;
 		this.tooltip.setVisible(false);
 		this.stage.update();		
 	}else if(evt.type == "stagemousemove"){
 		if(this.stage.mouseY > this.canvas.height - this.navigationBar.height){
 			if(!this.navigationOpened){
-				console.log("navi open");
 				this.navigationBar.show();
 				this.navigationOpened = true;
 			}
 		}else{
 			if(this.navigationOpened && !this.debateListView.isOpen){
-				console.log("navi closed");
 				this.navigationBar.hide();
 				this.navigationOpened = false;
 			}
@@ -102,4 +96,7 @@ argunet.ArgunetBrowserView.prototype.setCanvasView = function (view){
 		that.debateListView.hide();
 	});
 	
+};
+argunet.ArgunetBrowserView.prototype.removeLoadingSpinner = function(){
+	$(this.canvas).parent().removeClass("loading");
 };

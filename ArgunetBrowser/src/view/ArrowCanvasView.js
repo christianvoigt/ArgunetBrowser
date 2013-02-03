@@ -83,7 +83,6 @@ this.argunet = this.argunet||{};
     ArrowCanvasView.prototype._tick = function () {
            //call to _tick method from parent class 
                //this.Container_tick();
-              // console.log("ArrowCanvasView Ticked");
     };
     argunet.ArrowCanvasView = ArrowCanvasView;
 }());

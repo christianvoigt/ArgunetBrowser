@@ -14,7 +14,10 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 		createjs.EventDispatcher.initialize(p); // inject EventDispatcher methods.
 		
 		this.browserId = argunet.BrowserRegistry.getInstance().registerBrowser(this);
-		console.log("browserId: "+this.browserId);
+		
+		//create this early to show loading screen
+		this.argunetView = new argunet.ArgunetBrowserView(htmlElement,width,height, this.browserId);
+		
 		
 		var debateUrl = debateUrl;
 		var firstNodeId = firstNode;	
@@ -41,7 +44,6 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			this.debateManager.loadDebate(xml);					
 			
 			//Views
-			this.argunetView = new argunet.ArgunetBrowserView(htmlElement,width,height, this.browserId);
 			this.debateListView = this.argunetView.debateListView;			
 			this.debateListController = new argunet.DebateListController(this.debateListView, this.debateManager);
 			
@@ -79,6 +81,9 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			this.debateListView.addEventListener("closeAllGroups",this.arborController);
 			this.arborView.addEventListener("nodeSelection",this);
 			
+			//remove loading
+			this.argunetView.removeLoadingSpinner();
+			
 			//Select first node
 			if(firstNodeId==undefined)$.each(this.debateManager.nodes,function(){
 				firstNodeId=this.id; 
@@ -96,7 +101,6 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 				this.argunetView.navigationBar.setBackwardEnabled(this.history.backwardEnabled);
 				this.argunetView.navigationBar.setForwardEnabled(this.history.forwardEnabled);
 				this.argunetView.navigationBar.setHomeEnabled(this.history.homeEnabled);
-				console.log("history changed "+this.history.backwardEnabled);
 			}else if(evt.type == "nodeSelection"){
 				this.history.selectNode(evt.nodeId);
 				this.dispatchEvent({type:"nodeSelection",nodeId:evt.nodeId},evt.target);

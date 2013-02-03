@@ -2,6 +2,10 @@
 .argunetBrowser{
 	position:relative;
 	border:1px solid #999;
+	background:#ffffff;
+}
+.argunetBrowser.loading{
+	background:#ffffff url('images/loading.gif') no-repeat center center;
 }
 .argunetBrowser .navigationBar{
 	width:100%;

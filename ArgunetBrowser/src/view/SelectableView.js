@@ -42,7 +42,6 @@ this.argunet = this.argunet||{};
         }
         evt.onMouseUp = function(evt) { 
     		var now =new Date().getTime();
-    		console.log(that.lastMousedown+" "+now+" "+now-that.lastMousedown);
     		if(now-that.lastMousedown < 200){
     			that.dispatchEvent("select",that);
     		}
@@ -158,7 +157,6 @@ this.argunet = this.argunet||{};
     p._tick = function () {
            //call to _tick method from parent class 
                //this.Container_tick();
-              // console.log("SelectableView Ticked");
     };
     argunet.SelectableView = SelectableView;
 }());
