@@ -42,7 +42,6 @@ this.argunet = this.argunet||{};
         }
         evt.onMouseUp = function(evt) { 
     		var now =new Date().getTime();
-<<<<<<< HEAD
     		if(now-that.lastMousedown < 200){
     			that.dispatchEvent("select",that);
     		}
@@ -155,18 +154,6 @@ this.argunet = this.argunet||{};
     	this.state1.visible=false;
     	this.state2.visible=false;
     };
-    p._tick = function () {
-           //call to _tick method from parent class 
-               //this.Container_tick();
-=======
-    		console.log(that.lastMousedown+" "+now+" "+now-that.lastMousedown);
-    		if(now-that.lastMousedown < 200){
-    			that.dispatchEvent("select",that);
-    		}
-        	that.dispatchEvent("drop",that); 
-        	};
-    	}
-    };
     p.render = function(){
         this.state0= new createjs.Container();        
         this.state1= new createjs.Container();        
@@ -275,8 +262,7 @@ this.argunet = this.argunet||{};
     p._tick = function () {
            //call to _tick method from parent class 
                //this.Container_tick();
-              // console.log("SelectableView Ticked");
->>>>>>> refs/remotes/choose_remote_name/master
+
     };
     argunet.SelectableView = SelectableView;
 }());
