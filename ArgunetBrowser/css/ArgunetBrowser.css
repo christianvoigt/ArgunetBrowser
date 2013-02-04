@@ -2,10 +2,13 @@
 .argunetBrowser{
 	position:relative;
 	border:1px solid #999;
+<<<<<<< HEAD
 	background:#ffffff;
 }
 .argunetBrowser.loading{
 	background:#ffffff url('images/loading.gif') no-repeat center center;
+=======
+>>>>>>> refs/remotes/choose_remote_name/master
 }
 .argunetBrowser .navigationBar{
 	width:100%;

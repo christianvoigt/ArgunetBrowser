@@ -65,6 +65,14 @@ p.loadDebate= function(xml){
 				   }
 
 				   var argument= new argunet.Argument(argunetId,title,description, colorIndex, group, relations);
+<<<<<<< HEAD
+=======
+				   
+				   
+
+				   //console.log("Argument: "+nodeId+" "+title+" "+description+" "+colorIndex);
+				   
+>>>>>>> refs/remotes/choose_remote_name/master
 				   that.nodes[argunetId]=argument;
 			   }else if($(this).children("data:first").children("arg\\:thesis").length){ //Theses
 				   var thesisXML= $(this).children("data:first").children("arg\\:thesis:first");
