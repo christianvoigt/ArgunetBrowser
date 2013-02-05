@@ -50,7 +50,7 @@ Only the first two parameters are required.
 <dd>The height of the Argunet Browser widget. Default is 385.</dd>
 </dl>
 
-3. Dependencies
+3. Dependancies
 ---------------
 Argunet Browser uses the following libraries:
 
@@ -77,4 +77,4 @@ ArgunetBrowser.min.js is created with Ant (build.xml) and Yuicompressor (http://
 
 5. Development
 --------------
-For debugging purposes you can use the index-dev.html which includes all unminimized javascript files seperately.
+For debugging purposes you can use the index-dev.html which includes all unminimized javascript files separately.
