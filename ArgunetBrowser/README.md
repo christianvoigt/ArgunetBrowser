@@ -13,32 +13,44 @@ Argunet Browser is released under the MIT license. http://en.wikipedia.org/wiki/
 
 1. Copy the contents of /lib to your Webspace.
 2. Include ArgunetBrowser.min.css in the Head section of your Html page:
-    <link rel="stylesheet" href="lib/ArgunetBrowser.min.css" type="text/css" />
+    `<link rel="stylesheet" href="lib/ArgunetBrowser.min.css" type="text/css" />`
 3. Include ArgunetBrowser.min.js at the end of the Body section your Html page:
-    <script src="lib/ArgunetBrowser.min.js" type="text/javascript"></script>
+    `<script src="lib/ArgunetBrowser.min.js" type="text/javascript"></script>`
 4. Upload your debate in graphml format to your Webspace. You can export any debate from Argunet Editor into this format.
 5. Instantiate Argunet Browser in your Html page, at the end of your body section, telling ArgunetBrowser the location of your graphml file and the Html Element Argunet Browser should use for creating the Canvas and other Html elements. For example, you can use a html id:
+    ```
     <script type="text/javascript">
     	$(function() { //Jquery's document ready event
     		new argunet.ArgunetBrowser("yourmap.graphml",$("#htmlId"));
     	});	
     </script>
+    ```
 
 ArgunetBrowser accepts the following parameters: 
 
-*new ArgunetBrowser(debateUrl, htmlElement, firstNode, width, height)* 
+**`new ArgunetBrowser(debateUrl, htmlElement, firstNode, width, height)`**
 
 Only the first two parameters are required.
 				
-*debateUrl:* The url to your .graphml file.
+*debateUrl:* 
 
-*htmlElement:* The html element into which the Argunet Browser widget should be placed (or a jquery selector for this element, i.e. "#id").
+The url to your .graphml file.
 
-*firstNode:* The Argunet id of the first node to be selected. If firstNode is undefined Argunet Browser will simply select the first node in your .graphml file. 
+*htmlElement:* 
 
-*width:* 	The width of the Argunet Browser widget. Default is 640.
+The html element into which the Argunet Browser widget should be placed (or a jquery selector for this element, i.e. "#id").
 
-*height:* The height of the Argunet Browser widget. Default is 385.
+*firstNode:* 
+
+The Argunet id of the first node to be selected. If firstNode is undefined Argunet Browser will simply select the first node in your .graphml file. 
+
+*width:* 	
+
+The width of the Argunet Browser widget. Default is 640.
+
+*height:* 
+
+The height of the Argunet Browser widget. Default is 385.
 
 3. Dependencies
 ---------------
