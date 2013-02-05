@@ -33,25 +33,22 @@ ArgunetBrowser accepts the following parameters:
 
 Only the first two parameters are required.
 				
-*debateUrl:* 
+<dl>
+<dt>debateUrl:</dt> 
+<dd>The url to your .graphml file.</dd>
 
-The url to your .graphml file.
+<dt>htmlElement:</dt> 
+<dd>The html element into which the Argunet Browser widget should be placed (or a jquery selector for this element, i.e. "#id").</dd>
 
-*htmlElement:* 
+<dt>firstNode:<dt> 
+<dd>The Argunet id of the first node to be selected. If firstNode is undefined Argunet Browser will simply select the first node in your .graphml file.</dd> 
 
-The html element into which the Argunet Browser widget should be placed (or a jquery selector for this element, i.e. "#id").
+<dt>width:<dt> 	
+<dd>The width of the Argunet Browser widget. Default is 640.</dd>
 
-*firstNode:* 
-
-The Argunet id of the first node to be selected. If firstNode is undefined Argunet Browser will simply select the first node in your .graphml file. 
-
-*width:* 	
-
-The width of the Argunet Browser widget. Default is 640.
-
-*height:* 
-
-The height of the Argunet Browser widget. Default is 385.
+<dt>height:</dt>
+<dd>The height of the Argunet Browser widget. Default is 385.</dd>
+</dl>
 
 3. Dependencies
 ---------------
