@@ -18,7 +18,7 @@ Argunet Browser is released under the MIT license. http://en.wikipedia.org/wiki/
     `<script src="lib/ArgunetBrowser.min.js" type="text/javascript"></script>`
 4. Upload your debate in graphml format to your Webspace. You can export any debate from Argunet Editor into this format.
 5. Instantiate Argunet Browser in your Html page, at the end of your body section, telling ArgunetBrowser the location of your graphml file and the Html Element Argunet Browser should use for creating the Canvas and other Html elements. For example, you can use a html id:
-    ```
+    ```javascript
     <script type="text/javascript">
     	$(function() { //Jquery's document ready event
     		new argunet.ArgunetBrowser("yourmap.graphml",$("#htmlId"));
