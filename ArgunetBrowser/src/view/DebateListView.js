@@ -15,7 +15,7 @@ argunet.DebateListView = function(htmlElement, browserId){
 	
 	this.zTreeId = browserId+"-ztree";
 	
-	htmlElement.append("<div class='debateList'><div class='buttons'><div class='checkAll'>Show All Groups</div><div class='uncheckAll'>Unpack all Group Members</div></div><div id='"+this.zTreeId+"' class='tree ztree'></div></div>");
+	htmlElement.append("<div class='debateList'><div class='buttons'><div class='uncheckAll'>Deactivate All Group Members</div><div class='checkAll'>Activate All Group Members</div></div><div id='"+this.zTreeId+"' class='tree ztree'></div></div>");
 	this.htmlElement = $(htmlElement).children(".debateList").get(0);
 	
 	var that = this;
@@ -32,9 +32,9 @@ argunet.DebateListView.prototype.initialize = function(title,subtitle,zNodes){
 		};
 		var zTreeOnCheck = function(event, treeId, treeNode) {
 		    if(treeNode.checked){
-		    	that.dispatchEvent({type:"closeGroup", id:treeNode.id}, this);		    	
-		    }else{
 		    	that.dispatchEvent({type:"openGroup", id:treeNode.id}, this);
+		    }else{
+		    	that.dispatchEvent({type:"closeGroup", id:treeNode.id}, this);		    	
 		    }
 		};
 	   var zSettings = {
@@ -46,15 +46,17 @@ argunet.DebateListView.prototype.initialize = function(title,subtitle,zNodes){
 	   };
 	   //var zTreeElement = $(this.htmlElement).children("#ztree");
 	this.zTree = $.fn.zTree.init($("#"+this.zTreeId), zSettings, zNodes);
-	var treeObj = $.fn.zTree.getZTreeObj(this.zTreeId);;
+	var treeObj = $.fn.zTree.getZTreeObj(this.zTreeId);
+	treeObj.checkAllNodes(true);
+
 	$(this.htmlElement).children(".buttons").buttonset();
 	$(this.htmlElement).find(".checkAll").button().click(function() {
 		treeObj.checkAllNodes(true);
-		that.dispatchEvent({type:"closeAllGroups"}, that);
+		that.dispatchEvent({type:"openAllGroups"}, that);
 	});
 	$(this.htmlElement).find(".uncheckAll").button().click(function() {
 		treeObj.checkAllNodes(false);
-		that.dispatchEvent({type:"openAllGroups"}, that);
+		that.dispatchEvent({type:"closeAllGroups"}, that);
 	});
 
 	

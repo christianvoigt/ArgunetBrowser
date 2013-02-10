@@ -11,13 +11,13 @@ Argunet Browser is released under the MIT license. http://en.wikipedia.org/wiki/
 2. Deployment
 -------------
 
-1. Copy the contents of /lib to your Webspace.
-2. Include ArgunetBrowser.min.css in the Head section of your Html page:
+1. Copy the contents of /lib to your webspace.
+2. Include ArgunetBrowser.min.css in the head section of your html page:
     `<link rel="stylesheet" href="lib/ArgunetBrowser.min.css" type="text/css" />`
-3. Include ArgunetBrowser.min.js at the end of the Body section your Html page:
+3. Include ArgunetBrowser.min.js at the end of the body section of your html page:
     `<script src="lib/ArgunetBrowser.min.js" type="text/javascript"></script>`
-4. Upload your debate in graphml format to your Webspace. You can export any debate from Argunet Editor into this format.
-5. Instantiate Argunet Browser in your Html page, at the end of your body section, telling ArgunetBrowser the location of your graphml file and the Html Element Argunet Browser should use for creating the Canvas and other Html elements. For example, you can use a html id:
+4. Upload your debate in graphml format to your webspace. You can export any debate from Argunet Editor into this format.
+5. Instantiate Argunet Browser in your html page, at the end of your body section:
     
     ```html
     <script type="text/javascript">

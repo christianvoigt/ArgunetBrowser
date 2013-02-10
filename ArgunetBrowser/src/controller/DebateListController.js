@@ -23,7 +23,7 @@ this.argunet = this.argunet||{};
 			}
 		};
 		$.each(this.manager.groups, function(){
-			var group = {id:this.id ,name:"Hide in Group: "+this.title, children: [], checked:false};
+			var group = {id:this.id ,name:"Group: "+this.title, children: [], checked:false};
 			$.each(this.nodes,function(){
 				addNode(this, group);
 			});

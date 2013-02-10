@@ -42,7 +42,6 @@ argunet.ArborView= function(debateM){
 	};
 	this.handleEvent= function(evt){
 		if(evt.type == "select"){
-			this.selectNode(evt.target.nodeId);
 			this.dispatchEvent({type:"nodeSelection",nodeId:evt.target.nodeId},evt.target);
 		}else if(evt.type == "mouseover"){
 			var tooltipText = "<h3>"+evt.target.title+"</h3><p>"+evt.target.text+"</p>";
@@ -94,7 +93,7 @@ argunet.ArborView= function(debateM){
 		var that= this;
 		if (!particleSystem) return;
 
-		//delete nodeViews and arrowViews that are no longer used
+		//delete nodeViews that are no longer used
 		$.each(nodeViews, function(){
 			var nodeId=this.nodeId;
 			if(particleSystem.getNode(nodeId) == undefined){
@@ -106,7 +105,7 @@ argunet.ArborView= function(debateM){
 				delete nodeViews[nodeId];
 			}
 		});
-		//delete nodeViews and arrowViews that are no longer used
+		//delete arrowViews that are no longer used
 		$.each(edgeViews, function(){
 			$.each(this,function(){
 				if(particleSystem.getEdgesFrom(this.source)[this.target] == undefined){
@@ -129,18 +128,12 @@ argunet.ArborView= function(debateM){
 			var nodeView= nodeViews[node.data.id];
 			if(nodeViews[node.data.id]==undefined){
 				var nodeModel;
-				if(node.data.group){
-					nodeModel= debateManager.groups[node.data.id];					
-				}else{
-					nodeModel= debateManager.getNode(node.data.id);					
-				}
+
+				nodeModel= debateManager.getNode(node.data.id);					
 				if(nodeModel instanceof argunet.Argument){
 					nodeView= new argunet.ArgumentCanvasView(nodeModel,debateManager.getColor(nodeModel.colorIndex));
 				}else if(nodeModel instanceof argunet.Thesis){
 					nodeView= new argunet.ThesisCanvasView(nodeModel,debateManager.getColor(nodeModel.colorIndex));        			
-				}else if(nodeModel instanceof argunet.Group){
-					nodeView= new argunet.GroupCanvasView(nodeModel);
-					nodeView.addEventListener("dblclick",that);
 				}
 				nodeView.addEventListener("select", that);
 				nodeView.addEventListener("mousedown", that);
@@ -165,11 +158,12 @@ argunet.ArborView= function(debateM){
 			var nodeHeight = nodeView.getMarginedHeight();
 
 			nodeBoxes[node.data.id]=[pt.x-nodeWidth/2,pt.y-nodeHeight/2,nodeWidth,nodeHeight];
-			if(node.data.edgesToSelectedNode > 1)nodeView.minimize();
-			else if(node.data.edgesToSelectedNode >0)nodeView.deselect();
-
-			if(node.data.selected)that.selectNode(node.data.id);
-
+			if(node.data.selected && !node.data.inactive)that.selectNode(node.data.id);
+			else if(node.data.inactive){
+				console.log("minimizing..."); 
+				nodeView.minimize(true);}
+			else if(node.data.edgesToSelectedNode > 1)nodeView.minimize(false);
+			else if(node.data.edgesToSelectedNode >0 && !node.data.inactive)nodeView.deselect();
 		});
 
 		// draw the edges
