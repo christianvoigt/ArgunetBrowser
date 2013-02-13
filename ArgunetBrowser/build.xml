@@ -29,6 +29,7 @@
 			<file name="model/Thesis.js" />
 				
 			<file name="controller/ArborController.js" />
+			<file name="controller/ArborConfigurator.js" />
 			<file name="controller/BrowserRegistry.js" />
 			<file name="controller/DebateListController.js" />
 			<file name="controller/History.js" />

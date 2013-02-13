@@ -25,6 +25,10 @@
 				size</a> for 16:9 content. 640px is also a common width of blog content,
 			but many blogs have smaller widths.
 		</p>
+		<p>	
+			<a href='' id='nodeSelectionTest'>Select Node</a>
+		</p>
+		
 	</div>
 	<div id="content2">
 		<h2>2. Argunet in a 4:3 format</h2>
@@ -44,8 +48,6 @@
 		</p>
 		<div id="argunetBrowser2"></div>
 	</div>	
-<!-- 	<script src="lib/jquery-1.9.0.js" type="text/javascript"></script> -->
-<!-- 	<script src="lib/jquery-migrate-1.0.0.min.js" type="text/javascript"></script> -->
 	<script src="src/lib/modernizr.custom.12855.js" type="text/javascript"></script>
 	<script src="src/lib/jquery-1.8.3.min.js" type="text/javascript"></script>
 	<script src="src/lib/jquery-ui-1.10.0.custom.js" type="text/javascript"></script>
@@ -59,6 +61,7 @@
 
 	<script src="src/ArgunetBrowser.js" type="text/javascript"></script>
 	<script src="src/controller/ArborController.js" type="text/javascript"></script>
+	<script src="src/controller/ArborConfigurator.js" type="text/javascript"></script>
 	<script src="src/controller/DebateListController.js" type="text/javascript"></script>
 	<script src="src/controller/History.js" type="text/javascript"></script>
 	<script src="src/controller/BrowserRegistry.js" type="text/javascript"></script>
@@ -86,9 +89,27 @@
 	<script src="src/view/DebateListView.js" type="text/javascript"></script>
 	<script src="src/view/GroupCanvasView.js" type="text/javascript"></script>
 	<script src="src/view/ErrorMessageView.js" type="text/javascript"></script>
+		
 	<script type="text/javascript">
 	$(function() {
-		new argunet.ArgunetBrowser("greatmap.graphml",$("#content1"));
+		var argunetBrowser = new argunet.ArgunetBrowser("greatmap.graphml",$("#content1"),"67883");
+		
+		//Events
+		var listener = function(evt){
+            if(evt.type == "nodeSelection"){
+            	console.log("Node id of selected node: "+evt.nodeId);
+            }
+        }
+        argunetBrowser.addEventListener("mousedown",listener);
+        argunetBrowser.addEventListener("dblclick",listener);
+        argunetBrowser.addEventListener("nodeSelection",listener);
+        
+        //Node Selection
+		$("#nodeSelectionTest").click(function(evt){
+			argunetBrowser.selectNode("501839");
+			evt.preventDefault();
+		});
+
 		//new argunet.ArgunetBrowser("greatmap.graphml",$("#content2"),null,480,385);
 		//new argunet.ArgunetBrowser("greatmap.graphml",$("#content3"),null,1280,754);
 	    });	

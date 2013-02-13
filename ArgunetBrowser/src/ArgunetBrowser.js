@@ -84,7 +84,11 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			this.debateListView.addEventListener("closeGroup",this.arborController);
 			this.debateListView.addEventListener("openAllGroups",this.arborController);
 			this.debateListView.addEventListener("closeAllGroups",this.arborController);
+			
 			this.arborView.addEventListener("nodeSelection",this);
+			this.arborView.addEventListener("mousedown",this);
+			this.arborView.addEventListener("dblclick",this);
+			
 			
 			//remove loading
 			this.argunetView.removeLoadingSpinner();
@@ -99,7 +103,7 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			//firstNodeId = "n1::n2";
 			//firstNodeId = "n26";
 
-			this.history.selectNode(firstNodeId);
+			this.selectNode(firstNodeId);
 		};		
 
 			
@@ -112,6 +116,14 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			}else if(evt.type == "nodeSelection"){
 				this.history.selectNode(evt.nodeId);
 				this.dispatchEvent({type:"nodeSelection",nodeId:evt.nodeId},evt.target);
+			}else if(evt.type == "mousedown"){
+				this.dispatchEvent(evt, evt.target);
+			}else if(evt.type =="dblclick"){
+				this.dispatchEvent(evt, evt.target);
 			}
+		};
+		
+		this.selectNode = function(nodeId){
+			this.history.selectNode(nodeId);
 		};
 	};

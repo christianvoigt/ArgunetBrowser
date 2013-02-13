@@ -14,8 +14,13 @@ Argunet Browser is released under the MIT license. http://en.wikipedia.org/wiki/
 1. Copy the contents of /lib to your webspace.
 2. Include ArgunetBrowser.min.css in the head section of your html page:
     `<link rel="stylesheet" href="lib/ArgunetBrowser.min.css" type="text/css" />`
-3. Include ArgunetBrowser.min.js at the end of the body section of your html page:
-    `<script src="lib/ArgunetBrowser.min.js" type="text/javascript"></script>`
+3. Include arbor.js and ArgunetBrowser.min.js at the end of the body section of your html page:
+
+    ```html
+    	<script src="lib/arbor.js" type="text/javascript"></script>
+		<script src="lib/ArgunetBrowser.min.js" type="text/javascript"></script>
+	```
+	
 4. Upload your debate in graphml format to your webspace. You can export any debate from Argunet Editor into this format.
 5. Instantiate Argunet Browser in your html page, at the end of your body section:
     
@@ -26,6 +31,13 @@ Argunet Browser is released under the MIT license. http://en.wikipedia.org/wiki/
     	});	
     </script>
     ```
+In its default mode Google Chrome doesn't allow it to load local xml files with Javascript. If yout want to test Argunet Browser locally, please use another browser or start Chrome with the following parameters (this example is for OSX): 
+	
+	```
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --allow-file-access-from-files --enable-webgl --ignore-gpu-blacklist %U    
+	```
+    
+###Parameters
 
 ArgunetBrowser accepts the following parameters: 
 
@@ -49,6 +61,57 @@ Only the first two parameters are required.
 <dt>height:</dt>
 <dd>The height of the Argunet Browser widget. Default is 385.</dd>
 </dl>
+
+###Methods
+
+**`selectNode(nodeId)`**
+
+Selects a node in the graph.
+
+<dl>
+<dt>nodeId:</dt><dd>the Argunet id of the node to select.</dd>
+</dl>
+
+Example:
+
+    ```html
+    <a href='' id='nodeSelectionTest'>Select Node</a>
+    <script type="text/javascript">
+    	$(function() { //Jquery's document ready event
+    		var argunetBrowser = new argunet.ArgunetBrowser("yourmap.graphml",$("#htmlId"));
+			$("#nodeSelectionTest").click(function(evt){ //Jquery's click handler
+				argunetBrowser.selectNode("501839"); //change this to an argunet node id of your debate
+				evt.preventDefault();
+			});
+    	});	
+    </script>
+    ```
+
+**`addEventListener(eventType, listener)`**
+
+<dl>
+<dt>eventType:</dt><dd>The type of the event. ArgunetBrowser dispatches the following events: mousedown, dblclick, nodeSelection.</dd>
+<dt>listener:</dt><dd>a function or an object with a handleEvent(evt) method.</dd>
+</dl>
+
+Example:
+
+    ```html
+    <script type="text/javascript">
+    	$(function() { //Jquery's document ready event
+    		var argunetBrowser = new argunet.ArgunetBrowser("yourmap.graphml",$("#htmlId"));
+    		var listener = function(evt){
+	            if(evt.type == "nodeSelection"){
+  		          	console.log("Node id of selected node: "+evt.nodeId);
+ 	           }
+    		}
+    		argunetBrowser.addEventListener("mousedown",listener);
+    		argunetBrowser.addEventListener("dblclick",listener);
+    		argunetBrowser.addEventListener("nodeSelection",listener);
+    	});	
+    </script>
+    ```
+
 
 3. Dependancies
 ---------------

@@ -24,7 +24,8 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 	    var sys = arbor.ParticleSystem(400, 400, 0.7, true, 55, 0.03);
 	    sys.parameters({integrator:'euler'});
 	    
-	    var arborView = arborView;
+	    var configurator = new argunet.ArborConfigurator(sys, arborView.stage.canvas.width, arborView.stage.canvas.height);
+	    
 	    arborView.addEventListener("mousedown",this);
 	    sys.renderer = arborView;
 	    
@@ -38,17 +39,16 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 	    //Private Methods
 	    
 		this.addNodeToVisibleGraph = function(id,edgesToSelectedNode){
-	    	var selected = (edgesToSelectedNode == 0)? true:false;
-	    	var that = this;
-	    	
+	    	var selected = (edgesToSelectedNode == 0)? true:false;	    	
 		    groupId = this.debateManager.nodes[id].group;	    	
 		    var inactive = (groupId)?!this.debateManager.groups[groupId].open : false;
 
 		    if(visibleNodes[id]!= undefined){
-		    	visibleNodes[id].selected=selected;
+		    	if(selected)visibleNodes[id].selected=selected;
 		    	visibleNodes[id].inactive=inactive;
 		    	return;
 		    }
+		    this.nrOfNodes++;
 		    visibleNodes[id] = {'id':id, 'selected':selected, 'inactive':inactive, 'edgesToSelectedNode': edgesToSelectedNode};
 	    };	    
 	    
@@ -77,8 +77,8 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 									that.addEdgeToVisibleGraph(value);
 							});
 							if(that.debateManager.getEdgesFrom(node.id)!= undefined)$.each(that.debateManager.getEdgesFrom(node.id),function(key, value){
-								that.addNodeToVisibleGraph(value.target, currentDepth+1);
-								that.addEdgeToVisibleGraph(value);
+									that.addNodeToVisibleGraph(value.target, currentDepth+1);
+									that.addEdgeToVisibleGraph(value);
 							});
 							//recursion
 							that.changeGraphDepth(currentDepth+1,newDepth);
@@ -94,16 +94,17 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 	    };
 		this.selectNode = function(nodeId){
 			if(selectedNode == nodeId) return;
-				selectedNode = nodeId;
-				this.update();
+			selectedNode = nodeId;
+			this.update();
 		};	    
 		this.update = function(){
 			visibleNodes = {};
 			visibleEdges = {};
-			
+			this.nrOfNodes = 0;
 			this.addNodeToVisibleGraph(selectedNode,0);
 			this.changeGraphDepth(0, this.graphDepth);
-
+			configurator.configurate(this.nrOfNodes);
+				
 			sys.merge({'nodes':visibleNodes,'edges':visibleEdges});			  
 		};			    	    
 	};

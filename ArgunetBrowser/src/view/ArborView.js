@@ -80,7 +80,7 @@ argunet.ArborView= function(debateM){
 			draggedNode.fixed = false;
 			draggedNode.tempMass = 50;
 		}else if(evt.type == "dblclick"){
-			this.dispatchEvent({type:"openGroup",id:evt.target.nodeId},evt.target);			
+			this.dispatchEvent(evt,evt.target);			
 		}
 	};
 	this.selectNode= function(nodeId){
@@ -137,6 +137,7 @@ argunet.ArborView= function(debateM){
 				}
 				nodeView.addEventListener("select", that);
 				nodeView.addEventListener("mousedown", that);
+				nodeView.addEventListener("dblclick", that);
 				nodeView.addEventListener("mouseover", that);
 				nodeView.addEventListener("mouseout", that);
 				nodeView.addEventListener("drag",that);
