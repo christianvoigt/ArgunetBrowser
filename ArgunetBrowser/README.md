@@ -16,26 +16,24 @@ Argunet Browser is released under the MIT license. http://en.wikipedia.org/wiki/
     `<link rel="stylesheet" href="lib/ArgunetBrowser.min.css" type="text/css" />`
 3. Include arbor.js and ArgunetBrowser.min.js at the end of the body section of your html page:
 
-    ```html
-    	<script src="lib/arbor.js" type="text/javascript"></script>
-		<script src="lib/ArgunetBrowser.min.js" type="text/javascript"></script>
-	```
-	
+```html
+    <script src="lib/ArgunetBrowser.min.js" type="text/javascript"></script>
+```	
 4. Upload your debate in graphml format to your webspace. You can export any debate from Argunet Editor into this format.
 5. Instantiate Argunet Browser in your html page, at the end of your body section:
     
-    ```html
+```html
     <script type="text/javascript">
     	$(function() { //Jquery's document ready event
     		new argunet.ArgunetBrowser("yourmap.graphml",$("#htmlId"));
     	});	
     </script>
-    ```
+```
 In its default mode Google Chrome doesn't allow it to load local xml files with Javascript. If yout want to test Argunet Browser locally, please use another browser or start Chrome with the following parameters (this example is for OSX): 
 	
-	```
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --allow-file-access-from-files --enable-webgl --ignore-gpu-blacklist %U    
-	```
+```
+		/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --allow-file-access-from-files --enable-webgl --ignore-gpu-blacklist %U    
+```
     
 ###Parameters
 
@@ -74,19 +72,19 @@ Selects a node in the graph.
 
 Example:
 
-    ```html
+```html
     <a href='' id='nodeSelectionTest'>Select Node</a>
     <script type="text/javascript">
-    	$(function() { //Jquery's document ready event
-    		var argunetBrowser = new argunet.ArgunetBrowser("yourmap.graphml",$("#htmlId"));
-			$("#nodeSelectionTest").click(function(evt){ //Jquery's click handler
-				argunetBrowser.selectNode("501839"); //change this to an argunet node id of your debate
-				evt.preventDefault();
-			});
-    	});	
+    $(function() { //Jquery's document ready event
+    	var argunetBrowser = new argunet.ArgunetBrowser("yourmap.graphml",$("#htmlId"));
+    	$("#nodeSelectionTest").click(function(evt){ //Jquery's click handler
+    		argunetBrowser.selectNode("501839"); //change this to an argunet node id of your debate
+    		evt.preventDefault();
+    	});
+    });	
     </script>
-    ```
-
+```
+	
 **`addEventListener(eventType, listener)`**
 
 <dl>
@@ -96,7 +94,7 @@ Example:
 
 Example:
 
-    ```html
+```html
     <script type="text/javascript">
     	$(function() { //Jquery's document ready event
     		var argunetBrowser = new argunet.ArgunetBrowser("yourmap.graphml",$("#htmlId"));
@@ -110,8 +108,7 @@ Example:
     		argunetBrowser.addEventListener("nodeSelection",listener);
     	});	
     </script>
-    ```
-
+```
 
 3. Dependancies
 ---------------
