@@ -4,7 +4,7 @@ this.argunet = this.argunet||{};
 (function() {	
 	var ArborConfigurator = function(arborParticleSystem,width,height) {
 		var sys = arborParticleSystem;
-		this.configurate = function(nrOfNodes){
+		this.configurate = function(nrOfNodes, graphDepth){
 			//Repulsion
 			//var r = 800/nrOfNodes;
 			var r = 400;

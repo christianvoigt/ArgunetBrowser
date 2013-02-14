@@ -103,7 +103,7 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 			this.nrOfNodes = 0;
 			this.addNodeToVisibleGraph(selectedNode,0);
 			this.changeGraphDepth(0, this.graphDepth);
-			configurator.configurate(this.nrOfNodes);
+			configurator.configurate(this.nrOfNodes, this.graphDepth);
 				
 			sys.merge({'nodes':visibleNodes,'edges':visibleEdges});			  
 		};			    	    
