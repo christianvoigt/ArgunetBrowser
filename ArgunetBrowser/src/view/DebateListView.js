@@ -15,7 +15,7 @@ argunet.DebateListView = function(htmlElement, browserId){
 	
 	this.zTreeId = browserId+"-ztree";
 	
-	htmlElement.append("<div class='debateList'><div class='buttons'><div class='uncheckAll'>Deactivate All Group Members</div><div class='checkAll'>Activate All Group Members</div></div><div id='"+this.zTreeId+"' class='tree ztree'></div></div>");
+	htmlElement.append("<div class='debateList'><div class='buttons'><div class='uncheckAll menuItem'>Deactivate All Group Members</div><div class='checkAll menuItem'>Activate All Group Members</div></div><div id='"+this.zTreeId+"' class='tree ztree'></div></div>");
 	this.htmlElement = $(htmlElement).children(".debateList").get(0);
 	
 	var that = this;
@@ -66,7 +66,6 @@ argunet.DebateListView.prototype.setHeight = function(height){
 	$(this.htmlElement).height(this.height);
 };
 argunet.DebateListView.prototype.show = function(){
-	//$(this.htmlElement).fadeIn("fast");
 	$(this.htmlElement).show("slide", { direction: "left" }, 600);
 	this.isOpen=true;
 };

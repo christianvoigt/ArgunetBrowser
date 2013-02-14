@@ -173,7 +173,6 @@ this.argunet = this.argunet||{};
     		this.state0.visible=true;
     		this.state0inactive.visible=false;
     	}else{
-        	console.log("inactive");
     		this.state0.visible=false;
     		this.state0inactive.visible=true;
     	}

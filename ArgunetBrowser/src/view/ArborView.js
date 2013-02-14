@@ -161,7 +161,6 @@ argunet.ArborView= function(debateM){
 			nodeBoxes[node.data.id]=[pt.x-nodeWidth/2,pt.y-nodeHeight/2,nodeWidth,nodeHeight];
 			if(node.data.selected && !node.data.inactive)that.selectNode(node.data.id);
 			else if(node.data.inactive){
-				console.log("minimizing..."); 
 				nodeView.minimize(true);}
 			else if(node.data.edgesToSelectedNode > 1)nodeView.minimize(false);
 			else if(node.data.edgesToSelectedNode >0 && !node.data.inactive)nodeView.deselect();

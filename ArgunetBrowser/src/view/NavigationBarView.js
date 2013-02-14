@@ -16,21 +16,25 @@ argunet.NavigationBarView = function(htmlElement){
 	var openListLabel = "Open Debate List";
 
 	htmlElement.append("<div class='navigationBar'>" +
-			"<div class='buttons menuItem'>" +
-			"<div class='back'>Back</div><div class='home'>Home</div><div class='forward'>Forward</div>" +
-			"<div class='openList'>"+openListLabel+"</div>" +
-			"</div>" +
+			"<div class='menu'>" +
+			"<div class='back menuItem'>Back</div><div class='home menuItem'>Home</div><div class='forward menuItem'>Forward</div>" +
+			"<div class='openList menuItem'>"+openListLabel+"</div>" +
+			"<div class='decreaseDepth menuItem'>Decrease Depth</div>" +
 			"<div class='graphDepth menuItem'>" +
 			"<div class='label'>Graph Depth: <span class='graphDepthLabel'>1</span></div>" +
 				"<div class='slider'></div>" +
 			"</div>" +
+			"<div class='increaseDepth menuItem'>Increase Depth</div>" +
+			"</div>" +
 			"</div>");
 	this.htmlElement = $(htmlElement).children(".navigationBar").get(0);
 	var that = this;
-	$(this.htmlElement).find(".graphDepth .slider").slider({min:1,max:5,slide: function( event, ui ) {
+	$(this.htmlElement).find(".graphDepth .slider").slider({min:1,max:5,change: function( event, ui ) {
 		$(that.htmlElement).find(".graphDepthLabel").text(ui.value);
 		that.dispatchEvent({type:"graphDepthChange", value:ui.value},that);
     }});
+	var slider = $(this.htmlElement).find(".graphDepth .slider");
+	
 	$(this.htmlElement).find(".buttons").buttonset();
 	openListButton = $(this.htmlElement).find(".openList");
 	openListButton.button().click(function() {
@@ -61,16 +65,27 @@ argunet.NavigationBarView = function(htmlElement){
     text: false}).click(function() {
 		that.dispatchEvent({type:"forward"},that);
 	});
+	$(this.htmlElement).find(".decreaseDepth").button({icons: {
+        primary: "ui-icon-circle-minus"
+    },
+    text: false}).click(function() {
+		slider.slider("value",slider.slider("value")-1);
+	});	
+	$(this.htmlElement).find(".increaseDepth").button({icons: {
+        primary: "ui-icon-circle-plus"
+    },
+    text: false}).click(function() {
+		slider.slider("value",slider.slider("value")+1);
+	});		
+	
 	this.height = $(this.htmlElement).height();
 	$(this.htmlElement).hide();
 };
 argunet.NavigationBarView.prototype.show = function(){
-	console.log("fadeIn:");
-	//$(this.htmlElement).fadeIn("fast");
-	$(this.htmlElement).show("slide", { direction: "down"}, 200);
+	$(this.htmlElement).show("slide", { direction: "down"}, 600);
 };
 argunet.NavigationBarView.prototype.hide = function(){
-	$(this.htmlElement).hide("slide", { direction: "down" }, 200);
+	$(this.htmlElement).hide("slide", { direction: "down" }, 400);
 };
 argunet.NavigationBarView.prototype.setBackwardEnabled = function(enabled){
 	$(this.htmlElement).find(".back").button({disabled:!enabled});

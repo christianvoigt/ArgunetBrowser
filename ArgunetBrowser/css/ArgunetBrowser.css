@@ -2,13 +2,10 @@
 .argunetBrowser{
 	position:relative;
 	border:1px solid #999;
-<<<<<<< HEAD
 	background:#ffffff;
 }
 .argunetBrowser.loading{
 	background:#ffffff url('images/loading.gif') no-repeat center center;
-=======
->>>>>>> refs/remotes/choose_remote_name/master
 }
 .argunetBrowser .navigationBar{
 	width:100%;
@@ -23,20 +20,24 @@
 	font-size:11px;
 	opacity:0.7;
 }
+.argunetBrowser .navigationBar .menu{
+	padding:2px;
+}
 .argunetBrowser .navigationBar .label{
 	margin:5px 0px;
 	color:999;
 }
-.argunetBrowser .navigationBar .buttons{
-margin:10px;
+.argunetBrowser .navigationBar .menuItem{
+margin:10px 2px;
 float:left;
 }
-.argunetBrowser .navigationBar .ui-button, .argunetBrowser .debateList .ui-button{
+.argunetBrowser .debateList .menuItem{
 	margin:2px;
 }
-.argunetBrowser .graphDepth{
-		font-size:11px;
-		margin:4px 10px 10px 10px;
+.argunetBrowser .navigationBar .menu .graphDepth{
+font-size:11px;
+padding:4px 10px 10px 10px;
+margin:0px;
 float:left;
 }
 .argunetBrowser .debateList{

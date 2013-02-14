@@ -36,7 +36,28 @@ argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
 	this.tooltip = new argunet.TooltipCanvasView(this.canvas);
 	//tooltipLayer.addChild(tooltip);
 	this.stage.addChild(this.tooltip);
+	
+	//Extra Jquery Click Handler for Navigation Bar
+	var that = this;
+	$(this.canvas).click(function(){
+		that.showNavigationBar();
+	});
 
+};
+argunet.ArgunetBrowserView.prototype.showNavigationBar = function(){
+	window.clearTimeout(this.navigationBarTimeout);
+	if(!this.navigationOpened){
+			this.navigationBar.show();
+			this.navigationOpened = true;
+	}
+	var that = this;
+	this.navigationBarTimeout = window.setTimeout( function(){
+		if(that.navigationOpened && !that.debateListView.isOpen){
+			that.navigationBar.hide();
+			that.navigationOpened = false;
+		}
+		window.clearTimeout(that.navigationBarTimeout);
+	}, 2500 );		
 };
 argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 	var that = this;
@@ -67,17 +88,12 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 		this.tooltip.setVisible(false);
 		this.stage.update();		
 	}else if(evt.type == "stagemousemove"){
-		if(this.stage.mouseY > this.canvas.height - this.navigationBar.height){
-			if(!this.navigationOpened){
-				this.navigationBar.show();
-				this.navigationOpened = true;
-			}
-		}else{
-			if(this.navigationOpened && !this.debateListView.isOpen){
-				this.navigationBar.hide();
-				this.navigationOpened = false;
-			}
-		}
+		this.showNavigationBar();
+	}else if (evt.type == "openDebateList"){
+		this.debateListView.show();		
+	}else if (evt.type == "closeDebateList"){
+		this.debateListView.hide();		
+		this.showNavigationBar();
 	}
 };
 argunet.ArgunetBrowserView.prototype.setCanvasView = function (view){
@@ -89,12 +105,8 @@ argunet.ArgunetBrowserView.prototype.setCanvasView = function (view){
 	this.tooltip.addEventListener("mouseout",this);
 	
 	this.stage.addEventListener("stagemousemove",this);
-	this.navigationBar.addEventListener("openDebateList",function(){
-		that.debateListView.show();
-	});
-	this.navigationBar.addEventListener("closeDebateList",function(){
-		that.debateListView.hide();
-	});	
+	this.navigationBar.addEventListener("openDebateList",this);
+	this.navigationBar.addEventListener("closeDebateList",this);	
 };
 argunet.ArgunetBrowserView.prototype.removeLoadingSpinner = function(){
 	$(this.canvas).parent().removeClass("loading");

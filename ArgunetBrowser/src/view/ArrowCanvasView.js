@@ -38,7 +38,6 @@ this.argunet = this.argunet||{};
     	
     	//get current line length
     	var c = Math.sqrt(a*a + b*b);
-    	//console.log("a:"+a+" b:"+b+" c:"+c+" radians:"+radians+" degrees:"+degrees);
     	//shorten
     	c= c-arrowLength+bend;
     	
