@@ -23,6 +23,17 @@
 .argunetBrowser .navigationBar .menu{
 	padding:2px;
 }
+.argunetBrowser .navigationBar .logo{
+	float:right;
+	display:block;
+	padding:2px 4px;
+	width:134px;
+	height:42px;
+	background: url('images/argunet-logo.jpg') no-repeat center center;	
+}
+.argunetBrowser .navigationBar .logo span{
+	display:none;
+}
 .argunetBrowser .navigationBar .label{
 	margin:5px 0px;
 	color:999;
