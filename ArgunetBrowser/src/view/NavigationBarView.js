@@ -26,6 +26,7 @@ argunet.NavigationBarView = function(htmlElement){
 			"</div>" +
 			"<div class='increaseDepth menuItem'>Increase Depth</div>" +
 			"</div>" +
+			"<a href='http://www.argunet.org' class='logo'><span>Argunet</span></a>" +
 			"</div>");
 	this.htmlElement = $(htmlElement).children(".navigationBar").get(0);
 	var that = this;
@@ -48,7 +49,7 @@ argunet.NavigationBarView = function(htmlElement){
 		}
 	});
 	$(this.htmlElement).find(".back").button({icons: {
-        primary: "ui-icon-arrowthick-1-w"
+        primary: "ui-icon-circle-triangle-w"
     },
     text: false}).click(function() {
 		that.dispatchEvent({type:"back"},that);
@@ -60,7 +61,7 @@ argunet.NavigationBarView = function(htmlElement){
 		that.dispatchEvent({type:"home"},that);
 	});
 	$(this.htmlElement).find(".forward").button({icons: {
-        primary: "ui-icon-arrowthick-1-e"
+        primary: "ui-icon-circle-triangle-e"
     },
     text: false}).click(function() {
 		that.dispatchEvent({type:"forward"},that);
