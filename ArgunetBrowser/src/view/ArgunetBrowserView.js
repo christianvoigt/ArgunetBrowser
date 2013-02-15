@@ -52,7 +52,7 @@ argunet.ArgunetBrowserView.prototype.showNavigationBar = function(){
 	}
 	var that = this;
 	this.navigationBarTimeout = window.setTimeout( function(){
-		if(that.navigationOpened && !that.debateListView.isOpen){
+		if(that.navigationOpened && !that.debateListView.isOpen && that.stage.mouseY < that.canvas.height - that.navigationBar.height){
 			that.navigationBar.hide();
 			that.navigationOpened = false;
 		}
