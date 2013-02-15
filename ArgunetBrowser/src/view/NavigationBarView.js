@@ -86,7 +86,7 @@ argunet.NavigationBarView.prototype.show = function(){
 	$(this.htmlElement).show("slide", { direction: "down"}, 600);
 };
 argunet.NavigationBarView.prototype.hide = function(){
-	$(this.htmlElement).hide("slide", { direction: "down" }, 400);
+	$(this.htmlElement).hide("slide", { direction: "down" }, 600);
 };
 argunet.NavigationBarView.prototype.setBackwardEnabled = function(enabled){
 	$(this.htmlElement).find(".back").button({disabled:!enabled});
