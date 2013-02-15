@@ -57,7 +57,7 @@ argunet.ArgunetBrowserView.prototype.showNavigationBar = function(){
 			that.navigationOpened = false;
 		}
 		window.clearTimeout(that.navigationBarTimeout);
-	}, 2500 );		
+	}, 3500 );		
 };
 argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 	var that = this;
