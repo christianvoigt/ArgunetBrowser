@@ -110,7 +110,7 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 	}else if (evt.type == "closeFullscreen"){
     	var fs = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen;
     	if(fs) fs.call(document);
-	}else if (evt.type == "fullscreenchange" || evt.type == "mozfullscreenchange" || evt.type == "webkitfullscreenchange" ){
+	}else if (evt.type == "resize" || evt.type == "fullscreenchange" || evt.type == "mozfullscreenchange" || evt.type == "webkitfullscreenchange" ){
 		var c = this.canvas;
 	    if(document.mozFullScreen || document.webkitIsFullScreen) {
 	        var rect = c.getBoundingClientRect();
@@ -118,23 +118,17 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 	        $(c).height(rect.height);
 	    	this.canvas.width = rect.width;
 	    	this.canvas.height = rect.height;
-	    	this.debateListView.setHeight(rect.height);
-	    	var that = this;
-	    	window.setTimeout(function(){ //not nice, but otherwise the graph is getting distorted (height/width is too large). at least in osx.
-		        var rect = c.getBoundingClientRect();
-		        $(c).width(rect.width);
-		        $(c).height(rect.height);
-		    	that.canvas.width = rect.width;
-		    	that.canvas.height = rect.height;
-		    	that.debateListView.setHeight(rect.height-that.navigationBar.height+2);
-	    	},2000);
+	    	this.debateListView.setHeight(rect.height-this.navigationBar.height+2);
 	    }
 	    else {
+			if(this.oldWidth && this.oldHeight && this.oldWidth == this.canvas.width && this.oldHeight == this.canvas.height)return;
 	    	$(c).width(this.cWidth);
 	    	$(c).height(this.cHeight);
 	    	this.canvas.width = this.cWidth;
 	    	this.canvas.height = this.cHeight;
 	    	this.debateListView.setHeight(this.cHeight-this.navigationBar.height+2);
+			this.oldWidth = this.canvas.width;
+			this.oldHeight = this.canvas.height;
 
 	    }		
 	}		
@@ -155,6 +149,7 @@ argunet.ArgunetBrowserView.prototype.setCanvasView = function (view){
 	document.addEventListener('fullscreenchange', this);
 	document.addEventListener('mozfullscreenchange', this);
 	document.addEventListener('webkitfullscreenchange', this);
+	window.addEventListener('resize', this, false);
 	
 	this.navigationBar.addEventListener("openFullscreen",this);
 	this.navigationBar.addEventListener("closeFullscreen",this);

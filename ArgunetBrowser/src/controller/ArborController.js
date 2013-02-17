@@ -40,6 +40,8 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 		document.addEventListener('fullscreenchange', this);
 		document.addEventListener('mozfullscreenchange', this);
 		document.addEventListener('webkitfullscreenchange', this);
+		window.addEventListener('resize', this, false);
+
 	    
 	    
 	    
@@ -110,7 +112,7 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 			this.nrOfNodes = 0;
 			this.addNodeToVisibleGraph(selectedNode,0);
 			this.changeGraphDepth(0, this.graphDepth);
-			configurator.configurate(this.nrOfNodes, this.graphDepth);
+			configurator.configurate(this.nrOfNodes, this.graphDepth, this.arborView.stage.canvas.width, this.arborView.stage.canvas.height);
 				
 			this.sys.merge({'nodes':visibleNodes,'edges':visibleEdges});			  
 		};			 
@@ -143,14 +145,17 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 					this.open=false;
 				});
 				this.update();
-			}else if (evt.type == "fullscreenchange" || evt.type == "mozfullscreenchange" || evt.type == "webkitfullscreenchange" ){
+			}else if (evt.type == "resize" || evt.type == "fullscreenchange" || evt.type == "mozfullscreenchange" || evt.type == "webkitfullscreenchange" ){
 				var that = this;
-				that.sys.screenSize(that.arborView.stage.canvas.width, that.arborView.stage.canvas.height);
-				that.update();
-				window.setTimeout(function(){ //not nice, but otherwise the graph is getting distorted (height/width is too large) //not nice, but otherwise the graph is getting distorted (height/width is too large). at least in osx.
-					that.sys.screenSize(that.arborView.stage.canvas.width, that.arborView.stage.canvas.height);
+				if(document.mozFullScreen || document.webkitIsFullScreen) {
 					that.update();
-				},2000);
+					this.oldWidth = that.arborView.stage.canvas.width;
+					this.oldHeight = that.arborView.stage.canvas.height;
+				}else if(!this.oldWidth || !this.oldHeight || this.oldWidth != that.arborView.stage.canvas.width || this.oldHeight != that.arborView.stage.canvas.height){
+					that.update();					
+					this.oldWidth = that.arborView.stage.canvas.width;
+					this.oldHeight = that.arborView.stage.canvas.height;
+				}
 			}
 		};
     argunet.ArborController = ArborController;

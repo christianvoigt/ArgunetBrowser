@@ -2,9 +2,9 @@
 this.argunet = this.argunet||{};
 
 (function() {	
-	var ArborConfigurator = function(arborParticleSystem,width,height) {
+	var ArborConfigurator = function(arborParticleSystem) {
 		var sys = arborParticleSystem;
-		this.configurate = function(nrOfNodes, graphDepth){
+		this.configurate = function(nrOfNodes, graphDepth, width, height){
 			//Repulsion
 			//var r = 800/nrOfNodes;
 			var r = 400;
@@ -16,6 +16,7 @@ this.argunet = this.argunet||{};
 			
 			console.log("repulsion: "+r + " stiffness: " + s + " friction: " + f);
 			sys.parameters({repulsion:r, stiffness: s, friction: f, gravity:true});
+			sys.screenSize(width, height);
 		};
 	};
     argunet.ArborConfigurator = ArborConfigurator;
