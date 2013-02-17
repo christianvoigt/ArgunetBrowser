@@ -70,6 +70,7 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			this.argunetView.navigationBar.addEventListener("forward",this.history);
 			this.argunetView.navigationBar.addEventListener("graphDepthChange",this.arborController);
 			
+			
 			this.arborView.addEventListener("showTooltip",this.argunetView);
 			this.arborView.addEventListener("hideTooltip",this.argunetView);
 			this.arborView.addEventListener("mousedown",this.argunetView);
@@ -87,8 +88,7 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			
 			this.arborView.addEventListener("nodeSelection",this);
 			this.arborView.addEventListener("mousedown",this);
-			this.arborView.addEventListener("dblclick",this);
-			
+			this.arborView.addEventListener("dblclick",this);			
 			
 			//remove loading
 			this.argunetView.removeLoadingSpinner();

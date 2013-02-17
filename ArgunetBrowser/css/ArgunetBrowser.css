@@ -4,6 +4,22 @@
 	border:1px solid #999;
 	background:#ffffff;
 }
+.argunetBrowser:-moz-full-screen {
+  width: 100% !important;
+  height: 100% !important;
+}
+.argunetBrowser:-webkit-full-screen {
+  width: 100% !important;
+  height: 100% !important;
+}
+.argunetBrowser:-moz-full-screen canvas{
+    width: 100% !important;
+    height: 100% !important;
+}
+.argunetBrowser:-webkit-full-screen canvas{
+    width: 100% !important;
+    height: 100% !important;
+}
 .argunetBrowser.loading{
 	background:#ffffff url('images/loading.gif') no-repeat center center;
 }
@@ -51,6 +67,12 @@ padding:4px 10px 10px 10px;
 margin:0px;
 float:left;
 }
+.argunetBrowser .ui-button-icon-only .ui-icon-exit-fullscreen { 
+	background: url(images/ui-icons_ef8c08_256x240.png) -128px -80px; 
+}
+.argunetBrowser .ui-button-icon-only .ui-icon-open-fullscreen { 
+	background: url(images/ui-icons_ef8c08_256x240.png) -144px -80px; 
+}
 .argunetBrowser .debateList{
 	width:370px;
 	padding:0px 20px;
@@ -77,8 +99,6 @@ float:left;
 	display:none;
 }
 
-.argunetBrowser canvas{
-}
 .argunetBrowser .argument{
 	border: 1px solid #d0d0d0;
 	padding:0px 0px 61px;

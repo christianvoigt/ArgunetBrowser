@@ -14,6 +14,16 @@ argunet.NavigationBarView = function(htmlElement){
 	createjs.EventDispatcher.initialize(p); // inject EventDispatcher methods.
 
 	var openListLabel = "Open Debate List";
+	
+	//Fullscreen Test
+	this.fullscreenApiImplemented = false;
+	var fsRequest = typeof htmlElement.get(0).requestFullscreen == 'function' || typeof htmlElement.get(0).webkitRequestFullscreen == 'function' || typeof htmlElement.get(0).mozRequestFullScreen  == 'function';
+	var fsExit = typeof document.exitFullscreen == 'function' || typeof document.webkitExitFullscreen == 'function' || typeof document.mozCancelFullScreen == 'function';
+	var fsStatus = document.fullScreen != undefined || document.webkitIsFullScreen != undefined || document.mozFullScreen != undefined;
+	if(fsRequest && fsExit && fsStatus) this.fullscreenApiImplemented = true;
+	
+	var fullscreenHtml = "";
+	if(this.fullscreenApiImplemented) fullscreenHtml = "<div class='fullscreen menuItem'>Fullscreen</div>";
 
 	htmlElement.append("<div class='navigationBar'>" +
 			"<div class='menu'>" +
@@ -25,6 +35,7 @@ argunet.NavigationBarView = function(htmlElement){
 				"<div class='slider'></div>" +
 			"</div>" +
 			"<div class='increaseDepth menuItem'>Increase Depth</div>" +
+			fullscreenHtml +
 			"</div>" +
 			"<a href='http://www.argunet.org' class='logo'><span>Argunet</span></a>" +
 			"</div>");
@@ -79,8 +90,42 @@ argunet.NavigationBarView = function(htmlElement){
 		slider.slider("value",slider.slider("value")+1);
 	});		
 	
+	if(this.fullscreenApiImplemented){
+		this.fullscreenLabel = "Fullscreen";
+		this.exitFullscreenLabel = "Exit Fullscreen";
+		this.fullscreenButton = $(this.htmlElement).find(".fullscreen");
+		this.fullscreenButton.button({icons: {
+	        primary: "ui-icon-open-fullscreen"
+	    },
+	    text: false}).click(function() {
+			var label = $(this).button("option","label");
+			if(label == that.fullscreenLabel){
+				that.dispatchEvent({type:"openFullscreen"},that);
+			}else{
+				that.dispatchEvent({type:"closeFullscreen"},that);			   
+			}
+		});	
+	}
 	this.height = $(this.htmlElement).height();
+	
+	//Listen to Fullscreen events, because the user could exit fullscreen without pushing the fullscreen button
+	document.addEventListener('fullscreenchange', this);
+	document.addEventListener('mozfullscreenchange', this);
+	document.addEventListener('webkitfullscreenchange', this);
+
+	
 	$(this.htmlElement).hide();
+};
+argunet.NavigationBarView.prototype.handleEvent = function(evt){
+	if (evt.type == "fullscreenchange" || evt.type == "mozfullscreenchange" || evt.type == "webkitfullscreenchange" ){
+		if(document.fullScreen || document.webkitIsFullScreen || document.mozFullScreen){
+			this.fullscreenButton.button("option", "label", this.exitFullscreenLabel);
+			this.fullscreenButton.button("option","icons",{primary:"ui-icon-exit-fullscreen"});
+		}else{
+			this.fullscreenButton.button("option", "label", this.fullscreenLabel);			
+			this.fullscreenButton.button("option","icons",{primary:"ui-icon-open-fullscreen"});
+		}
+	}
 };
 argunet.NavigationBarView.prototype.show = function(){
 	$(this.htmlElement).show("slide", { direction: "down"}, 600);

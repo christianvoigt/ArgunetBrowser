@@ -20,20 +20,27 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 		createjs.EventDispatcher.initialize(p); // inject EventDispatcher methods.
 
 		this.debateManager = debateManager;
+		this.arborView = arborView;
 		
-	    var sys = arbor.ParticleSystem(400, 400, 0.7, true, 55, 0.03);
-	    sys.parameters({integrator:'euler'});
+	    this.sys = arbor.ParticleSystem(400, 400, 0.7, true, 55, 0.03);
+	    this.sys.parameters({integrator:'euler'});
 	    
-	    var configurator = new argunet.ArborConfigurator(sys, arborView.stage.canvas.width, arborView.stage.canvas.height);
+	    var configurator = new argunet.ArborConfigurator(this.sys, arborView.stage.canvas.width, arborView.stage.canvas.height);
 	    
 	    arborView.addEventListener("mousedown",this);
-	    sys.renderer = arborView;
+	    this.sys.renderer = arborView;
 	    
 		this.graphDepth = 1;
 		
 	    var visibleNodes = {};
 	    var visibleEdges = {};
 	    var selectedNode = undefined;
+	    
+		//Fullscreen
+		document.addEventListener('fullscreenchange', this);
+		document.addEventListener('mozfullscreenchange', this);
+		document.addEventListener('webkitfullscreenchange', this);
+	    
 	    
 	    
 	    //Private Methods
@@ -105,11 +112,12 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 			this.changeGraphDepth(0, this.graphDepth);
 			configurator.configurate(this.nrOfNodes, this.graphDepth);
 				
-			sys.merge({'nodes':visibleNodes,'edges':visibleEdges});			  
-		};			    	    
+			this.sys.merge({'nodes':visibleNodes,'edges':visibleEdges});			  
+		};			 
 	};
 //public methods
 	var p = ArborController.prototype; 
+
 	    p.handleEvent = function(evt){		  
 	    	if(evt.type == "historyChange"){
 				var state = evt.state;
@@ -134,6 +142,10 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 				$.each(this.debateManager.groups,function(){
 					this.open=false;
 				});
+				this.update();
+			}else if (evt.type == "fullscreenchange" || evt.type == "mozfullscreenchange" || evt.type == "webkitfullscreenchange" ){
+				this.sys.screenSize(this.arborView.stage.canvas.width, this.arborView.stage.canvas.height);
+				this.arborView.stage.update();
 				this.update();
 			}
 		};
