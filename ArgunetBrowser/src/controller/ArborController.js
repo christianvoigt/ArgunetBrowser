@@ -144,9 +144,13 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 				});
 				this.update();
 			}else if (evt.type == "fullscreenchange" || evt.type == "mozfullscreenchange" || evt.type == "webkitfullscreenchange" ){
-				this.sys.screenSize(this.arborView.stage.canvas.width, this.arborView.stage.canvas.height);
-				this.arborView.stage.update();
-				this.update();
+				var that = this;
+				that.sys.screenSize(that.arborView.stage.canvas.width, that.arborView.stage.canvas.height);
+				that.update();
+				window.setTimeout(function(){ //not nice, but otherwise the graph is getting distorted (height/width is too large) //not nice, but otherwise the graph is getting distorted (height/width is too large). at least in osx.
+					that.sys.screenSize(that.arborView.stage.canvas.width, that.arborView.stage.canvas.height);
+					that.update();
+				},2000);
 			}
 		};
     argunet.ArborController = ArborController;

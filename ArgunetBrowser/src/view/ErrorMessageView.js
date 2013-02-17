@@ -9,6 +9,7 @@ argunet.ErrorMessageView = function(htmlElement, width, height, title, message){
 
 	//canvas
 	if (typeof(htmlElement)=="string") { htmlElement = $(htmlElement);}
-	$(htmlElement).append("<div class='argunetBrowser loading' width='"+cWidth+"' height='"+cHeight+"'><h3>"+title+"</h3><p>"+message+"</p></div>");
+	if(!$(htmlElement).children(".argunetBrowser").length)$(htmlElement).append("<div class='argunetBrowser'></div>");
+	$(htmlElement).children(".argunetBrowser:first").width(cWidth).height(cHeight).empty().addClass("error").append("<div class='error'><a href='http://www.argunet.org' class='logo'><span>Argunet Browser</span></a><h3>"+title+"</h3><p>"+message+"</p><p><a href='http://www.argunet.org'>www.argunet.org</a></p></div>");
 };
 

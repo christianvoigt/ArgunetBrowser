@@ -40,7 +40,9 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 					},
 					error: function(XMLHttpRequest, textStatus, errorThrown) 
 					{
-						alert('Data Could Not Be Loaded - '+ textStatus);
+						//remove loading
+						that.argunetView.removeLoadingSpinner();
+						new argunet.ErrorMessageView(htmlElement,width,height, 'Data Could Not Be Loaded', textStatus);
 					}
 		});				
 		this.onDebateLoad = function(xml){

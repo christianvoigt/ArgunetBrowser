@@ -57,9 +57,7 @@ argunet.DebateListView.prototype.initialize = function(title,subtitle,zNodes){
 	$(this.htmlElement).find(".uncheckAll").button().click(function() {
 		treeObj.checkAllNodes(false);
 		that.dispatchEvent({type:"closeAllGroups"}, that);
-	});
-
-	
+	});	
 };
 argunet.DebateListView.prototype.setHeight = function(height){
 	this.height = height;
@@ -73,3 +71,5 @@ argunet.DebateListView.prototype.hide = function(){
 	$(this.htmlElement).hide("slide", { direction: "left" }, 600);
 	this.isOpen=false;
 };
+
+

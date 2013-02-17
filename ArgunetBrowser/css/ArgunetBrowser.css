@@ -7,21 +7,49 @@
 .argunetBrowser:-moz-full-screen {
   width: 100% !important;
   height: 100% !important;
+  border:0px;
 }
 .argunetBrowser:-webkit-full-screen {
   width: 100% !important;
-  height: 100% !important;
+  border:0px;
 }
 .argunetBrowser:-moz-full-screen canvas{
     width: 100% !important;
     height: 100% !important;
 }
 .argunetBrowser:-webkit-full-screen canvas{
-    width: 100% !important;
-    height: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 .argunetBrowser.loading{
 	background:#ffffff url('images/loading.gif') no-repeat center center;
+}
+.argunetBrowser.error{
+	display: table;
+}
+.argunetBrowser .error{
+	text-align:center;
+	color:#bbb;
+	font-size:11px;
+	padding:30px;
+    display: inline-block;
+display: table-cell;
+    vertical-align: middle;
+    margin:0 auto;
+}
+.argunetBrowser a{
+	color:#bbb;
+}
+.argunetBrowser .logo{
+	display:block;
+	padding:0px 0px 0px 0px;
+	margin:0 auto;
+	width:134px;
+	height:42px;
+	background: url('images/argunet-logo.jpg') no-repeat center center;	
+}
+.argunetBrowser .logo span{
+	display:none;
 }
 .argunetBrowser .navigationBar{
 	width:100%;

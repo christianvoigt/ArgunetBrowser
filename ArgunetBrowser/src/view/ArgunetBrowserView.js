@@ -9,8 +9,15 @@ argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
 
 	//canvas
 	if (typeof(htmlElement)=="string") { htmlElement = $(htmlElement);}
-	$(htmlElement).append("<div class='argunetBrowser loading' width='"+this.cWidth+"' height='"+this.cHeight+"'><canvas width='"+this.cWidth+"' height='"+this.cHeight+"'></canvas></div>");
+	$(htmlElement).append("<div class='argunetBrowser loading'><canvas></canvas></div>").width(this.cWidth).height(this.cHeight);
+	
+	this.cWidth -=2;
+	this.cHeight -=2;
+
 	this.canvas = $(htmlElement).children(".argunetBrowser").children("canvas").get(0);
+	$(this.canvas).width(this.cWidth).height(this.cHeight);
+	this.canvas.width = this.cWidth;
+	this.canvas.height = this.cHeight;
 
 	
 	//createjs stage
@@ -107,12 +114,28 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 		var c = this.canvas;
 	    if(document.mozFullScreen || document.webkitIsFullScreen) {
 	        var rect = c.getBoundingClientRect();
-	        c.width = rect.width;
-	        c.height = rect.height;
+	        $(c).width(rect.width);
+	        $(c).height(rect.height);
+	    	this.canvas.width = rect.width;
+	    	this.canvas.height = rect.height;
+	    	this.debateListView.setHeight(rect.height);
+	    	var that = this;
+	    	window.setTimeout(function(){ //not nice, but otherwise the graph is getting distorted (height/width is too large). at least in osx.
+		        var rect = c.getBoundingClientRect();
+		        $(c).width(rect.width);
+		        $(c).height(rect.height);
+		    	that.canvas.width = rect.width;
+		    	that.canvas.height = rect.height;
+		    	that.debateListView.setHeight(rect.height-that.navigationBar.height+2);
+	    	},2000);
 	    }
 	    else {
-	    	c.width = that.cWidth;
-	    	c.height = that.cHeight;
+	    	$(c).width(this.cWidth);
+	    	$(c).height(this.cHeight);
+	    	this.canvas.width = this.cWidth;
+	    	this.canvas.height = this.cHeight;
+	    	this.debateListView.setHeight(this.cHeight-this.navigationBar.height+2);
+
 	    }		
 	}		
 };
