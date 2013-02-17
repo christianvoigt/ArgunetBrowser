@@ -9,8 +9,8 @@ argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
 
 	//canvas
 	if (typeof(htmlElement)=="string") { htmlElement = $(htmlElement);}
-	$(htmlElement).append("<div class='argunetBrowser loading'><canvas></canvas></div>").width(this.cWidth).height(this.cHeight);
-	
+	$(htmlElement).append("<div class='argunetBrowser loading'><canvas></canvas></div>");
+		
 	this.cWidth -=2;
 	this.cHeight -=2;
 

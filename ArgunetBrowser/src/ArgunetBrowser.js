@@ -17,7 +17,7 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 		
 		
 		//feature check
-		if(!Modernizr.canvas || !Modernizr.canvastext){
+		if(!Modernizr.canvas || !Modernizr.canvastext || !({}).__defineGetter__){
 			new argunet.ErrorMessageView(htmlElement,width,height, "Argunet Browser not initialized", "We detected that your browser lacks features <a href='http://www.argunet.org'>Argunet Browser</a> depends on. Please use an up-to-date browser that supports HTML5, CSS3 and the Canvas Element.");
 			return;
 		}
@@ -32,9 +32,17 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 		$.ajax({
 			type:'GET',
 			url: debateUrl,
-			dataType: "xml",
+			dataType: "XML",
 					success : function(response) 
 					{
+						var xml;
+						if ( !window.DOMParser ) { //Internet Explorer
+							xml = new ActiveXObject("Microsoft.XMLDOM");
+							xml.async = false;
+							xml.loadXML(response);
+						} else {
+							xml = response;
+						}
 						xml = $(response);
 						that.onDebateLoad(xml);
 					},

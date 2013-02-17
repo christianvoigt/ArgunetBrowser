@@ -37,7 +37,6 @@
 				href="http://support.google.com/youtube/bin/answer.py?hl=en&answer=178264">recommended
 				size</a> for 4:3 content. This should fit into nearly every blog layout.
 		</p>
-		<div id="argunetBrowser2"></div>
 	</div>
 	<div id="content3">
 		<h2>2. Argunet in Widescreen format</h2>
@@ -46,7 +45,6 @@
 				href="http://support.google.com/youtube/bin/answer.py?hl=en&answer=178264">
 				format</a>.
 		</p>
-		<div id="argunetBrowser2"></div>
 	</div>	
 	<script src="src/lib/modernizr.custom.12855.js" type="text/javascript"></script>
 	<script src="src/lib/jquery-1.8.3.min.js" type="text/javascript"></script>
@@ -109,7 +107,8 @@
 			argunetBrowser.selectNode("501839");
 			evt.preventDefault();
 		});
-
+		
+        //So far, it's not possible to instantiate ArgunetBrowser more than once, since arbor.js is implemented as a singleton (most things work, but dragging is buggy).
 		//new argunet.ArgunetBrowser("greatmap.graphml",$("#content2"),null,480,385);
 		//new argunet.ArgunetBrowser("greatmap.graphml",$("#content3"),null,1280,754);
 	    });	

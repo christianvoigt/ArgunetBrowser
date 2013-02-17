@@ -14,7 +14,7 @@ this.argunet = this.argunet||{};
 			//Friction
 			var f = 0.7;
 			
-			console.log("repulsion: "+r + " stiffness: " + s + " friction: " + f);
+			//console.log("repulsion: "+r + " stiffness: " + s + " friction: " + f);
 			sys.parameters({repulsion:r, stiffness: s, friction: f, gravity:true});
 			sys.screenSize(width, height);
 		};

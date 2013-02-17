@@ -1,9 +1,7 @@
 // namespace:
 this.argunet = this.argunet||{};
 
-argunet.ErrorMessageView = function(htmlElement, width, height, title, message){
-	this.canvasView= undefined;
-	
+argunet.ErrorMessageView = function(htmlElement, width, height, title, message){	
 	var cWidth = width || 640;
 	var cHeight = height || 385;
 
