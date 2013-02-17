@@ -9,4 +9,5 @@
 8) Argunet Logo x
 9) Test & Doku: Events von au§en ansteuern x
 10) Mouse pointer: Hand Ÿber Nodes x
-11) Fullscreen
+11) Fullscreen x
+12) Tooltip Position x

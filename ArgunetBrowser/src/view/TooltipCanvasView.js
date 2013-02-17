@@ -20,7 +20,8 @@ this.argunet = this.argunet||{};
         //this.addChild(domElement);
         this.addChild(domElement);
      	this.x=50;
-    	this.y=50;        
+    	this.y=50;  
+    	this.width=$(this.tooltip).outerWidth();
     	//this.rotation=25;
     	this.setVisible(false);
     	
@@ -35,6 +36,7 @@ this.argunet = this.argunet||{};
     p.setContent = function(htmlElement){
     	$(this.tooltip).empty();
     	$(this.tooltip).append(htmlElement);
+    	this.height = $(this.tooltip).outerHeight();
     };
     p.setVisible = function(visible){ //because .visible doesn't work for DOMElement
     	if(visible){

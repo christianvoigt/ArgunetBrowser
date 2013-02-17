@@ -65,10 +65,10 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 	var that = this;
 	if(evt.type == "showTooltip"){
     	this.tooltipTimeout = window.setTimeout( function(){
-    		that.tooltip.setVisible(true);
-    		that.tooltip.x = that.stage.mouseX+5;
-    		that.tooltip.y = that.stage.mouseY+5;
     		that.tooltip.setContent(evt.tooltip);
+    		that.tooltip.setVisible(true);
+    		that.tooltip.x = Math.min(that.stage.canvas.width-5-that.tooltip.width, that.stage.mouseX+5);
+    		that.tooltip.y = Math.min(that.stage.canvas.height-5-that.tooltip.height, that.stage.mouseY+5);
     		that.stage.update();
     		window.clearTimeout(this.tooltipTimeout);
     	}, 1000 );
