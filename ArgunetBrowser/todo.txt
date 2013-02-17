@@ -5,7 +5,8 @@
 4) Bug: GraphDepth 2 und Argumentselektion aus der DebateList x
 5) TouchScreen: a) NavigationBar, b) graphDepth + -, c) Icongrš§e x
 6) Test Firefox Anfangsknoten x
-7) Tooltip Pfeil-Icons
+7) Tooltip Pfeil-Icons x
 8) Argunet Logo x
 9) Test & Doku: Events von au§en ansteuern x
 10) Mouse pointer: Hand Ÿber Nodes x
+11) Fullscreen

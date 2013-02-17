@@ -44,34 +44,32 @@ argunet.ArborView= function(debateM){
 		if(evt.type == "select"){
 			this.dispatchEvent({type:"nodeSelection",nodeId:evt.target.nodeId},evt.target);
 		}else if(evt.type == "mouseover"){
-    	    document.body.style.cursor='pointer';
+			document.body.style.cursor='pointer';
 
 			var tooltipText = "<h3>"+evt.target.title+"</h3><p>"+evt.target.text+"</p>";
-			if(evt.target instanceof argunet.ArgumentCanvasView){
-				tooltipText+= "<table class='relations'><tr><td></td><td class='attacks'>Attacks</td><td class='supports'>Supports</td></tr>" +
-				"<tr><td class='incoming'>Incoming</td><td class='attacks'>"+evt.target.argument.relations.incomingAttacks+"</td>" +
-				"<td class='supports'>"+evt.target.argument.relations.incomingSupports+" </td></tr>" +
-				"<tr><td class='outgoing'>Outgoing</td><td class='attacks'>"+evt.target.argument.relations.outgoingAttacks+" </td>" +
-				"<td class='supports'>"+evt.target.argument.relations.outgoingSupports+" </td></tr>" +
+			var model;
+			if(evt.target instanceof argunet.ArgumentCanvasView || evt.target instanceof argunet.ThesisCanvasView){
+				if(evt.target instanceof argunet.ArgumentCanvasView){
+					model = evt.target.argument;
+				}else model = evt.target.thesis;
+				tooltipText+= "<table class='relations'>" +
+				"<tr><td class='incoming-attacks'><span class='icon-incoming-attacks'></span><span class='label'>"+model.relations.incomingAttacks+"</span></td>" +
+				"<td class='incoming-supports'><span class='icon-incoming-supports'></span><span class='label'>"+model.relations.incomingSupports+"</span></td></tr>" +
+				"<tr><td class='outgoing-attacks'><span class='icon-outgoing-attacks'></span><span class='label'>"+model.relations.outgoingAttacks+"</span></td>" +
+				"<td class='outgoing-supports'><span class='icon-outgoing-supports'></span><span class='label'>"+model.relations.outgoingSupports+"</span></td></tr>" +
 				"</table>";
-			}else if(evt.target instanceof argunet.ThesisCanvasView){
-				tooltipText+= "<table class='relations'><tr><td></td><td class='attacks'>Attacks</td><td class='supports'>Supports</td></tr>" +
-				"<tr><td class='incoming'>Incoming</td><td class='attacks'>"+evt.target.thesis.relations.incomingAttacks+"</td>" +
-				"<td class='supports'>"+evt.target.thesis.relations.incomingSupports+" </td></tr>" +
-				"<tr><td class='outgoing'>Outgoing</td><td class='attacks'>"+evt.target.thesis.relations.outgoingAttacks+" </td>" +
-				"<td class='supports'>"+evt.target.thesis.relations.outgoingSupports+" </td></tr>" +
-				"</table>";
+
 			}else if(evt.target instanceof argunet.GroupCanvasView){
 				if(evt.target.state2.visible)tooltipText+="<p class='tip'>(double click group to open the group and show its members.)</p>";
 			}
 			this.dispatchEvent({type:"showTooltip",tooltip:tooltipText},evt.target);
 		}else if(evt.type == "mouseout"){
-    	    document.body.style.cursor='default';
+			document.body.style.cursor='default';
 			this.dispatchEvent("hideTooltip",evt.target);
 		}else if(evt.type == "mousedown"){
 			this.dispatchEvent({type:"mousedown",nodeId:evt.target.nodeId},evt.target);
 		}else if(evt.type == "drag"){
-    	    document.body.style.cursor='move';
+			document.body.style.cursor='move';
 			var draggedNodeView = evt.target;
 			var draggedNode = particleSystem.getNode(evt.target.nodeId);
 			draggedNode.fixed = true;
@@ -79,7 +77,7 @@ argunet.ArborView= function(debateM){
 			p = particleSystem.fromScreen(p);
 			draggedNode.p = p;
 		}else if(evt.type == "drop"){
-    	    document.body.style.cursor='default';
+			document.body.style.cursor='default';
 			var draggedNodeView = evt.target;
 			var draggedNode = particleSystem.getNode(evt.target.nodeId);
 			draggedNode.fixed = false;

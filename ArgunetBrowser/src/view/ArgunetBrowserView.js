@@ -63,7 +63,7 @@ argunet.ArgunetBrowserView.prototype.showNavigationBar = function(){
 };
 argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 	var that = this;
-	if(evt.type == "showTooltip" && !this.navigationOpened){
+	if(evt.type == "showTooltip"){
     	this.tooltipTimeout = window.setTimeout( function(){
     		that.tooltip.setVisible(true);
     		that.tooltip.x = that.stage.mouseX+5;

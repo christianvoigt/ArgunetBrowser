@@ -52,7 +52,6 @@
 }
 .argunetBrowser .navigationBar .label{
 	margin:5px 0px;
-	color:999;
 }
 .argunetBrowser .navigationBar .menuItem{
 margin:10px 2px;
@@ -203,7 +202,6 @@ float:left;
 	left:0px;
 	background-color:#ffffff;
 	border:1px solid #ddd;
-	font-color:#000;
 	font-size:12px;
 	padding:10px;
 	-moz-border-radius: 5px;
@@ -218,20 +216,44 @@ float:left;
 }
 .argunetBrowser .argunet-tooltip td, tr{
 	border-collapse:collapse;
-	border:1px solid #ccc;
+	border:none;
 	padding:2px;
 	margin:0px;
+	vertical-align:center;
 }
-.argunetBrowser .argunet-tooltip .incoming, .argunet-tooltip .outgoing{
-	font-weight:bold;
+.argunetBrowser .argunet-tooltip .label{
+	padding:0px 2px;
+	display:block;
+	float:left;
+	color:#999;
 }
-.argunetBrowser .argunet-tooltip .supports{
-	font-weight:normal;
-	color:#00ff00;
+.argunetBrowser .argunet-tooltip .icon-incoming-supports{
+	background: url(images/arrow-icons.png) no-repeat -52px 1px;
+	height:11px;
+	width:26px;
+	display:block;
+	float:left;
 }
-.argunetBrowser .argunet-tooltip .attacks{
-	font-weight:normal;
-	color:#ff0000;
+.argunetBrowser .argunet-tooltip .icon-incoming-attacks{
+	background: url(images/arrow-icons.png) no-repeat -78px 1px;
+	height:11px;
+	width:26px;
+	display:block;
+	float:left;
+}
+.argunetBrowser .argunet-tooltip .icon-outgoing-supports{
+	background: url(images/arrow-icons.png) no-repeat 0px 1px;
+	height:11px;
+	width:26px;
+	display:block;
+	float:left;
+}
+.argunetBrowser .argunet-tooltip .icon-outgoing-attacks{
+	background: url(images/arrow-icons.png) no-repeat -26px 1px;
+	height:11px;
+	width:26px;
+	display:block;
+	float:left;
 }
 .argunetBrowser .argunet-tooltip h3{
 	margin-top:0px;
