@@ -15,7 +15,7 @@ this.argunet = this.argunet||{};
     ArrowCanvasView.prototype.initialize = function (edge, source, target) {
         //call to initialize() method from parent class 
         this.Container_initialize();
-        this.color=(edge.type==undefined || edge.type.toLowerCase()=="attack" || edge.type.toLowerCase()=="sketchedattack")? "#ff0000" : "#00ff00";
+        this.color=(edge.type==undefined || edge.type.toLowerCase()=="attack" || edge.type.toLowerCase()=="sketchedattack")? "#FF3333" : "#33FF33";
         this.edge=edge;   
         this.source = source;
         this.target = target;

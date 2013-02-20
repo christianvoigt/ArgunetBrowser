@@ -23,7 +23,7 @@ p.loadDebate= function(xml){
 			   var colorDescription= $(this).attr('description');
 		   var baseColor=$(this).attr('colorCode');
 		   var lightColor= $.xcolor.lighten(baseColor,80,1).getHex();
-		   var darkColor= $.xcolor.darken(baseColor,80,2).getHex();
+		   var darkColor= $.xcolor.darken(baseColor,45,3).getHex();
 		   that.colors[colorIndex]={index:colorIndex, description:colorDescription,base:baseColor, light:lightColor, dark:darkColor};
 		   //$.style.insertRule(['.color'+color.colorIndex], 'background-color:'+color.colorCode+';');
 		   //$.style.insertRule(['.borderColor'+color.colorIndex], 'border-color:'+color.colorCode+'; color:'+color.colorCode+';');
