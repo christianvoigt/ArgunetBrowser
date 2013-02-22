@@ -22,7 +22,7 @@ this.argunet = this.argunet||{};
 		this.state0Height = 15;
 		this.cornerRadius = 8;
 		this.styleState1={width:100, bgColor:this.colors.base, borderColor: this.colors.dark, borderWidth:1, cornerRadius:8, titleColor:this.colors.dark, titleCss:"11px Arial", textColor:this.colors.dark};
-		this.styleState2={width:130, bgColor:this.colors.base, borderColor: this.colors.dark, borderWidth:3, cornerRadius:8, titleColor:this.colors.dark, titleCss:"bold 11px Arial", textColor:this.colors.dark, textCss:"11px Arial"};
+		this.styleState2={width:140, bgColor:this.colors.base, borderColor: this.colors.dark, borderWidth:3, cornerRadius:8, titleColor:this.colors.dark, titleCss:"bold 11px Arial", textColor:this.colors.dark, textCss:"11px Arial"};
 		this.styleState0={cornerRadius:8};
 		this.paddingState1={top:4,left:4,bottom:4,right:4};                
 		this.paddingState2={top:8,left:8,bottom:8,right:8};                
@@ -52,6 +52,7 @@ this.argunet = this.argunet||{};
 		}
 	};
 	p.render = function(){
+		
 		this.state0= new createjs.Container();        
 		this.state0inactive= new createjs.Container();        
 		this.state1= new createjs.Container();        
@@ -85,7 +86,7 @@ this.argunet = this.argunet||{};
 
 
 		//State 1 (Title)
-		var titleState1 = new createjs.Text(this.title, this.styleState1.titleCss,this.styleState1.titleColor);
+		var titleState1 = new createjs.Text(this.shortenWords(this.title,17, "."), this.styleState1.titleCss,this.styleState1.titleColor);
 		titleState1.lineWidth= this.styleState1.width-this.paddingState1.left-this.paddingState1.right;
 		titleState1.textAlign ="center";
 
@@ -109,37 +110,74 @@ this.argunet = this.argunet||{};
 
 		this.deselect();    	
 	};
+	p.shortenString = function(text,max, substitute){
+		return (text.length>max)? text.substring(0, text.length - (text.length-max))+substitute : text;		
+	};
+	p.shortenWords = function (text, max, substitute){
+		var newText = "";
+		var words = text.split(" ");
+		var that = this;
+		$.each(words,function(i,word){
+			var newWord = word;
+			if(word.length > max){
+				hyphenIndex =word.indexOf("-");
+				slashIndex =word.indexOf("/");
+				if((-1<hyphenIndex && hyphenIndex<word.length-1) || (-1<slashIndex && slashIndex<word.length-1)){
+					newWord = that.shortenWords(word.replace("-","- ").replace("/", "/ "), max, substitute);
+				}else{
+					newWord = that.shortenString(word, max, substitute);
+				}
+			}
+			var space = (newText == "")?"":" ";
+			newText+=space+newWord;
+		});
+		return newText;
+	};
+
 	p.renderState2 = function(){
 		//State 2 (Title with Text)
-		var titleState2 = new createjs.Text(this.title, this.styleState2.titleCss,this.styleState2.titleColor);
-		titleState2.lineWidth= this.styleState2.width-this.paddingState2.left-this.paddingState2.right;
-		titleState2.textAlign ="center";
-		var max=200;
-		var shortText= (this.text.length>max)? this.text.substring(0, this.text.length - (this.text.length-max))+" ..." : this.text;
+		this.state2Height=this.paddingState2.top+this.paddingState2.bottom;
+				
+		if(this.title!="" && this.title.toLowerCase()!="untitled"){
+			var titleState2 = new createjs.Text(this.shortenWords(this.title,24, "."), this.styleState2.titleCss,this.styleState2.titleColor);
+			titleState2.lineWidth= this.styleState2.width-this.paddingState2.left-this.paddingState2.right;
+			titleState2.textAlign ="center";
+			this.state2Height+=titleState2.getMeasuredHeight();
+		}
+		
+		if(this.text!=""){
+			var shortText= this.shortenWords(this.shortenString(this.text, 200, "."),24, " ...");
+			
 
-		var textState2 = new createjs.Text(shortText, this.styleState2.textCss,this.styleState2.textColor);
-		textState2.lineWidth= this.styleState2.width-this.paddingState2.left-this.paddingState2.right;
-		textState2.textAlign ="center";
+			var textState2 = new createjs.Text(shortText, this.styleState2.textCss,this.styleState2.textColor);
+			textState2.lineWidth= this.styleState2.width-this.paddingState2.left-this.paddingState2.right;
+			textState2.textAlign ="center";
 
-		this.state2Height=this.paddingState2.top+titleState2.getMeasuredHeight()+this.paddingState2.top/2+textState2.getMeasuredHeight()+this.paddingState2.bottom;
+			this.state2Height+=textState2.getMeasuredHeight();
+			if(titleState2) this.state2Height+=this.paddingState2.top/2;
+		}
+		
+			var graphic = new createjs.Graphics();
+			graphic.beginFill(this.styleState2.bgColor);
+			graphic.setStrokeStyle(this.styleState2.borderWidth).beginStroke(this.styleState2.borderColor);
+			graphic.drawRoundRect(0,0,this.styleState2.width,this.state2Height,this.styleState2.cornerRadius);
 
-		var graphic = new createjs.Graphics();
-		graphic.beginFill(this.styleState2.bgColor);
-		graphic.setStrokeStyle(this.styleState2.borderWidth).beginStroke(this.styleState2.borderColor);
-		graphic.drawRoundRect(0,0,this.styleState2.width,this.state2Height,this.styleState2.cornerRadius);
+			var bgState2= new createjs.Shape(graphic);
+			bgState2.x=-this.styleState2.width/2;
+			bgState2.y=-this.state2Height/2;
+			this.state2.addChild(bgState2);
 
-		var bgState2= new createjs.Shape(graphic);
-		bgState2.x=-this.styleState2.width/2;
-		bgState2.y=-this.state2Height/2;
-
-		titleState2.x=textState2.x=bgState2.x+this.styleState2.width/2;
-		titleState2.y=bgState2.y+this.paddingState2.top;
-		textState2.y=titleState2.y+titleState2.getMeasuredHeight()+this.paddingState2.top/2;
-
-		this.state2.addChild(bgState2);
-		this.state2.addChild(titleState2);
-		this.state2.addChild(textState2);    	
-
+			if(titleState2){
+				titleState2.x=bgState2.x+this.styleState2.width/2;
+				titleState2.y=bgState2.y+this.paddingState2.top;
+				this.state2.addChild(titleState2);
+			}
+			
+			if(textState2){
+				textState2.x=bgState2.x+this.styleState2.width/2;
+				textState2.y=bgState2.y+this.state2Height-textState2.getMeasuredHeight()-this.paddingState2.bottom;
+				this.state2.addChild(textState2);    				
+			}
 	};
 	p.getMarginedHeight = function(){
 		if(this.state1.visible){

@@ -33,6 +33,7 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 		this.graphDepth = 1;
 		
 	    var visibleNodes = {};
+	    var visibleGraph;
 	    var visibleEdges = {};
 	    var selectedNode = undefined;
 	    
@@ -52,13 +53,17 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 		    groupId = this.debateManager.nodes[id].group;	    	
 		    var inactive = (groupId)?!this.debateManager.groups[groupId].open : false;
 
+		    var isNew = false;
 		    if(visibleNodes[id]!= undefined){
 		    	if(selected)visibleNodes[id].selected=selected;
 		    	visibleNodes[id].inactive=inactive;
 		    	return;
+		    }else if(!selected && (visibleGraph && !visibleGraph.nodes[id])){
+		    	isNew = true;
+		    	this.nrOfNewNodes++;
 		    }
 		    this.nrOfNodes++;
-		    visibleNodes[id] = {'id':id, 'selected':selected, 'inactive':inactive, 'edgesToSelectedNode': edgesToSelectedNode};
+		    visibleNodes[id] = {id:id, isNew:isNew, selected:selected, inactive:inactive, edgesToSelectedNode: edgesToSelectedNode};
 	    };	    
 	    
 	    this.addEdgeToVisibleGraph = function(edge){	    	
@@ -70,8 +75,11 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 	    	if(visibleEdges[source] == undefined){
 	    		visibleEdges[source]={};
 	    	}
-	    		    	
-	    	visibleEdges[source][target] = {source:source, target:target, sourceModel:edge.source, targetModel:edge.target};
+	    	var sourceNode = visibleNodes[edge.source];
+	    	var targetNode = visibleNodes[edge.target];
+	    	var distance = Math.max(sourceNode.edgesToSelectedNode, targetNode.edgesToSelectedNode);
+	    	//console.log("distance:" +distance);
+	    	visibleEdges[source][target] = {source:source, target:target, length:1/(distance*distance*distance), sourceModel:edge.source, targetModel:edge.target};
 	    };
 	    		
 		//changeGraphDepth recursively collects the nodes and edges for a given graphDepth and selectedNode.
@@ -110,11 +118,31 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 			visibleNodes = {};
 			visibleEdges = {};
 			this.nrOfNodes = 0;
+			this.nrOfNewNodes = 0;
 			this.addNodeToVisibleGraph(selectedNode,0);
 			this.changeGraphDepth(0, this.graphDepth);
 			configurator.configurate(this.nrOfNodes, this.graphDepth, this.arborView.stage.canvas.width, this.arborView.stage.canvas.height);
-				
-			this.sys.merge({'nodes':visibleNodes,'edges':visibleEdges});			  
+
+			visibleGraph = {'nodes':visibleNodes,'edges':visibleEdges};
+			//set start position of new nodes to position of selected node
+			var arborNode = this.sys.getNode(selectedNode);
+		    var xPos = (arborNode)? arborNode.p.x + .05*Math.random() - .025 : undefined;
+		    var yPos = (arborNode)? arborNode.p.y + .05*Math.random() - .025 : undefined;
+		     
+		    var that = this;
+//		    $.each(visibleGraph.nodes, function(i,node){
+//		    	if(node.isNew && xPos){
+//		    		var r = 10;
+//		    		var j = i+1;
+//		    		var x=xPos + r*Math.cos(j*2*Math.PI/that.nrOfNewNodes);
+//		    		var y=yPos + r*Math.sin(j*2*Math.PI/that.nrOfNewNodes);
+//		    		node.x = x;
+//					node.y = y;
+//		    	}
+//		    });
+
+			
+			this.sys.merge(visibleGraph);
 		};			 
 	};
 //public methods
