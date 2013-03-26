@@ -12,13 +12,12 @@ Argunet Browser is released under the MIT license. http://en.wikipedia.org/wiki/
 -------------
 
 1. Copy the contents of /lib to your webspace.
-2. Include ArgunetBrowser.min.css in the head section of your html page:
-    `<link rel="stylesheet" href="lib/ArgunetBrowser.min.css" type="text/css" />`
-3. Include arbor.js and ArgunetBrowser.min.js at the end of the body section of your html page:
+3. Include ArgunetBrowser.min.js at the end of the body section of your html page:
 
 ```html
     <script src="lib/ArgunetBrowser.min.js" type="text/javascript"></script>
 ```	
+
 4. Upload your debate in graphml format to your webspace. You can export any debate from Argunet Editor into this format.
 5. Instantiate Argunet Browser in your html page, at the end of your body section:
     
@@ -39,7 +38,7 @@ In its default mode Google Chrome doesn't allow it to load local xml files with 
 
 ArgunetBrowser accepts the following parameters: 
 
-**`new ArgunetBrowser(debateUrl, htmlElement, firstNode, width, height)`**
+**`new ArgunetBrowser(debateUrl, htmlElement, firstNode, width, height, cssPath)`**
 
 Only the first two parameters are required.
 				
@@ -58,6 +57,10 @@ Only the first two parameters are required.
 
 <dt>height:</dt>
 <dd>The height of the Argunet Browser widget. Default is 385.</dd>
+</dl>
+
+<dt>cssPath:</dt>
+<dd>By default Argunet Browser assumes that the ArgunetBrowser.min.css can be found in the same directory as ArgunetBrowser.min.js and embeds it dynamically so that you don't have to take care of it. If you want to put the ArgunetBrowser.min.css into another directory than ArgunetBrowser.min.js you can either embed the stylesheet directly into your html page or set the cssPath to the css's url. In the former case Argunet Browser will recognize that the css has already been loaded.</dd>
 </dl>
 
 ###Methods
