@@ -126,16 +126,28 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 			visibleGraph = {'nodes':visibleNodes,'edges':visibleEdges};
 			//set start position of new nodes to position of selected node
 			var arborNode = this.sys.getNode(selectedNode);
-		    var xPos = (arborNode)? arborNode.p.x + .05*Math.random() - .025 : undefined;
-		    var yPos = (arborNode)? arborNode.p.y + .05*Math.random() - .025 : undefined;
+		    var xPos = (arborNode)? arborNode.p.x : undefined;
+		    var yPos = (arborNode)? arborNode.p.y : undefined;
+		    console.log("x: "+xPos+" y: "+yPos);
 		     
 		    var that = this;
 //		    $.each(visibleGraph.nodes, function(i,node){
+//	    	if(node.isNew && xPos){
+//	    		var r = 10;
+//	    		var j = i+1;
+//	    		var x=xPos + .05*Math.random() - .025;
+//	    		var y=yPos + .05*Math.random() - .025;
+//	    		node.x = x;
+//				node.y = y;
+//	    	}
+//	    });		    
+//		    var newNodeIndex = 1;
+//		    $.each(visibleGraph.nodes, function(i,node){
 //		    	if(node.isNew && xPos){
 //		    		var r = 10;
-//		    		var j = i+1;
-//		    		var x=xPos + r*Math.cos(j*2*Math.PI/that.nrOfNewNodes);
-//		    		var y=yPos + r*Math.sin(j*2*Math.PI/that.nrOfNewNodes);
+//		    		newNodeIndex++;
+//		    		var x=xPos + r*Math.cos(newNodeIndex*2*Math.PI/that.nrOfNewNodes);
+//		    		var y=yPos + r*Math.sin(newNodeIndex*2*Math.PI/that.nrOfNewNodes);
 //		    		node.x = x;
 //					node.y = y;
 //		    	}

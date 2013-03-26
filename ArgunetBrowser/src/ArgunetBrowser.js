@@ -1,7 +1,7 @@
 // namespace:
 this.argunet = this.argunet||{};
 
-argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, height){
+argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, height, cssPath){
 		// mix-ins:
 		// EventDispatcher methods:
 		var p= argunet.ArgunetBrowser.prototype;
@@ -15,6 +15,44 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 		
 		this.browserId = argunet.BrowserRegistry.getInstance().registerBrowser(this);
 		
+		//load css if this is the compiled version and the stylesheet has not been loaded yet
+		//check if this is the compiled version and get the path to Argunet
+		var pathToArgunetJs = undefined;
+		$("script").each(function(){
+			var src= $(this).attr("src");
+			var j = -1;
+			if(src) j = src.indexOf("ArgunetBrowser.min.js");
+			if(j !== -1){
+				pathToArgunetJs = $(this).attr("src").substring(0,j);
+				return false;
+			}
+		});
+		//check if css has been loaded
+		var loaded = false;
+		$("link[type='text/css']").each(function(){
+			var src= $(this).attr("src");
+			if(src)loaded = (src.indexOf("ArgunetBrowser.min.css")!= -1);
+			if(loaded){
+				return false;
+			}
+		});
+
+		if(pathToArgunetJs && !loaded){
+			var url = cssPath;
+			if(!url) url = pathToArgunetJs+'ArgunetBrowser.min.css';
+			if(document.createStyleSheet) {
+				try { document.createStyleSheet(url); } catch (e) { }
+			}
+			else {
+			    var css;
+			    css         = document.createElement('link');
+			    css.rel     = 'stylesheet';
+			    css.type    = 'text/css';
+			    css.media   = "all";
+			    css.href    = url;
+			    document.getElementsByTagName("head")[0].appendChild(css);
+			}
+		}
 		
 		//feature check
 		if(!Modernizr.canvas || !Modernizr.canvastext || !({}).__defineGetter__){

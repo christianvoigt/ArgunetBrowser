@@ -1,0 +1,2699 @@
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:arg="http://www.argunet.org/xml/argml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xsi:schemaLocation="http://www.argunet.org/xml/argml argunetxml.xsd http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <!--Created by yFiles for Java 2.7.0.2-->
+  <key attr.name="arg.debate" id="d0"/>
+  <key for="graphml" id="d1" yfiles.type="resources"/>
+  <key attr.name="arg.node" for="node" id="d2"/>
+  <key for="node" id="d3" yfiles.type="nodegraphics"/>
+  <key attr.name="arg.edge" for="edge" id="d4"/>
+  <key for="edge" id="d5" yfiles.type="edgegraphics"/>
+  <data key="d0">
+    <arg:map>
+      <arg:colorTable>
+        <arg:color colorCode="#63aef2" colorIndex="0" description="Family 1"/>
+        <arg:color colorCode="#637ef2" colorIndex="1" description="To add, enter a name!"/>
+        <arg:color colorCode="#7863f2" colorIndex="2" description="To add, enter a name!"/>
+        <arg:color colorCode="#a863f2" colorIndex="3" description="To add, enter a name!"/>
+        <arg:color colorCode="#d863f2" colorIndex="4" description="To add, enter a name!"/>
+        <arg:color colorCode="#f263dd" colorIndex="5" description="Family 2"/>
+        <arg:color colorCode="#f263ae" colorIndex="6" description="To add, enter a name!"/>
+        <arg:color colorCode="#f2637e" colorIndex="7" description="To add, enter a name!"/>
+        <arg:color colorCode="#f27863" colorIndex="8" description="To add, enter a name!"/>
+        <arg:color colorCode="#f2a863" colorIndex="9" description="To add, enter a name!"/>
+        <arg:color colorCode="#f2d863" colorIndex="10" description="Family 3"/>
+        <arg:color colorCode="#ddf263" colorIndex="11" description="To add, enter a name!"/>
+        <arg:color colorCode="#aef263" colorIndex="12" description="To add, enter a name!"/>
+        <arg:color colorCode="#7ef263" colorIndex="13" description="To add, enter a name!"/>
+        <arg:color colorCode="#63f278" colorIndex="14" description="To add, enter a name!"/>
+        <arg:color colorCode="#63f2a8" colorIndex="15" description="Family 4"/>
+        <arg:color colorCode="#63f2d8" colorIndex="16" description="To add, enter a name!"/>
+        <arg:color colorCode="#63ddf2" colorIndex="17" description="To add, enter a name!"/>
+      </arg:colorTable>
+      <arg:mapTitle>Gesamtdebatte Endstand</arg:mapTitle>
+      <arg:mapDescription/>
+      <arg:debate identifier="local///Users/cvoigt/Dropbox/Argunet/Konsultationsprozess-Reko">
+        <arg:title>Netzentwicklungsplan 2012 - Erste Konsultationsphase</arg:title>
+        <arg:language> de - German </arg:language>
+      </arg:debate>
+    </arg:map>
+  </data>
+  <graph edgedefault="directed" id="G">
+    <node id="n1" yfiles.foldertype="group">
+      <data key="d2">
+        <arg:group color="#c0c0c0" id="1908964829" numberOfArguments="8" numberOfTheses="0">
+          <arg:title>Unberücksichtigte Technologien/Maßnahmen</arg:title>
+        </arg:group>
+      </data>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="138.4501953125" width="1415.0" x="-1429.0" y="-120.7578125"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#666699" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="15" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="20.7578125" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="320.0" x="4.0" y="4.0">Unberücksichtigte Technologien/Maßnahmen</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+      <graph edgedefault="directed" id="n1:">
+        <node id="n1::n2">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="88473" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Alternative Speichertechnologien (z.B. dezentral, Druckluft, Wasserstoff, Gasnetz)</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="97.6923828125" width="135.0" x="-1058.5" y="-89.84619140625"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="48.84619140625"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="91.140625" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="125.0" x="5.0" y="4.0">Alternative
+Speichertechnologi
+en (z.B. dezentral,
+Druckluft,
+Wasserstoff,
+Gasnetz)
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n1::n3">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="95477" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Bahnstromtrassen</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="22.94873046875" width="135.0" x="-158.5" y="-52.474365234375"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="11.474365234375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.5234375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="117.0" x="9.0" y="4.0">Bahnstromtrassen
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n1::n1">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="95802" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Last- und Einspeisemanagment (Smart Grid)</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-878.5" y="-67.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="126.0" x="4.5" y="4.0">Last- und
+Einspeisemanagme
+nt (Smart Grid)
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n1::n5">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="99054" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Keine Garantie für Einspeisung von 100% EE</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-1418.5" y="-67.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="116.0" x="9.5" y="4.0">Keine Garantie für
+Einspeisung von
+100% EE
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n1::n4">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="101235" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Netzoptimierung (Hochtemperaturseile)</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-518.5" y="-67.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="129.0" x="3.0" y="4.0">Netzoptimierung
+(Hochtemperaturseil
+e)
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n1::n7">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="106803" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Flexibilitätsverbesserungen bei Kraftwerken</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-1238.5" y="-67.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="131.0" x="2.0" y="4.0">Flexibilitätsverbesse
+rungen bei
+Kraftwerken
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n1::n6">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="112073" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>KWK</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="22.94873046875" width="135.0" x="-698.5" y="-52.474365234375"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="11.474365234375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.5234375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="34.0" x="50.5" y="4.0">KWK
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n1::n0">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="441795" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Energiesparen</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="22.94873046875" width="135.0" x="-338.5" y="-52.474365234375"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="11.474365234375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.5234375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="94.0" x="20.5" y="4.0">Energiesparen
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+      </graph>
+    </node>
+    <node id="n0" yfiles.foldertype="group">
+      <data key="d2">
+        <arg:group color="#c0c0c0" id="1103911610" numberOfArguments="13" numberOfTheses="3">
+          <arg:title>Kritik: Intransparenz</arg:title>
+        </arg:group>
+      </data>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="561.027099609375" width="1775.0" x="-5684.0" y="-1673.7578125"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#666699" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="15" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="20.7578125" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="148.0" x="4.0" y="4.0">Kritik: Intransparenz</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+      <graph edgedefault="directed" id="n0:">
+        <node id="n0::n5">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="39172" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Dezentralisierung-Irrelevant-These nicht belegt</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-4233.5" y="-1190.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="117.0" x="9.0" y="4.0">Dezentralisierung-
+Irrelevant-These
+nicht belegt
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n0">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="44295" incomingAttacks="0" incomingSupports="1" outgoingAttacks="1" outgoingSupports="0">
+              <arg:title>Intransparenz 2: Begründung des Szenariorahmens</arg:title>
+              <arg:proposition attacks="0" id="109299" index="1" supports="0" type="premise">
+                <arg:content>Ein Szenariorahmen, dessen Annahmen teilweise auf ungenügende oder intransparente Weise begründet oder belegt werden, ist nicht für die Planung des Ausbaubedarfs geeignet.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="107553" index="2" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="107553" refersToNode="n0::n7" refersToProposition="107553"/>
+                <arg:content>Die Annahmen des Szenariorahmens werden teilweise auf ungenügende oder intransparente Weise begründet oder belegt.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="1" id="90526" index="3" supports="0" type="conclusion">
+                <arg:attackReference refersToArgunetNode="9826" refersToNode="n6" refersToProposition="9826"/>
+                <arg:content>Der Szenariorahmen ist für die Planung des Ausbaubedarfs ungeeignet.</arg:content>
+              </arg:proposition>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-4394.5" y="-1635.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="113.0" x="11.0" y="4.0">Intransparenz 2:
+Begründung des
+Szenariorahmens
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n15">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="50125" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Regionalisierung der Daten erforderlich (Kraftwerke, Speicher)</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="82.74365234375" width="135.0" x="-5133.5" y="-1205.371826171875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="41.371826171875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="76.6171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="110.0" x="12.5" y="4.0">Regionalisierung
+der Daten
+erforderlich
+(Kraftwerke,
+Speicher)
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n1">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="80735" incomingAttacks="0" incomingSupports="3" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Untitled</arg:title>
+              <arg:content>Für den Szenariorahmen ist vollkommen intransparent, auf welche Weise aus seinen Annahmen Schlussfolgerungen für den Ausbaubedarf abgeleitet werden oder der Szenariorahmen ist für eine solche Ableitung unvollständig.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="232.23095703125" width="135.0" x="-4953.5" y="-1441.115478515625"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="116.115478515625"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.5234375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="52.0" x="41.5" y="4.0">Untitled
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="207.328125" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="128.0" x="3.5" y="20.90283203125">Für den
+Szenariorahmen ist
+vollkommen
+intransparent, auf
+welche Weise aus
+seinen Annahmen
+Schlussfolgerungen
+für den Ausbaubedarf
+abgeleitet werden
+oder der
+Szenariorahmen ist
+für eine solche
+Ableitung
+unvollständig.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n7">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="107553" incomingAttacks="0" incomingSupports="4" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Untitled</arg:title>
+              <arg:content>Die Annahmen des Szenariorahmens werden teilweise auf ungenügende oder intransparente Weise begründet oder belegt.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="127.58984375" width="135.0" x="-4394.5" y="-1388.794921875"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="63.794921875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.5234375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="52.0" x="41.5" y="4.0">Untitled
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="105.6640625" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="126.0" x="4.5" y="17.92578125">Die Annahmen des
+Szenariorahmens
+werden teilweise auf
+ungenügende oder
+intransparente Weise
+begründet oder
+belegt.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n11">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="113427" incomingAttacks="0" incomingSupports="1" outgoingAttacks="1" outgoingSupports="0">
+              <arg:title>Intransparenz 3: Ableitung der Ergebnisse aus Szenariorahmen</arg:title>
+              <arg:proposition attacks="0" id="80727" index="1" supports="0" type="premise">
+                <arg:content>Ein Szenariorahmen ist nur dann für die Planung des Ausbaubedarfs geeignet, wenn transparent ist, auf welche Weise aus seinen Annahmen Schlussfolgerungen für den Ausbaubedarf abgeleitet werden und die Angaben des Szenariorahmens für eine solche Ableitung vollständig sind.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="80735" index="2" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="80735" refersToNode="n0::n1" refersToProposition="80735"/>
+                <arg:content>Für den Szenariorahmen ist vollkommen intransparent, auf welche Weise aus seinen Annahmen Schlussfolgerungen für den Ausbaubedarf abgeleitet werden oder der Szenariorahmen ist für eine solche Ableitung unvollständig.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="1" id="90526" index="3" supports="0" type="conclusion">
+                <arg:attackReference refersToArgunetNode="9826" refersToNode="n6" refersToProposition="9826"/>
+                <arg:content>Der Szenariorahmen ist für die Planung des Ausbaubedarfs ungeeignet.</arg:content>
+              </arg:proposition>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="67.794921875" width="135.0" x="-4953.5" y="-1642.8974609375"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="33.8974609375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="62.09375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="106.0" x="14.5" y="4.0">Intransparenz 3:
+Ableitung der
+Ergebnisse aus
+Szenariorahmen
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n10">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="140179" incomingAttacks="0" incomingSupports="3" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Untitled</arg:title>
+              <arg:content>Der Szenariorahmen ist nicht Ergebnis eines fairen Prozesses, in dem alle Betroffenen die Möglichkeit hatten, sich zu beteiligen.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="127.58984375" width="135.0" x="-5493.5" y="-1388.794921875"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="63.794921875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.5234375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="52.0" x="41.5" y="4.0">Untitled
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="105.6640625" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="122.0" x="6.5" y="17.92578125">Der Szenariorahmen
+ist nicht Ergebnis
+eines fairen
+Prozesses, in dem
+alle Betroffenen die
+Möglichkeit hatten,
+sich zu beteiligen.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n4">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="141524" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Informationsmonopol</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="37.8974609375" width="135.0" x="-5673.5" y="-1182.94873046875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="18.94873046875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="127.0" x="4.0" y="4.0">Informationsmonop
+ol
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n13">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="141872" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Mangelnde Neutralität der ÜBN und BNetzA</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-5313.5" y="-1190.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="122.0" x="6.5" y="4.0">Mangelnde
+Neutralität der ÜBN
+und BNetzA
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n9">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="159322" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Jahresprofile des Energieverbrauchs notwendig</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-4953.5" y="-1190.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="121.0" x="7.0" y="4.0">Jahresprofile des
+Energieverbrauchs
+notwendig
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n12">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="163289" incomingAttacks="0" incomingSupports="1" outgoingAttacks="1" outgoingSupports="0">
+              <arg:title>Intransparenz 1: Unfairer Prozess</arg:title>
+              <arg:proposition attacks="0" id="140171" index="1" supports="0" type="premise">
+                <arg:content>Ein Szenariorahmen ist nur dann für die Planung des Ausbaubedarfs geeignet, wenn er Ergebnis eines fairen Prozesses war, in dem alle Betroffenen die Möglichkeit hatten, sich zu beteiligen.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="140179" index="2" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="140179" refersToNode="n0::n10" refersToProposition="140179"/>
+                <arg:content>Der Szenariorahmen ist nicht Ergebnis eines fairen Prozesses, in dem alle Betroffenen die Möglichkeit hatten, sich zu beteiligen.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="1" id="90526" index="3" supports="0" type="conclusion">
+                <arg:attackReference refersToArgunetNode="9826" refersToNode="n6" refersToProposition="9826"/>
+                <arg:content>Der Szenariorahmen ist für die Planung des Ausbaubedarfs ungeeignet.</arg:content>
+              </arg:proposition>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="37.8974609375" width="135.0" x="-5493.5" y="-1627.94873046875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="18.94873046875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="107.0" x="14.0" y="4.0">Intransparenz 1:
+Unfairer Prozess
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n2">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="165349" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Modell und Methodik der Simulation unbekannt</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="67.794921875" width="135.0" x="-4773.5" y="-1197.8974609375"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="33.8974609375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="62.09375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="85.0" x="25.0" y="4.0">Modell und
+Methodik der
+Simulation
+unbekannt
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n8">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="170774" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Scheinbeteiligung</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="22.94873046875" width="135.0" x="-5493.5" y="-1175.474365234375"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="11.474365234375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.5234375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="117.0" x="9.0" y="4.0">Scheinbeteiligung
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n6">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="175379" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Varianzen zwischen Szenarien willkürlich (insbes. Energieverbrauch)</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="67.794921875" width="135.0" x="-4413.5" y="-1197.8974609375"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="33.8974609375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="62.09375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="128.0" x="3.5" y="4.0">Varianzen zwischen
+Szenarien
+willkürlich (insbes.
+Energieverbrauch)
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n14">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="199003" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Unbelegte, nicht nachvollziehbare Annahmen Brennstoff- und Zertifikatpreise</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="82.74365234375" width="135.0" x="-4593.5" y="-1205.371826171875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="41.371826171875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="76.6171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="110.0" x="12.5" y="4.0">Unbelegte, nicht
+nachvollziehbare
+Annahmen
+Brennstoff- und
+Zertifikatpreise
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n0::n3">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="233651" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Ungedeckte Spitzenlast in Szenario C</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-4053.5" y="-1190.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="89.0" x="23.0" y="4.0">Ungedeckte
+Spitzenlast in
+Szenario C
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+      </graph>
+    </node>
+    <node id="n2" yfiles.foldertype="group">
+      <data key="d2">
+        <arg:group color="#c0c0c0" id="-25013805" numberOfArguments="11" numberOfTheses="0">
+          <arg:title>Falsche Annahmen</arg:title>
+        </arg:group>
+      </data>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="452.37353515625" width="1955.0" x="-3441.0" y="-277.7578125"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#666699" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="15" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="20.7578125" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="138.0" x="4.0" y="4.0">Falsche Annahmen</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+      <graph edgedefault="directed" id="n2:">
+        <node id="n2::n5">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="25808" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Falsche Annahme: "Dezentralisierung irrelevant"</arg:title>
+              <arg:description>Die folgende Annahme des Szenariorahmens ist falsch: "Nach bisherigen Erkenntnissen und Einschätzungen ist zu erwarten, dass die stärkere De- zentralisierung fluktuierender Erzeugungseinheiten keinen signifikanten Einfluss auf die Trends beim zusätzlichen Transportbedarf in den Höchstspannungsnetzen in der kommenden Dekade hat." (Szenariorahmen der ÜBN S.2f.)</arg:description>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="411.61572265625" width="135.0" x="-2350.5" y="-246.807861328125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="205.807861328125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="119.0" x="8.0" y="4.0">Falsche Annahme:
+"Dezentralisierung
+irrelevant"
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="352.5625" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="128.0" x="3.5" y="55.05322265625">Die folgende
+Annahme des
+Szenariorahmens ist
+falsch: "Nach
+bisherigen
+Erkenntnissen und
+Einschätzungen ist
+zu erwarten, dass die
+stärkere De-
+zentralisierung
+fluktuierender
+Erzeugungseinheiten
+keinen signifikanten
+Einfluss auf die
+Trends beim
+zusätzlichen
+Transportbedarf in
+den
+Höchstspannungsnet
+zen in der
+kommenden Dekade
+hat."
+(Szenariorahmen der
+ÜBN S.2f.)
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n2::n8">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="199496" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Brennstoff- und Zertifikatpreise überschätzt/unterschätzt</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="67.794921875" width="135.0" x="-3070.5" y="-74.8974609375"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="33.8974609375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="62.09375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="126.0" x="4.5" y="4.0">Brennstoff- und
+Zertifikatpreise
+überschätzt/untersc
+hätzt
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n2::n0">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="210483" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Annahmen zur Auslastung/Erzeugung (Volllast), nicht zur installierten Leistung relevant</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="82.74365234375" width="135.0" x="-3250.5" y="-82.371826171875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="41.371826171875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="76.6171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="130.0" x="2.5" y="4.0">Annahmen zur
+Auslastung/Erzeugu
+ng (Volllast), nicht
+zur installierten
+Leistung relevant
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n2::n3">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="216860" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>On-Shore in Szenario C zu hoch (in A zu niedrig)</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-2530.5" y="-67.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="126.0" x="4.5" y="4.0">On-Shore in
+Szenario C zu hoch
+(in A zu niedrig)
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n2::n1">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="235918" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Unberücksichtigte Beiträge zur Grundlast: Laufwasserwerke, Biomasse und 10 % der Spitzen-Windkraft</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="112.64111328125" width="135.0" x="-1810.5" y="-97.320556640625"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="56.320556640625"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="105.6640625" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="127.0" x="4.0" y="4.0">Unberücksichtigte
+Beiträge zur
+Grundlast:
+Laufwasserwerke,
+Biomasse und 10 %
+der Spitzen-
+Windkraft
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n2::n4">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="238344" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Konventionelle Kraftwerke: Laufzeit, Planung, Standorte</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-3430.5" y="-67.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="130.0" x="2.5" y="4.0">Konventionelle
+Kraftwerke: Laufzeit,
+Planung, Standorte
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n2::n2">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="241631" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Stromverbrauch zu niedrig/zu hoch</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="37.8974609375" width="135.0" x="-2710.5" y="-59.94873046875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="18.94873046875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="123.0" x="6.0" y="4.0">Stromverbrauch zu
+niedrig/zu hoch
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n2::n9">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="253455" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Off-Shore in Szenario C zu hoch</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="37.8974609375" width="135.0" x="-2890.5" y="-59.94873046875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="18.94873046875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="126.0" x="4.5" y="4.0">Off-Shore in
+Szenario C zu hoch
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n2::n7">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="261581" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Illegitime Fortschreibung von 2020 auf 2022</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-1990.5" y="-67.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="126.0" x="4.5" y="4.0">Illegitime
+Fortschreibung von
+2020 auf 2022
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n2::n6">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="313900" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Daten der Bundesländer in Szenario C</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-1630.5" y="-67.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="106.0" x="14.5" y="4.0">Daten der
+Bundesländer in
+Szenario C
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n2::n10">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="320458" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Pumpspeicherwerke unterschätzt/überschätzt</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-2170.5" y="-67.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="130.0" x="2.5" y="4.0">Pumpspeicherwerke
+unterschätzt/übersc
+hätzt
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+      </graph>
+    </node>
+    <node id="n7" yfiles.foldertype="group">
+      <data key="d2">
+        <arg:group color="#c0c0c0" id="-310466912" numberOfArguments="4" numberOfTheses="0">
+          <arg:title>Unvereinbar mit energiepolitischen Zielen</arg:title>
+        </arg:group>
+      </data>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="123.50146484375" width="695.0" x="-4193.0" y="-113.7578125"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#666699" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="15" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="20.7578125" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="295.0" x="4.0" y="4.0">Unvereinbar mit energiepolitischen Zielen</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+      <graph edgedefault="directed" id="n7:">
+        <node id="n7::n1">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="105650" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Erneuerbare Energie in Szenario A unvereinbar mit Zielen</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="67.794921875" width="135.0" x="-3822.5" y="-74.8974609375"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="33.8974609375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="62.09375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="127.0" x="4.0" y="4.0">Erneuerbare
+Energie in Szenario
+A unvereinbar mit
+Zielen
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n7::n0">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="227314" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Gleichbleibender Energieverbrauch/Höchstlast unvereinbar mit Energiesparzielen</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="82.74365234375" width="135.0" x="-3642.5" y="-82.371826171875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="41.371826171875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="76.6171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="127.0" x="4.0" y="4.0">Gleichbleibender
+Energieverbrauch/H
+öchstlast
+unvereinbar mit
+Energiesparzielen
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n7::n2">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="398441" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>KWK-Ziele unberücksichtigt</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="37.8974609375" width="135.0" x="-4182.5" y="-59.94873046875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="18.94873046875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="108.0" x="13.5" y="4.0">KWK-Ziele
+unberücksichtigt
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n7::n3">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="560926" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>PV in Szenario C zu niedrig</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="37.8974609375" width="135.0" x="-4002.5" y="-59.94873046875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="18.94873046875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="129.0" x="3.0" y="4.0">PV in Szenario C zu
+niedrig
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+      </graph>
+    </node>
+    <node id="n3" yfiles.foldertype="group">
+      <data key="d2">
+        <arg:group color="#c0c0c0" id="-1259740230" numberOfArguments="2" numberOfTheses="7">
+          <arg:title>Kernargumentation der BNetzA</arg:title>
+        </arg:group>
+      </data>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="1216.847900390625" width="3165.0" x="-3852.0" y="-1658.7578125"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#666699" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="15" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="20.7578125" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="225.0" x="4.0" y="4.0">Kernargumentation der BNetzA</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+      <graph edgedefault="directed" id="n3:">
+        <node id="n3::n8">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="7157" incomingAttacks="0" incomingSupports="1" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Gesetzliche Anforderungen erfüllt</arg:title>
+              <arg:content>Der Szenariorahmen x erfüllt die Anforderungen aus §12a Abs.1 EnWG.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="112.64111328125" width="135.0" x="-2207.5" y="-1381.320556640625"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="56.320556640625"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="97.0" x="19.0" y="4.0">Gesetzliche
+Anforderungen
+erfüllt
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="62.09375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="122.0" x="6.5" y="46.54736328125">Der Szenariorahmen
+x erfüllt die
+Anforderungen aus
+§12a Abs.1 EnWG.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n3::n6">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="14769" incomingAttacks="2" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Gesetzliche Anforderungen adäquat</arg:title>
+              <arg:content>Ein Szenariorahmen, der die Anforderungen aus §12a Abs.1 EnWG erfüllt, ist für die Planung des Ausbaubedarfs geeignet.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="157.4873046875" width="135.0" x="-831.5" y="-1403.74365234375"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="78.74365234375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="97.0" x="19.0" y="4.0">Gesetzliche
+Anforderungen
+adäquat
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="105.6640625" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="131.0" x="2.0" y="47.8232421875">Ein Szenariorahmen,
+der die Anforderungen
+aus §12a Abs.1
+EnWG erfüllt, ist für
+die Planung des
+Ausbaubedarfs
+geeignet.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n3::n4">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="15223" incomingAttacks="0" incomingSupports="2" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Szenariorahmen geeignet</arg:title>
+              <arg:proposition attacks="0" id="14769" index="1" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="14769" refersToNode="n3::n6" refersToProposition="14769"/>
+                <arg:content>Ein Szenariorahmen, der die Anforderungen aus §12a Abs.1 EnWG erfüllt, ist für die Planung des Ausbaubedarfs geeignet.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="7157" index="2" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="7157" refersToNode="n3::n8" refersToProposition="7157"/>
+                <arg:content>Der Szenariorahmen x erfüllt die Anforderungen aus §12a Abs.1 EnWG.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="9826" index="3" supports="1" type="conclusion">
+                <arg:supportReference refersToArgunetNode="9826" refersToNode="n6" refersToProposition="9826"/>
+                <arg:content>Der Szenariorahmen ist für die Planung des Ausbaubedarfs geeignet.</arg:content>
+              </arg:proposition>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="37.8974609375" width="135.0" x="-2170.5" y="-1627.94873046875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="18.94873046875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="106.0" x="14.5" y="4.0">Szenariorahmen
+geeignet
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n3::n5">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="16715" incomingAttacks="0" incomingSupports="5" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Anforderungen erfüllt</arg:title>
+              <arg:proposition attacks="0" id="28687" index="1" supports="0" type="premise">
+                <arg:content>Der Szenariorahmen x wurde von den Übertragungsnetzbetreibern gemeinsam erarbeitet. </arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="29312" index="2" supports="0" type="premise">
+                <arg:content>Der Szenariorahmen x umfasst mindestens drei Entwicklungspfade (Szenarien), die die Entwicklung für die nächsten zehn Jahre, und ein Szenario, das die Entwicklung für die nächsten zwanzig Jahre darstellt. </arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="23911" index="3" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="23911" refersToNode="n3::n0" refersToProposition="23911"/>
+                <arg:content>Die Szenarien des Szenariorahmens x decken die Bandbreite wahrscheinlicher Entwicklungen für die nächsten 10, bzw. 20 Jahre ab.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="23543" index="4" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="23543" refersToNode="n3::n7" refersToProposition="23543"/>
+                <arg:content>Die Szenarien des Szenariorahmens x befinden sich im Rahmen der mittel- und langfristigen energiepolitischen Ziele der Bundesregierung.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="23927" index="5" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="23927" refersToNode="n3::n3" refersToProposition="23927"/>
+                <arg:content>Die Annahmen des Szenariorahmens x zum zukünftigen Austausch von Strom mit anderen Ländern sind angemessen und die geplanten Investitionsvorhaben der europäischen Netzinfrastruktur wurden in diesem Rahmen berücksichtigt.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="29033" index="6" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="29033" refersToNode="n3::n2" refersToProposition="29033"/>
+                <arg:content>Die Annahmen im Szenariorahmen x zur zukünftigen Erzeugung, Versorgung und zum zukünftigen Verbrauch von Strom sind angemessen.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="22347" index="7" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="22347" refersToNode="n3::n1" refersToProposition="22347"/>
+                <arg:content>In §12a Abs.1 EnWG finden sich folgende Anforderungen an den Szenariorahmen: Der Szenariorahmen ist von den Übertragungsnetzbetreibern gemeinsam zu erarbeiten (1). Der Szenariorahmen umfasst mindestens drei Entwicklungspfade (Szenarien), die für die nächsten Zehn Jahre (2) die Bandbreite wahrscheinlicher Entwicklungen (3) im Rahmen der mittel- und langfristigen energiepolitischen Ziele der Bundesregierung (4) abdecken. Eines der Szenarien muss die wahrscheinliche Entwicklung für die nächsten zwanzig Jahre darstellen (2). Für den Szenariorahmen legen die Betreiber von Übertragungsnetzen angemessene Annahmen für die jeweiligen Szenarien zu Erzeugung, Versorgung, Verbrauch von Strom (5) sowie dessen Austausch mit anderen Ländern zu Grunde und berücksichtigen geplante Investitionsvorhaben der europäischen Netzinfrastruktur (6). </arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="7157" index="8" supports="1" type="conclusion">
+                <arg:supportReference refersToArgunetNode="7157" refersToNode="n3::n8" refersToProposition="7157"/>
+                <arg:content>Der Szenariorahmen x erfüllt die Anforderungen aus §12a Abs.1 EnWG.</arg:content>
+              </arg:proposition>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="37.8974609375" width="135.0" x="-2207.5" y="-1182.94873046875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="18.94873046875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="97.0" x="19.0" y="4.0">Anforderungen
+erfüllt
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n3::n1">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="22347" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="2">
+              <arg:title>Gesetzliche Vorgaben aus §12a Abs.1 EnWG</arg:title>
+              <arg:content>In §12a Abs.1 EnWG finden sich folgende Anforderungen an den Szenariorahmen: Der Szenariorahmen ist von den Übertragungsnetzbetreibern gemeinsam zu erarbeiten (1). Der Szenariorahmen umfasst mindestens drei Entwicklungspfade (Szenarien), die für die nächsten Zehn Jahre (2) die Bandbreite wahrscheinlicher Entwicklungen (3) im Rahmen der mittel- und langfristigen energiepolitischen Ziele der Bundesregierung (4) abdecken. Eines der Szenarien muss die wahrscheinliche Entwicklung für die nächsten zwanzig Jahre darstellen (2). Für den Szenariorahmen legen die Betreiber von Übertragungsnetzen angemessene Annahmen für die jeweiligen Szenarien zu Erzeugung, Versorgung, Verbrauch von Strom (5) sowie dessen Austausch mit anderen Ländern zu Grunde und berücksichtigen geplante Investitionsvorhaben der europäischen Netzinfrastruktur (6). </arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="800.28271484375" width="135.0" x="-831.5" y="-1252.141357421875"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="400.141357421875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="122.0" x="6.5" y="4.0">Gesetzliche
+Vorgaben aus §12a
+Abs.1 EnWG
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="730.171875" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="131.0" x="2.0" y="66.11083984375">In §12a Abs.1 EnWG
+finden sich folgende
+Anforderungen an den
+Szenariorahmen: Der
+Szenariorahmen ist
+von den
+Übertragungsnetzbetr
+eibern gemeinsam zu
+erarbeiten (1). Der
+Szenariorahmen
+umfasst mindestens
+drei
+Entwicklungspfade
+(Szenarien), die für
+die nächsten Zehn
+Jahre (2) die
+Bandbreite
+wahrscheinlicher
+Entwicklungen (3) im
+Rahmen der mittel-
+und langfristigen
+energiepolitischen
+Ziele der
+Bundesregierung (4)
+abdecken. Eines der
+Szenarien muss die
+wahrscheinliche
+Entwicklung für die
+nächsten zwanzig
+Jahre darstellen (2).
+Für den
+Szenariorahmen
+legen die Betreiber
+von
+Übertragungsnetzen
+angemessene
+Annahmen für die
+jeweiligen Szenarien
+zu Erzeugung,
+Versorgung,
+Verbrauch von Strom
+(5) sowie dessen
+Austausch mit
+anderen Ländern zu
+Grunde und
+berücksichtigen
+geplante
+Investitionsvorhaben
+der europäischen
+Netzinfrastruktur (6).
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n3::n7">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="23543" incomingAttacks="1" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Energiepolitische Ziele</arg:title>
+              <arg:content>Die Szenarien des Szenariorahmens x befinden sich im Rahmen der mittel- und langfristigen energiepolitischen Ziele der Bundesregierung.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="157.4873046875" width="135.0" x="-3841.5" y="-930.74365234375"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="78.74365234375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="113.0" x="11.0" y="4.0">Energiepolitische
+Ziele
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="120.1875" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="116.0" x="9.5" y="33.2998046875">Die Szenarien des
+Szenariorahmens x
+befinden sich im
+Rahmen der mittel-
+und langfristigen
+energiepolitischen
+Ziele der
+Bundesregierung.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n3::n0">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="23911" incomingAttacks="3" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Bandbreite wahrscheinlicher Entwicklungen</arg:title>
+              <arg:content>Die Szenarien des Szenariorahmens x decken die Bandbreite wahrscheinlicher Entwicklungen für die nächsten 10, bzw. 20 Jahre ab.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="172.43603515625" width="135.0" x="-2207.5" y="-938.218017578125"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="86.218017578125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="110.0" x="12.5" y="4.0">Bandbreite
+wahrscheinlicher
+Entwicklungen
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="120.1875" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="128.0" x="3.5" y="48.24853515625">Die Szenarien des
+Szenariorahmens x
+decken die
+Bandbreite
+wahrscheinlicher
+Entwicklungen für die
+nächsten 10, bzw. 20
+Jahre ab.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n3::n3">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="23927" incomingAttacks="2" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Internationale Planung berücksichtigt</arg:title>
+              <arg:content>Die Annahmen des Szenariorahmens x zum zukünftigen Austausch von Strom mit anderen Ländern sind angemessen und die geplanten Investitionsvorhaben der europäischen Netzinfrastruktur wurden in diesem Rahmen berücksichtigt.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="247.1796875" width="135.0" x="-1011.5" y="-975.58984375"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="123.58984375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="92.0" x="21.5" y="4.0">Internationale
+Planung
+berücksichtigt
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="192.8046875" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="131.0" x="2.0" y="50.375">Die Annahmen des
+Szenariorahmens x
+zum zukünftigen
+Austausch von Strom
+mit anderen Ländern
+sind angemessen und
+die geplanten
+Investitionsvorhaben
+der europäischen
+Netzinfrastruktur
+wurden in diesem
+Rahmen
+berücksichtigt.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n3::n2">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="29033" incomingAttacks="1" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Annahmen angemessen</arg:title>
+              <arg:content>Die Annahmen im Szenariorahmen x zur zukünftigen Erzeugung, Versorgung und zum zukünftigen Verbrauch von Strom sind angemessen.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="157.4873046875" width="135.0" x="-2567.5" y="-930.74365234375"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="78.74365234375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="82.0" x="26.5" y="4.0">Annahmen
+angemessen
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="120.1875" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="131.0" x="2.0" y="33.2998046875">Die Annahmen im
+Szenariorahmen x zur
+zukünftigen
+Erzeugung,
+Versorgung und zum
+zukünftigen
+Verbrauch von Strom
+sind angemessen.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+      </graph>
+    </node>
+    <node id="n4" yfiles.foldertype="group">
+      <data key="d2">
+        <arg:group color="#c0c0c0" id="-1427631231" numberOfArguments="7" numberOfTheses="3">
+          <arg:title>Kritik: Anforderungen nicht erfüllt</arg:title>
+        </arg:group>
+      </data>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="295.39892578125" width="2985.0" x="-3852.0" y="-564.7578125"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#666699" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="15" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="20.7578125" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="242.0" x="4.0" y="4.0">Kritik: Anforderungen nicht erfüllt</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+      <graph edgedefault="directed" id="n4:">
+        <node id="n4::n7">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="90518" incomingAttacks="0" incomingSupports="8" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Untitled</arg:title>
+              <arg:content>Der Szenariorahmen läßt mögliche Technologien oder Maßnahmen unberücksichtigt, die den Ausbaubedarf reduzieren könnten, enthält also kein bedarfsminimierendes Szenario.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="172.43603515625" width="135.0" x="-1191.5" y="-451.218017578125"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="86.218017578125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.5234375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="52.0" x="41.5" y="4.0">Untitled
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="149.234375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="131.0" x="2.0" y="19.20166015625">Der Szenariorahmen
+läßt mögliche
+Technologien oder
+Maßnahmen
+unberücksichtigt, die
+den Ausbaubedarf
+reduzieren könnten,
+enthält also kein
+bedarfsminimierendes
+Szenario.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n4::n3">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="92173" incomingAttacks="0" incomingSupports="1" outgoingAttacks="1" outgoingSupports="0">
+              <arg:title>Kein bedarfsminimierendes Szenario</arg:title>
+              <arg:proposition attacks="0" id="90518" index="1" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="90518" refersToNode="n4::n7" refersToProposition="90518"/>
+                <arg:content>Der Szenariorahmen läßt mögliche Technologien oder Maßnahmen unberücksichtigt, die den Ausbaubedarf reduzieren könnten, enthält also kein bedarfsminimierendes Szenario.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="92411" index="2" supports="0" type="premise">
+                <arg:content>Ein bedarfsminimierendes Szenario, in dem alle Technologien und Maßnahmen realisiert werden, die den Ausbau reduzieren könnten, gehört zur Bandbreite wahrscheinlicher Entwicklungen.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="1" id="97123" index="3" supports="0" type="conclusion">
+                <arg:attackReference refersToArgunetNode="23911" refersToNode="n3::n0" refersToProposition="23911"/>
+                <arg:content>Die Szenarien des Szenariorahmens decken nicht die gesamte Bandbreite wahrscheinlicher Entwicklungen für die nächsten 10 bzw. 20 Jahre ab.</arg:content>
+              </arg:proposition>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-1191.5" y="-533.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="129.0" x="3.0" y="4.0">Kein
+bedarfsminimierend
+es Szenario
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n4::n6">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="128862" incomingAttacks="0" incomingSupports="4" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Untitled</arg:title>
+              <arg:content>In den Szenarien des Szenariorahmens werden die energiepolitischen Ziele der Bundesregierung und des Bundestages teilweise nicht erreicht.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="157.4873046875" width="135.0" x="-3841.5" y="-443.74365234375"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="78.74365234375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.5234375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="52.0" x="41.5" y="4.0">Untitled
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="134.7109375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="127.0" x="4.0" y="18.7763671875">In den Szenarien des
+Szenariorahmens
+werden die
+energiepolitischen
+Ziele der
+Bundesregierung und
+des Bundestages
+teilweise nicht
+erreicht.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n4::n1">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="187759" incomingAttacks="0" incomingSupports="11" outgoingAttacks="0" outgoingSupports="2">
+              <arg:title>Untitled</arg:title>
+              <arg:content>Die Szenarien des Szenariorahmens enthalten falsche, unvollständige oder unrealistische Annahmen, die für die Planung des Ausbaubedarfs relevant sind.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="157.4873046875" width="135.0" x="-2530.5" y="-443.74365234375"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="78.74365234375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.5234375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="52.0" x="41.5" y="4.0">Untitled
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="134.7109375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="131.0" x="2.0" y="18.7763671875">Die Szenarien des
+Szenariorahmens
+enthalten falsche,
+unvollständige oder
+unrealistische
+Annahmen, die für die
+Planung des
+Ausbaubedarfs
+relevant sind.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n4::n8">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="293317" incomingAttacks="0" incomingSupports="1" outgoingAttacks="1" outgoingSupports="1">
+              <arg:title>Unsystematische Parametervariation</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="37.8974609375" width="135.0" x="-2207.5" y="-525.94873046875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="18.94873046875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="121.0" x="7.0" y="4.0">Unsystematische
+Parametervariation
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n4::n4">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="316640" incomingAttacks="0" incomingSupports="1" outgoingAttacks="1" outgoingSupports="0">
+              <arg:title>Szenarien aufgrund falscher Annahmen unwahrscheinlich</arg:title>
+              <arg:proposition attacks="0" id="187759" index="1" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="187759" refersToNode="n4::n1" refersToProposition="187759"/>
+                <arg:content>Die Szenarien des Szenariorahmens enthalten falsche, unvollständige oder unrealistische Annahmen, die für die Planung des Ausbaubedarfs relevant sind.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="274839" index="2" supports="0" type="premise">
+                <arg:content>Szenarien, die falsche, unvollständige oder unrealistische Annahmen enthalten, sind nicht wahrscheinlich.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="274249" index="3" supports="0" type="premise">
+                <arg:content>Die Szenarien des Szenariorahmens beschreiben nicht ausschließlich wahrscheinliche Entwicklungen.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="332031" index="4" supports="0" type="premise">
+                <arg:content>Ein Szenariorahmen, dessen Szenarien die gesamte Bandbreite wahrscheinlicher Entwicklungen abdeckt, enthält keine Szenarien, die unwahrscheinliche Entwicklungen beschreiben.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="1" id="97123" index="5" supports="0" type="conclusion">
+                <arg:attackReference refersToArgunetNode="23911" refersToNode="n3::n0" refersToProposition="23911"/>
+                <arg:content>Die Szenarien des Szenariorahmens decken nicht die gesamte Bandbreite wahrscheinlicher Entwicklungen für die nächsten 10 bzw. 20 Jahre ab.</arg:content>
+              </arg:proposition>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-2387.5" y="-533.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="126.0" x="4.5" y="4.0">Szenarien aufgrund
+falscher Annahmen
+unwahrscheinlich
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n4::n2">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="449496" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Variation des Stromverbrauchs</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="37.8974609375" width="135.0" x="-2207.5" y="-383.94873046875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="18.94873046875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="111.0" x="12.0" y="4.0">Variation des
+Stromverbrauchs
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n4::n5">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="512557" incomingAttacks="0" incomingSupports="0" outgoingAttacks="1" outgoingSupports="0">
+              <arg:title>Stärkere/bessere Einbettung in EU-Planung notwendig</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-1011.5" y="-533.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="125.0" x="5.0" y="4.0">Stärkere/bessere
+Einbettung in EU-
+Planung notwendig
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n4::n0">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="526626" incomingAttacks="0" incomingSupports="1" outgoingAttacks="1" outgoingSupports="0">
+              <arg:title>Nicht im Rahmen</arg:title>
+              <arg:proposition attacks="0" id="128862" index="1" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="128862" refersToNode="n4::n6" refersToProposition="128862"/>
+                <arg:content>In den Szenarien des Szenariorahmens werden die energiepolitischen Ziele der Bundesregierung und des Bundestages teilweise nicht erreicht.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="54462" index="2" supports="0" type="premise">
+                <arg:content>Wenn die Ziele nicht erreicht werden, dann befinden sich die Szenarien auch nicht im Rahmen dieser Ziele.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="508212" index="3" supports="0" type="premise">
+                <arg:content>Premiss...</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="1" id="465313" index="4" supports="0" type="conclusion">
+                <arg:attackReference refersToArgunetNode="23543" refersToNode="n3::n7" refersToProposition="23543"/>
+                <arg:content>Die Szenarien des Szenariorahmens x befinden sich nicht im Rahmen der mittel- und langfristigen energiepolitischen Ziele der Bundesregierung.</arg:content>
+              </arg:proposition>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="22.94873046875" width="135.0" x="-3841.5" y="-518.474365234375"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="11.474365234375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.5234375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="111.0" x="12.0" y="4.0">Nicht im Rahmen
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n4::n9">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="660796" incomingAttacks="0" incomingSupports="1" outgoingAttacks="1" outgoingSupports="0">
+              <arg:title>Falsche Annahmen unangemessen</arg:title>
+              <arg:proposition attacks="0" id="187759" index="1" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="187759" refersToNode="n4::n1" refersToProposition="187759"/>
+                <arg:content>Die Szenarien des Szenariorahmens enthalten falsche, unvollständige oder unrealistische Annahmen, die für die Planung des Ausbaubedarfs relevant sind.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="606849" index="2" supports="0" type="premise">
+                <arg:content>Wenn eine Annahme im Szenariorahmen falsch, unvollständig oder unrealistisch ist, dann ist sie nicht angemessen.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="1" id="508479" index="3" supports="0" type="conclusion">
+                <arg:attackReference refersToArgunetNode="29033" refersToNode="n3::n2" refersToProposition="29033"/>
+                <arg:content>Die Annahmen im Szenariorahmen x zur zukünftigen Erzeugung, Versorgung und zum zukünftigen Verbrauch von Strom sind nicht angemessen.</arg:content>
+              </arg:proposition>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="37.8974609375" width="135.0" x="-2567.5" y="-525.94873046875"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="18.94873046875"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="123.0" x="6.0" y="4.0">Falsche Annahmen
+unangemessen
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+      </graph>
+    </node>
+    <node id="n5" yfiles.foldertype="group">
+      <data key="d2">
+        <arg:group color="#c0c0c0" id="-1587886315" numberOfArguments="2" numberOfTheses="1">
+          <arg:title>Kritik: Anforderungen inadäquat</arg:title>
+        </arg:group>
+      </data>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="407.50146484375" width="335.0" x="-630.0" y="-1673.7578125"/>
+          <y:Fill color="#C0C0C0" transparent="false"/>
+          <y:BorderStyle color="#666699" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="15" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="20.7578125" modelName="internal" modelPosition="tl" textColor="#000000" visible="true" width="231.0" x="4.0" y="4.0">Kritik: Anforderungen inadäquat</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+      <graph edgedefault="directed" id="n5:">
+        <node id="n5::n2">
+          <data key="d2">
+            <arg:thesis colorIndex="0" id="129834" incomingAttacks="0" incomingSupports="0" outgoingAttacks="0" outgoingSupports="1">
+              <arg:title>Untitled</arg:title>
+              <arg:content>Für die Planung des Ausbaubedarfs ist ein Betrachtungshorizont bis mindestens 2050 vonnöten.</arg:content>
+            </arg:thesis>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="97.6923828125" width="135.0" x="-479.5" y="-1373.84619140625"/>
+              <y:Fill color="#FFFFFF" transparent="false"/>
+              <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="48.84619140625"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.5234375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="52.0" x="41.5" y="4.0">Untitled
+</y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="76.6171875" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="130.0" x="2.5" y="17.0751953125">Für die Planung des
+Ausbaubedarfs ist ein
+Betrachtungshorizont
+bis mindestens 2050
+vonnöten.
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n5::n1">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="499307" incomingAttacks="0" incomingSupports="2" outgoingAttacks="1" outgoingSupports="0">
+              <arg:title>Vorgegebener Betrachtungshorizont inadäquat</arg:title>
+              <arg:proposition attacks="0" id="22347" index="1" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="22347" refersToNode="n3::n1" refersToProposition="22347"/>
+                <arg:content>In §12a Abs.1 EnWG finden sich folgende Anforderungen an den Szenariorahmen: Der Szenariorahmen ist von den Übertragungsnetzbetreibern gemeinsam zu erarbeiten (1). Der Szenariorahmen umfasst mindestens drei Entwicklungspfade (Szenarien), die für die nächsten Zehn Jahre (2) die Bandbreite wahrscheinlicher Entwicklungen (3) im Rahmen der mittel- und langfristigen energiepolitischen Ziele der Bundesregierung (4) abdecken. Eines der Szenarien muss die wahrscheinliche Entwicklung für die nächsten zwanzig Jahre darstellen (2). Für den Szenariorahmen legen die Betreiber von Übertragungsnetzen angemessene Annahmen für die jeweiligen Szenarien zu Erzeugung, Versorgung, Verbrauch von Strom (5) sowie dessen Austausch mit anderen Ländern zu Grunde und berücksichtigen geplante Investitionsvorhaben der europäischen Netzinfrastruktur (6). </arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="0" id="129834" index="2" supports="1" type="premise">
+                <arg:supportReference refersToArgunetNode="129834" refersToNode="n5::n2" refersToProposition="129834"/>
+                <arg:content>Für die Planung des Ausbaubedarfs ist ein Betrachtungshorizont bis mindestens 2050 vonnöten.</arg:content>
+              </arg:proposition>
+              <arg:proposition attacks="1" id="530670" index="3" supports="0" type="conclusion">
+                <arg:attackReference refersToArgunetNode="14769" refersToNode="n3::n6" refersToProposition="14769"/>
+                <arg:content>Ein Szenariorahmen, der die Anforderungen aus §12a Abs.1 EnWG erfüllt, ist für die Planung des Ausbaubedarfs nicht geeignet.</arg:content>
+              </arg:proposition>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="52.84619140625" width="135.0" x="-439.5" y="-1635.423095703125"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="26.423095703125"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="47.5703125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="126.0" x="4.5" y="4.0">Vorgegebener
+Betrachtungshorizo
+nt inadäquat
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+        <node id="n5::n0">
+          <data key="d2">
+            <arg:argument colorIndex="0" id="667766" incomingAttacks="0" incomingSupports="0" outgoingAttacks="1" outgoingSupports="0">
+              <arg:title>Wechselwirkung/Schnittstellen mit Verteilnetz unberücksichtigt</arg:title>
+            </arg:argument>
+          </data>
+          <data key="d3">
+            <y:ShapeNode>
+              <y:Geometry height="67.794921875" width="135.0" x="-619.5" y="-1642.8974609375"/>
+              <y:Fill color="#63AEF2" color2="#82BEF5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="33.8974609375"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="62.09375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="126.0" x="4.5" y="4.0">Wechselwirkung/Sc
+hnittstellen mit
+Verteilnetz
+unberücksichtigt
+</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+            </y:ShapeNode>
+          </data>
+        </node>
+      </graph>
+    </node>
+    <node id="n6">
+      <data key="d2">
+        <arg:thesis colorIndex="0" id="9826" incomingAttacks="6" incomingSupports="1" outgoingAttacks="0" outgoingSupports="0">
+          <arg:title>Szenariorahmen geeignet</arg:title>
+          <arg:content>Der Szenariorahmen ist für die Planung des Ausbaubedarfs geeignet.</arg:content>
+        </arg:thesis>
+      </data>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="97.6923828125" width="135.0" x="-4934.5" y="-1941.84619140625"/>
+          <y:Fill color="#FFFFFF" transparent="false"/>
+          <y:BorderStyle color="#63AEF2" type="line" width="3.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="node_width" configuration="CroppingLabel" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="0.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="135.0" x="0.0" y="48.84619140625"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="33.046875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="106.0" x="14.5" y="4.0">Szenariorahmen
+geeignet
+</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Arial" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="62.09375" modelName="internal" modelPosition="b" textColor="#000000" visible="true" width="122.0" x="6.5" y="31.5986328125">Der Szenariorahmen
+ist für die Planung
+des Ausbaubedarfs
+geeignet.
+</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <edge id="e0" source="n3::n4" target="n6">
+      <data key="d4">
+        <arg:edge sourceNodeId="15223" sourcePropositionId="9826" targetNodeId="9826" targetPropositionId="9826" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="56.0" ty="41.0">
+            <y:Point x="-2103.0" y="-1667.0"/>
+            <y:Point x="-4811.0" y="-1837.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e1" source="n0::n0" target="n6">
+      <data key="d4">
+        <arg:edge sourceNodeId="44295" sourcePropositionId="90526" targetNodeId="9826" targetPropositionId="9826" type="attack"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="18.0" ty="41.0">
+            <y:Point x="-4327.0" y="-1667.0"/>
+            <y:Point x="-4848.0" y="-1837.0"/>
+          </y:Path>
+          <y:LineStyle color="#FF0000" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e2" source="n0::n12" target="n6">
+      <data key="d4">
+        <arg:edge sourceNodeId="163289" sourcePropositionId="90526" targetNodeId="9826" targetPropositionId="9826" type="attack"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-56.0" ty="41.0">
+            <y:Point x="-5426.0" y="-1667.0"/>
+            <y:Point x="-4923.0" y="-1837.0"/>
+          </y:Path>
+          <y:LineStyle color="#FF0000" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e3" source="n0::n11" target="n6">
+      <data key="d4">
+        <arg:edge sourceNodeId="113427" sourcePropositionId="90526" targetNodeId="9826" targetPropositionId="9826" type="attack"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-18.0" ty="41.0"/>
+          <y:LineStyle color="#FF0000" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e0" source="n0::n10" target="n0::n12">
+      <data key="d4">
+        <arg:edge sourceNodeId="140179" sourcePropositionId="140179" targetNodeId="163289" targetPropositionId="140179" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-48.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e1" source="n0::n1" target="n0::n11">
+      <data key="d4">
+        <arg:edge sourceNodeId="80735" sourcePropositionId="80735" targetNodeId="113427" targetPropositionId="80735" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-83.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n3::e0" source="n3::n0" target="n3::n5">
+      <data key="d4">
+        <arg:edge sourceNodeId="23911" sourcePropositionId="23911" targetNodeId="16715" targetPropositionId="23911" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-76.0" tx="0.0" ty="13.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e4" source="n4::n3" target="n3::n0">
+      <data key="d4">
+        <arg:edge sourceNodeId="92173" sourcePropositionId="97123" targetNodeId="23911" targetPropositionId="23911" type="attack"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="50.0" ty="76.0">
+            <y:Point x="-1124.0" y="-558.0"/>
+            <y:Point x="-2090.0" y="-728.0"/>
+          </y:Path>
+          <y:LineStyle color="#FF0000" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e5" source="n4::n4" target="n3::n0">
+      <data key="d4">
+        <arg:edge sourceNodeId="316640" sourcePropositionId="97123" targetNodeId="23911" targetPropositionId="23911" type="attack"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-50.0" ty="76.0">
+            <y:Point x="-2320.0" y="-558.0"/>
+            <y:Point x="-2190.0" y="-728.0"/>
+          </y:Path>
+          <y:LineStyle color="#FF0000" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n3::e1" source="n3::n1" target="n3::n5">
+      <data key="d4">
+        <arg:edge sourceNodeId="22347" sourcePropositionId="22347" targetNodeId="16715" targetPropositionId="22347" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="-37.0" sy="-20.0" tx="60.0" ty="13.0">
+            <y:Point x="-801.0" y="-966.0"/>
+            <y:Point x="-2080.0" y="-1136.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e6" source="n3::n1" target="n5::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="22347" sourcePropositionId="22347" targetNodeId="499307" targetPropositionId="22347" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="37.0" sy="-20.0" tx="50.0" ty="0.0">
+            <y:Point x="-726.0" y="-882.0"/>
+            <y:Point x="-689.0" y="-1164.0"/>
+            <y:Point x="-689.0" y="-1177.0"/>
+            <y:Point x="-322.0" y="-1269.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e7" source="n5::n1" target="n3::n6">
+      <data key="d4">
+        <arg:edge sourceNodeId="499307" sourcePropositionId="530670" targetNodeId="14769" targetPropositionId="14769" type="attack"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="-50.0" sy="0.0" tx="50.0" ty="-55.0">
+            <y:Point x="-422.0" y="-1565.0"/>
+            <y:Point x="-714.0" y="-1395.0"/>
+          </y:Path>
+          <y:LineStyle color="#FF0000" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n3::e2" source="n3::n6" target="n3::n4">
+      <data key="d4">
+        <arg:edge sourceNodeId="14769" sourcePropositionId="14769" targetNodeId="15223" targetPropositionId="14769" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="-50.0" sy="-55.0" tx="37.0" ty="0.0">
+            <y:Point x="-814.0" y="-1390.0"/>
+            <y:Point x="-2065.0" y="-1574.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e8" source="n4::n9" target="n3::n2">
+      <data key="d4">
+        <arg:edge sourceNodeId="660796" sourcePropositionId="508479" targetNodeId="29033" targetPropositionId="29033" type="attack"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="69.0"/>
+          <y:LineStyle color="#FF0000" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n3::e3" source="n3::n2" target="n3::n5">
+      <data key="d4">
+        <arg:edge sourceNodeId="29033" sourcePropositionId="29033" targetNodeId="16715" targetPropositionId="29033" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-69.0" tx="-30.0" ty="13.0">
+            <y:Point x="-2500.0" y="-931.0"/>
+            <y:Point x="-2170.0" y="-1136.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n4::e0" source="n4::n6" target="n4::n0">
+      <data key="d4">
+        <arg:edge sourceNodeId="128862" sourcePropositionId="128862" targetNodeId="526626" targetPropositionId="128862" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-55.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n4::e1" source="n4::n7" target="n4::n3">
+      <data key="d4">
+        <arg:edge sourceNodeId="90518" sourcePropositionId="90518" targetNodeId="92173" targetPropositionId="90518" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-69.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n3::e4" source="n3::n3" target="n3::n5">
+      <data key="d4">
+        <arg:edge sourceNodeId="23927" sourcePropositionId="23927" targetNodeId="16715" targetPropositionId="23927" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-104.0" tx="30.0" ty="13.0">
+            <y:Point x="-944.0" y="-966.0"/>
+            <y:Point x="-2110.0" y="-1136.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n4::e2" source="n4::n1" target="n4::n4">
+      <data key="d4">
+        <arg:edge sourceNodeId="187759" sourcePropositionId="187759" targetNodeId="316640" targetPropositionId="187759" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="37.0" sy="-69.0" tx="0.0" ty="0.0">
+            <y:Point x="-2425.0" y="-444.0"/>
+            <y:Point x="-2320.0" y="-465.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n4::e3" source="n4::n1" target="n4::n9">
+      <data key="d4">
+        <arg:edge sourceNodeId="187759" sourcePropositionId="187759" targetNodeId="660796" targetPropositionId="187759" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="-37.0" sy="-69.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e2" source="n0::n7" target="n0::n0">
+      <data key="d4">
+        <arg:edge sourceNodeId="107553" sourcePropositionId="107553" targetNodeId="44295" targetPropositionId="107553" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-48.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n5::e0" source="n5::n2" target="n5::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="129834" sourcePropositionId="129834" targetNodeId="499307" targetPropositionId="129834" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-41.0" tx="0.0" ty="0.0">
+            <y:Point x="-412.0" y="-1376.0"/>
+            <y:Point x="-372.0" y="-1567.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n3::e5" source="n3::n7" target="n3::n5">
+      <data key="d4">
+        <arg:edge sourceNodeId="23543" sourcePropositionId="23543" targetNodeId="16715" targetPropositionId="23543" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-62.0" tx="-60.0" ty="13.0">
+            <y:Point x="-3774.0" y="-931.0"/>
+            <y:Point x="-2200.0" y="-1136.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e9" source="n4::n0" target="n3::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="526626" sourcePropositionId="465313" targetNodeId="23543" targetPropositionId="23543" type="attack"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="62.0"/>
+          <y:LineStyle color="#FF0000" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n3::e6" source="n3::n5" target="n3::n8">
+      <data key="d4">
+        <arg:edge sourceNodeId="16715" sourcePropositionId="7157" targetNodeId="7157" targetPropositionId="7157" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-13.0" tx="0.0" ty="41.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n3::e7" source="n3::n8" target="n3::n4">
+      <data key="d4">
+        <arg:edge sourceNodeId="7157" sourcePropositionId="7157" targetNodeId="15223" targetPropositionId="7157" type="support"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-41.0" tx="-37.0" ty="0.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e10" source="n2::n3" target="n4::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="216860" targetNodeId="187759" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-20.0" tx="0.0" ty="69.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e11" source="n2::n2" target="n4::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="241631" targetNodeId="187759" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-13.0" ty="69.0">
+            <y:Point x="-2643.0" y="-106.0"/>
+            <y:Point x="-2476.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e12" source="n1::n3" target="n4::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="95477" targetNodeId="90518" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="65.0" ty="69.0">
+            <y:Point x="-91.0" y="-106.0"/>
+            <y:Point x="-1058.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e13" source="n2::n4" target="n4::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="238344" targetNodeId="187759" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="69.0">
+            <y:Point x="-3363.0" y="-106.0"/>
+            <y:Point x="-2531.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e3" source="n0::n9" target="n0::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="159322" targetNodeId="80735" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="83.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e14" source="n1::n0" target="n4::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="441795" targetNodeId="90518" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="46.0" ty="69.0">
+            <y:Point x="-271.0" y="-106.0"/>
+            <y:Point x="-1077.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e15" source="n1::n4" target="n4::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="101235" targetNodeId="90518" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-20.0" tx="28.0" ty="69.0">
+            <y:Point x="-451.0" y="-106.0"/>
+            <y:Point x="-1096.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e16" source="n2::n0" target="n4::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="210483" targetNodeId="187759" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-41.0" tx="-54.0" ty="69.0">
+            <y:Point x="-3183.0" y="-106.0"/>
+            <y:Point x="-2517.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e17" source="n2::n6" target="n4::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="313900" targetNodeId="187759" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="69.0">
+            <y:Point x="-1563.0" y="-106.0"/>
+            <y:Point x="-2395.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e18" source="n2::n5" target="n4::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="25808" targetNodeId="187759" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-27.0" tx="13.0" ty="69.0">
+            <y:Point x="-2283.0" y="-106.0"/>
+            <y:Point x="-2449.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e19" source="n7::n0" target="n4::n6">
+      <data key="d4">
+        <arg:edge sourceNodeId="227314" targetNodeId="128862" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-34.0" tx="56.0" ty="55.0">
+            <y:Point x="-3575.0" y="-99.0"/>
+            <y:Point x="-3717.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e20" source="n2::n7" target="n4::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="261581" targetNodeId="187759" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="40.0" ty="69.0">
+            <y:Point x="-1923.0" y="-106.0"/>
+            <y:Point x="-2422.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e21" source="n7::n1" target="n4::n6">
+      <data key="d4">
+        <arg:edge sourceNodeId="105650" targetNodeId="128862" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-27.0" tx="18.0" ty="55.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e22" source="n2::n8" target="n4::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="199496" targetNodeId="187759" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-40.0" ty="69.0">
+            <y:Point x="-3003.0" y="-106.0"/>
+            <y:Point x="-2504.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e4" source="n0::n2" target="n0::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="165349" targetNodeId="80735" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-20.0" tx="50.0" ty="83.0">
+            <y:Point x="-4706.0" y="-1194.0"/>
+            <y:Point x="-4836.0" y="-1227.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e23" source="n1::n5" target="n4::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="99054" targetNodeId="90518" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-65.0" ty="69.0">
+            <y:Point x="-1351.0" y="-106.0"/>
+            <y:Point x="-1190.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e24" source="n2::n1" target="n4::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="235918" targetNodeId="187759" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-41.0" tx="54.0" ty="69.0">
+            <y:Point x="-1743.0" y="-106.0"/>
+            <y:Point x="-2408.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e25" source="n7::n2" target="n4::n6">
+      <data key="d4">
+        <arg:edge sourceNodeId="398441" targetNodeId="128862" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-56.0" ty="55.0">
+            <y:Point x="-4115.0" y="-99.0"/>
+            <y:Point x="-3830.0" y="-281.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e26" source="n1::n1" target="n4::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="95802" targetNodeId="90518" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-9.0" ty="69.0">
+            <y:Point x="-811.0" y="-106.0"/>
+            <y:Point x="-1133.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e5" source="n0::n3" target="n0::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="233651" targetNodeId="107553" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-20.0" tx="56.0" ty="48.0">
+            <y:Point x="-3986.0" y="-1201.0"/>
+            <y:Point x="-4271.0" y="-1262.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e27" source="n1::n6" target="n4::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="112073" targetNodeId="90518" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="9.0" ty="69.0">
+            <y:Point x="-631.0" y="-106.0"/>
+            <y:Point x="-1115.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e6" source="n0::n13" target="n0::n10">
+      <data key="d4">
+        <arg:edge sourceNodeId="141872" targetNodeId="140179" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-20.0" tx="50.0" ty="48.0">
+            <y:Point x="-5246.0" y="-1194.0"/>
+            <y:Point x="-5376.0" y="-1262.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e28" source="n1::n2" target="n4::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="88473" targetNodeId="90518" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-41.0" tx="-28.0" ty="69.0">
+            <y:Point x="-991.0" y="-106.0"/>
+            <y:Point x="-1152.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e7" source="n0::n4" target="n0::n10">
+      <data key="d4">
+        <arg:edge sourceNodeId="141524" targetNodeId="140179" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-13.0" tx="-50.0" ty="48.0">
+            <y:Point x="-5606.0" y="-1187.0"/>
+            <y:Point x="-5476.0" y="-1262.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e29" source="n2::n9" target="n4::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="253455" targetNodeId="187759" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-27.0" ty="69.0">
+            <y:Point x="-2823.0" y="-106.0"/>
+            <y:Point x="-2490.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e8" source="n0::n5" target="n0::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="39172" targetNodeId="107553" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="18.0" ty="48.0">
+            <y:Point x="-4166.0" y="-1201.0"/>
+            <y:Point x="-4308.0" y="-1262.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e9" source="n0::n14" target="n0::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="199003" targetNodeId="107553" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-34.0" tx="-56.0" ty="48.0">
+            <y:Point x="-4526.0" y="-1208.0"/>
+            <y:Point x="-4383.0" y="-1262.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e30" source="n7::n3" target="n4::n6">
+      <data key="d4">
+        <arg:edge sourceNodeId="560926" targetNodeId="128862" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-18.0" ty="55.0">
+            <y:Point x="-3935.0" y="-99.0"/>
+            <y:Point x="-3792.0" y="-281.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e10" source="n0::n6" target="n0::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="175379" targetNodeId="107553" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="-18.0" ty="48.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e31" source="n1::n7" target="n4::n7">
+      <data key="d4">
+        <arg:edge sourceNodeId="106803" targetNodeId="90518" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-20.0" tx="-46.0" ty="69.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n4::e4" source="n4::n2" target="n4::n8">
+      <data key="d4">
+        <arg:edge sourceNodeId="449496" targetNodeId="293317" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e11" source="n0::n15" target="n0::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="50125" targetNodeId="80735" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="-27.0" tx="-50.0" ty="83.0">
+            <y:Point x="-5066.0" y="-1201.0"/>
+            <y:Point x="-4936.0" y="-1227.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n0::e12" source="n0::n8" target="n0::n10">
+      <data key="d4">
+        <arg:edge sourceNodeId="170774" targetNodeId="140179" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="48.0"/>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e32" source="n2::n10" target="n4::n1">
+      <data key="d4">
+        <arg:edge sourceNodeId="320458" targetNodeId="187759" type="sketchedSupport"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="27.0" ty="69.0">
+            <y:Point x="-2103.0" y="-106.0"/>
+            <y:Point x="-2435.0" y="-276.0"/>
+          </y:Path>
+          <y:LineStyle color="#00FF00" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e33" source="n4::n8" target="n3::n0">
+      <data key="d4">
+        <arg:edge sourceNodeId="293317" targetNodeId="23911" type="sketchedAttack"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="76.0"/>
+          <y:LineStyle color="#FF0000" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e34" source="n4::n5" target="n3::n3">
+      <data key="d4">
+        <arg:edge sourceNodeId="512557" targetNodeId="23927" type="sketchedAttack"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="104.0"/>
+          <y:LineStyle color="#FF0000" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e35" source="n5::n0" target="n3::n6">
+      <data key="d4">
+        <arg:edge sourceNodeId="667766" targetNodeId="14769" type="sketchedAttack"/>
+      </data>
+      <data key="d5">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="-55.0">
+            <y:Point x="-552.0" y="-1565.0"/>
+            <y:Point x="-764.0" y="-1395.0"/>
+          </y:Path>
+          <y:LineStyle color="#FF0000" type="line" width="2.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+  </graph>
+  <data key="d1">
+    <y:Resources/>
+  </data>
+</graphml>
