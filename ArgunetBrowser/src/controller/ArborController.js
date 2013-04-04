@@ -7,7 +7,7 @@ The visible graph is given to Arbor.
 Arbor then calculates the position of the nodes and calls the redraw method of ArborView.
 */
 (function() {
-	var ArborController= function(arborView,debateManager) {
+	var ArborController= function(arborView,debateManager,arborUrl) {
 		// mix-ins:
 		// EventDispatcher methods:
 		var p= argunet.ArborController.prototype;
@@ -22,7 +22,9 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 		this.debateManager = debateManager;
 		this.arborView = arborView;
 		
-	    this.sys = arbor.ParticleSystem(400, 400, 0.7, true, 55, 0.03);
+		var arborPreferences = {workerUrl:arborUrl, integrator:'euler', stiffness:400, repulsion:400, friction:0.7, gravity:true};
+		
+	    this.sys = arbor.ParticleSystem(arborPreferences);
 	    this.sys.parameters({integrator:'euler'});
 	    
 	    var configurator = new argunet.ArborConfigurator(this.sys, arborView.stage.canvas.width, arborView.stage.canvas.height);
@@ -37,11 +39,14 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 	    var visibleEdges = {};
 	    var selectedNode = undefined;
 	    
+		this.doc= this.arborView.stage.canvas.ownerDocument;
+		this.win= 'defaultView' in this.doc? this.doc.defaultView : this.doc.parentWindow;
+
 		//Fullscreen
-		document.addEventListener('fullscreenchange', this);
-		document.addEventListener('mozfullscreenchange', this);
-		document.addEventListener('webkitfullscreenchange', this);
-		window.addEventListener('resize', this, false);
+		this.doc.addEventListener('fullscreenchange', this);
+		this.doc.addEventListener('mozfullscreenchange', this);
+		this.doc.addEventListener('webkitfullscreenchange', this);
+		this.win.addEventListener('resize', this, false);
 
 	    
 	    
@@ -187,7 +192,8 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 				this.update();
 			}else if (evt.type == "resize" || evt.type == "fullscreenchange" || evt.type == "mozfullscreenchange" || evt.type == "webkitfullscreenchange" ){
 				var that = this;
-				if(document.mozFullScreen || document.webkitIsFullScreen) {
+				
+				if(this.doc.mozFullScreen || this.doc.webkitIsFullScreen) {
 					that.update();
 					this.oldWidth = that.arborView.stage.canvas.width;
 					this.oldHeight = that.arborView.stage.canvas.height;

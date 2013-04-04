@@ -1,7 +1,20 @@
 // namespace:
 this.argunet = this.argunet||{};
 
-argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, height, cssPath){
+argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, height, jsUrl, cssUrl, embedded){
+//also callable with ArgunetBrowser({debateUrl:, htmlElement:, firstNode:, width:, height:, jsUrl:, cssUrl:, embedded:});
+		if (typeof debateUrl=='object'){
+			var _p = debateUrl;
+			debateUrl = _p.debateUrl;
+			htmlElement = _p.htmlElement;
+			firstNode = _p.firstNode;
+			width = _p.width;
+			height = _p.height;
+			jsUrl = _p.jsUrl;
+			cssUrl = _p.cssUrl;
+			embedded = _p.embedded;
+		}
+				
 		// mix-ins:
 		// EventDispatcher methods:
 		var p= argunet.ArgunetBrowser.prototype;
@@ -13,23 +26,36 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 		p._listeners = null;
 		createjs.EventDispatcher.initialize(p); // inject EventDispatcher methods.
 		
-		this.browserId = argunet.BrowserRegistry.getInstance().registerBrowser(this);
+		this.w = (embedded)? window.parent : window;
+		
+		//fix firefox iframe issue (show is not working if iframe is set to display:none)
+		$("#lightningjs-argunet",this.w.document).css("display","block");
+		
+		this.browserId = argunet.BrowserRegistry.getInstance(this.w).registerBrowser(this);
+		if(htmlElement){
+			this.htmlElement = (typeof htmlElement == 'string')? $(htmlElement,this.w.document) : htmlElement;
+		}else{
+			this.htmlElement = $("<div></div>").insertAfter(argunet.BrowserRegistry.getScriptTag(this.browserId));
+		}
 		
 		//load css if this is the compiled version and the stylesheet has not been loaded yet
 		//check if this is the compiled version and get the path to Argunet
-		var pathToArgunetJs = undefined;
-		$("script").each(function(){
-			var src= $(this).attr("src");
-			var j = -1;
-			if(src) j = src.indexOf("ArgunetBrowser.min.js");
-			if(j !== -1){
-				pathToArgunetJs = $(this).attr("src").substring(0,j);
-				return false;
-			}
-		});
+		if(!jsUrl){
+			$("script").each(function(){
+				var src= $(this).attr("src");
+				var j = -1;
+				if(src) j = src.indexOf("ArgunetBrowser.min.js");
+				if(j !== -1){
+					jsUrl = $(this).attr("src").substring(0,j);
+					return false;
+				}
+			});
+		}
+		this.jsUrl = jsUrl;
+		
 		//check if css has been loaded
 		var loaded = false;
-		$("link[type='text/css']").each(function(){
+		$("link[type='text/css']",this.w.document).each(function(){
 			var src= $(this).attr("src");
 			if(src)loaded = (src.indexOf("ArgunetBrowser.min.css")!= -1);
 			if(loaded){
@@ -37,20 +63,20 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			}
 		});
 
-		if(pathToArgunetJs && !loaded){
-			var url = cssPath;
-			if(!url) url = pathToArgunetJs+'ArgunetBrowser.min.css';
-			if(document.createStyleSheet) {
-				try { document.createStyleSheet(url); } catch (e) { }
+		if(this.jsUrl && !loaded){
+			var url = cssUrl;
+			if(!url) url = this.jsUrl+'ArgunetBrowser.min.css';
+			if(this.w.document.createStyleSheet) {
+				try { this.w.document.createStyleSheet(url); } catch (e) { }
 			}
 			else {
 			    var css;
-			    css         = document.createElement('link');
+			    css         = this.w.document.createElement('link');
 			    css.rel     = 'stylesheet';
 			    css.type    = 'text/css';
 			    css.media   = "all";
 			    css.href    = url;
-			    document.getElementsByTagName("head")[0].appendChild(css);
+			    this.w.document.getElementsByTagName("head")[0].appendChild(css);
 			}
 		}
 		
@@ -60,7 +86,7 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			return;
 		}
 		//loading screen
-		this.argunetView = new argunet.ArgunetBrowserView(htmlElement,width,height, this.browserId);
+		this.argunetView = new argunet.ArgunetBrowserView(this.htmlElement,width,height, this.browserId);
 		
 		
 		var firstNodeId = firstNode;	
@@ -104,8 +130,9 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			this.arborView = new argunet.ArborView(this.debateManager);
 			this.argunetView.setCanvasView(this.arborView);
 			
+			console.log("scriptPath: "+this.jsUrl+"arbor.js");
 			//Controllers
-			this.arborController = new argunet.ArborController(this.arborView,this.debateManager);
+			this.arborController = new argunet.ArborController(this.arborView,this.debateManager, this.jsUrl+"arbor.js");
 			this.debateListView.addEventListener("nodeSelection",this.arborController);
 			
 			this.history = new argunet.History();

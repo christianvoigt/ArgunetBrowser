@@ -1,4 +1,8 @@
-/.project
-/.settings
-/.externalToolBuilders
-/.DS_Store
+.settings/
+.externalToolBuilders/
+.project
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes

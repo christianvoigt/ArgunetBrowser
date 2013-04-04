@@ -25,7 +25,7 @@ argunet.NavigationBarView = function(htmlElement){
 	var fullscreenHtml = "";
 	if(this.fullscreenApiImplemented) fullscreenHtml = "<div class='fullscreen menuItem'>Fullscreen</div>";
 
-	htmlElement.append("<div class='navigationBar'>" +
+	$(htmlElement).append("<div class='navigationBar'>" +
 			"<div class='menu'>" +
 			"<div class='back menuItem'>Back</div><div class='home menuItem'>Home</div><div class='forward menuItem'>Forward</div>" +
 			"<div class='openList menuItem'>"+openListLabel+"</div>" +
@@ -40,8 +40,12 @@ argunet.NavigationBarView = function(htmlElement){
 			"<a href='http://www.argunet.org' class='logo'><span>Argunet</span></a>" +
 			"</div>");
 	this.htmlElement = $(htmlElement).children(".navigationBar").get(0);
+	
+	this.doc= this.htmlElement.ownerDocument;
+	this.win= 'defaultView' in this.doc? this.doc.defaultView : this.doc.parentWindow;
+	
 	var that = this;
-	$(this.htmlElement).find(".graphDepth .slider").slider({min:1,max:5,change: function( event, ui ) {
+	$(this.htmlElement).find(".slider").slider({min:1,max:5,change: function( event, ui ) {
 		$(that.htmlElement).find(".graphDepthLabel").text(ui.value);
 		that.dispatchEvent({type:"graphDepthChange", value:ui.value},that);
     }});
@@ -107,18 +111,19 @@ argunet.NavigationBarView = function(htmlElement){
 		});	
 	}
 	this.height = $(this.htmlElement).height();
-	
-	//Listen to Fullscreen events, because the user could exit fullscreen without pushing the fullscreen button
-	document.addEventListener('fullscreenchange', this);
-	document.addEventListener('mozfullscreenchange', this);
-	document.addEventListener('webkitfullscreenchange', this);
 
 	
-	$(this.htmlElement).hide();
+	//Listen to Fullscreen events, because the user could exit fullscreen without pushing the fullscreen button
+	this.doc.addEventListener('fullscreenchange', this);
+	this.doc.addEventListener('mozfullscreenchange', this);
+	this.doc.addEventListener('webkitfullscreenchange', this);
+
+	
+	//$(this.htmlElement,this.doc).hide();
 };
 argunet.NavigationBarView.prototype.handleEvent = function(evt){
 	if (evt.type == "fullscreenchange" || evt.type == "mozfullscreenchange" || evt.type == "webkitfullscreenchange" ){
-		if(document.fullScreen || document.webkitIsFullScreen || document.mozFullScreen){
+		if(this.doc.fullScreen || this.doc.webkitIsFullScreen || this.doc.mozFullScreen){
 			this.fullscreenButton.button("option", "label", this.exitFullscreenLabel);
 			this.fullscreenButton.button("option","icons",{primary:"ui-icon-exit-fullscreen"});
 		}else{
@@ -128,9 +133,11 @@ argunet.NavigationBarView.prototype.handleEvent = function(evt){
 	}
 };
 argunet.NavigationBarView.prototype.show = function(){
+	//$(".navigationBar",this.doc).show(600);
 	$(this.htmlElement).show("slide", { direction: "down"}, 600);
 };
 argunet.NavigationBarView.prototype.hide = function(){
+	//$(".navigationBar",this.doc).hide(600);
 	$(this.htmlElement).hide("slide", { direction: "down" }, 600);
 };
 argunet.NavigationBarView.prototype.setBackwardEnabled = function(enabled){

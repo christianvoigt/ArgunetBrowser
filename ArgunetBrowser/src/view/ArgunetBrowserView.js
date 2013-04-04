@@ -6,18 +6,27 @@ argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
 	
 	this.cWidth = width || 640;
 	this.cHeight = height || 385;
-
-	//canvas
-	if (typeof(htmlElement)=="string") { htmlElement = $(htmlElement);}
-	$(htmlElement).append("<div class='argunetBrowser loading'><canvas></canvas></div>");
-		
 	this.cWidth -=2;
 	this.cHeight -=2;
+	
+	var idString = "argunetBrowser-"+browserId;
+	
+	this.htmlElement = $("<div id='"+idString+"' class='argunetBrowser loading'></div>").appendTo(htmlElement).get(0);
 
-	this.canvas = $(htmlElement).children(".argunetBrowser").children("canvas").get(0);
+	$(this.htmlElement).width(this.cWidth);
+	//$(htmlElement).height(this.cHeight);
+	//canvas
+		
+
+	this.canvas = $("<canvas></canvas>").appendTo(this.htmlElement).get(0);
+
 	$(this.canvas).width(this.cWidth).height(this.cHeight);
 	this.canvas.width = this.cWidth;
 	this.canvas.height = this.cHeight;
+	
+	this.doc= this.canvas.ownerDocument;
+	this.win= 'defaultView' in this.doc? this.doc.defaultView : this.doc.parentWindow;
+
 
 	
 	//createjs stage
@@ -34,7 +43,8 @@ argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
 	
 	//Debate List
 	this.debateListView = new argunet.DebateListView($(this.canvas).parent(),browserId);
-	this.debateListView.setHeight($(this.canvas).parent().height()-this.navigationBar.height);
+	console.log("naviHeight "+this.navigationBar.height);
+	//this.debateListView.setHeight($(this.canvas).parent().height()-this.navigationBar.height);
 
 	
 	//Tooltip
@@ -108,17 +118,17 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
     	var fs = ab.requestFullscreen || ab.webkitRequestFullscreen || ab.mozRequestFullScreen;
     	if(fs) fs.call(ab);		
 	}else if (evt.type == "closeFullscreen"){
-    	var fs = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen;
-    	if(fs) fs.call(document);
+    	var fs = this.doc.exitFullscreen || this.doc.webkitExitFullscreen || this.doc.mozCancelFullScreen;
+    	if(fs) fs.call(this.doc);
 	}else if (evt.type == "resize" || evt.type == "fullscreenchange" || evt.type == "mozfullscreenchange" || evt.type == "webkitfullscreenchange" ){
 		var c = this.canvas;
-	    if(document.mozFullScreen || document.webkitIsFullScreen) {
+	    if(this.doc.mozFullScreen || this.doc.webkitIsFullScreen) {
 	        var rect = c.getBoundingClientRect();
 	        $(c).width(rect.width);
 	        $(c).height(rect.height);
 	    	this.canvas.width = rect.width;
 	    	this.canvas.height = rect.height;
-	    	this.debateListView.setHeight(rect.height-this.navigationBar.height+2);
+	    	//this.debateListView.setHeight(rect.height-this.navigationBar.height+2);
 	    }
 	    else {
 			if(this.oldWidth && this.oldHeight && this.oldWidth == this.canvas.width && this.oldHeight == this.canvas.height)return;
@@ -126,7 +136,7 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 	    	$(c).height(this.cHeight);
 	    	this.canvas.width = this.cWidth;
 	    	this.canvas.height = this.cHeight;
-	    	this.debateListView.setHeight(this.cHeight-this.navigationBar.height+2);
+	    	//this.debateListView.setHeight(this.cHeight-this.navigationBar.height+2);
 			this.oldWidth = this.canvas.width;
 			this.oldHeight = this.canvas.height;
 
@@ -144,12 +154,11 @@ argunet.ArgunetBrowserView.prototype.setCanvasView = function (view){
 	this.stage.addEventListener("stagemousemove",this);
 	this.navigationBar.addEventListener("openDebateList",this);
 	this.navigationBar.addEventListener("closeDebateList",this);
-
-	//Fullscreen
-	document.addEventListener('fullscreenchange', this);
-	document.addEventListener('mozfullscreenchange', this);
-	document.addEventListener('webkitfullscreenchange', this);
-	window.addEventListener('resize', this, false);
+	
+	this.doc.addEventListener('fullscreenchange', this);
+	this.doc.addEventListener('mozfullscreenchange', this);
+	this.doc.addEventListener('webkitfullscreenchange', this);
+	this.win.addEventListener('resize', this, false);
 	
 	this.navigationBar.addEventListener("openFullscreen",this);
 	this.navigationBar.addEventListener("closeFullscreen",this);

@@ -45,19 +45,19 @@ argunet.DebateListView.prototype.initialize = function(title,subtitle,zNodes){
 			   check: {enable: false, chkboxType : { "Y" : "ps", "N" : "ps" }}
 	   };
 	   //var zTreeElement = $(this.htmlElement).children("#ztree");
-	this.zTree = $.fn.zTree.init($("#"+this.zTreeId), zSettings, zNodes);
-	var treeObj = $.fn.zTree.getZTreeObj(this.zTreeId);
-	treeObj.checkAllNodes(true);
-
-	$(this.htmlElement).children(".buttons").buttonset();
-	$(this.htmlElement).find(".checkAll").button().click(function() {
-		treeObj.checkAllNodes(true);
-		that.dispatchEvent({type:"openAllGroups"}, that);
-	});
-	$(this.htmlElement).find(".uncheckAll").button().click(function() {
-		treeObj.checkAllNodes(false);
-		that.dispatchEvent({type:"closeAllGroups"}, that);
-	});	
+	this.zTree = $.fn.zTree.init($(this.htmlElement).children("#"+this.zTreeId), zSettings, zNodes);
+//	var treeObj = $.fn.zTree.getZTreeObj(this.zTreeId);
+//	treeObj.checkAllNodes(true);
+//
+//	$(this.htmlElement).children(".buttons").buttonset();
+//	$(this.htmlElement).find(".checkAll").button().click(function() {
+//		treeObj.checkAllNodes(true);
+//		that.dispatchEvent({type:"openAllGroups"}, that);
+//	});
+//	$(this.htmlElement).find(".uncheckAll").button().click(function() {
+//		treeObj.checkAllNodes(false);
+//		that.dispatchEvent({type:"closeAllGroups"}, that);
+//	});	
 };
 argunet.DebateListView.prototype.setHeight = function(height){
 	this.height = height;

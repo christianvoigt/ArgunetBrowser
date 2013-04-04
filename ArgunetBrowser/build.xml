@@ -9,54 +9,114 @@
 	</target>
 
 	<target name="compressJs" depends="cleanJs"> 
-		<filelist id="filelist" dir="${basedir}/src">
-			<file name="lib/modernizr.custom.12855.js" />
-			<file name="lib/jquery-1.8.3.min.js" />
-			<file name="lib/jquery-ui-1.10.0.custom.js" />
-			<file name="lib/jquery.xcolor.min.js" />
-			<file name="lib/jquery.ztree.core-3.5.js" />
-			<file name="lib/jquery.ztree.excheck-3.5.js" />
-			<file name="lib/easeljs-NEXT.min.js" />
-			<file name="lib/arbor.js" />
-			<file name="lib/graphics.js" />
+		<concat destfile="lib/ArgunetBrowser.combined.js">
+			<filelist id="filelist" dir="${basedir}/src">
+				<file name="lib/modernizr.custom.12855.js" />
+				<file name="lib/jquery-1.8.3.min.js" />
+				<file name="lib/jquery-ui-1.10.0.custom.js" />
+				<file name="lib/jquery.xcolor.min.js" />
+				<file name="lib/jquery.ztree.core-3.5.js" />
+				<file name="lib/easeljs-NEXT.min.js" />
+				<file name="lib/arbor.js" />
+				<file name="lib/semicolon.js" />
+				<file name="lib/graphics.js" />
+				<file name="lib/semicolon.js" />
 
-			<file name="model/Argument.js" />
-			<file name="model/DebateManager.js" />
-			<file name="model/Edge.js" />
-			<file name="model/Group.js" />
-			<file name="model/HistoryState.js" />
-			<file name="model/Sentence.js" />
-			<file name="model/Thesis.js" />
+	
+				<file name="model/Argument.js" />
+				<file name="model/DebateManager.js" />
+				<file name="model/Edge.js" />
+				<file name="model/Group.js" />
+				<file name="model/HistoryState.js" />
+				<file name="model/Sentence.js" />
+				<file name="model/Thesis.js" />
+					
+				<file name="controller/ArborController.js" />
+				<file name="controller/ArborConfigurator.js" />
+				<file name="controller/BrowserRegistry.js" />
+				<file name="controller/DebateListController.js" />
+				<file name="controller/History.js" />
+					
+				<file name="view/SelectableView.js" />
+				<file name="view/ArgunetBrowserView.js" />
+				<file name="view/ArrowCanvasView.js" />
+				<file name="view/ArgumentCanvasView.js" />
+				<file name="view/ThesisCanvasView.js" />
+				<file name="view/ArborView.js" />
+				<file name="view/TooltipCanvasView.js" />
+				<file name="view/NavigationBarView.js" />
+				<file name="view/DebateListView.js" />
+				<file name="view/GroupCanvasView.js" />
+				<file name="view/ErrorMessageView.js" />
+					
 				
-			<file name="controller/ArborController.js" />
-			<file name="controller/ArborConfigurator.js" />
-			<file name="controller/BrowserRegistry.js" />
-			<file name="controller/DebateListController.js" />
-			<file name="controller/History.js" />
+				<file name="ArgunetBrowser.js" />					
+			</filelist>
+			</concat>
+		<concat destfile="lib/ArgunetBrowser-embed.js">
+			<filelist id="filelist2" dir="${basedir}/src">
+				<file name="lib/lightningjs-bootstrap.min.js" />
 				
-			<file name="view/SelectableView.js" />
-			<file name="view/ArgunetBrowserView.js" />
-			<file name="view/ArrowCanvasView.js" />
-			<file name="view/ArgumentCanvasView.js" />
-			<file name="view/ThesisCanvasView.js" />
-			<file name="view/ArborView.js" />
-			<file name="view/TooltipCanvasView.js" />
-			<file name="view/NavigationBarView.js" />
-			<file name="view/DebateListView.js" />
-			<file name="view/GroupCanvasView.js" />
-			<file name="view/ErrorMessageView.js" />
+				<file name="lib/modernizr.custom.12855.js" />
+				<file name="lib/jquery-1.8.3.js" />
+				<file name="lib/jquery-ui-1.10.0.custom.js" />
+				<file name="lib/jquery.xcolor.min.js" />
+				<file name="lib/jquery.ztree.core-3.5.js" />
 				
-			
-			<file name="ArgunetBrowser.js" />
+				<file name="lib/easeljsWrapStart.js" />
+				<file name="lib/easeljs-NEXT.min.js" />
+				<file name="lib/easeljsWrapEnd.js" />
 				
-		</filelist>
+				<file name="lib/arbor.js" />
+				<file name="lib/semicolon.js" />
+				<file name="lib/graphics.js" />
+				<file name="lib/semicolon.js" />
+
+	
+				<file name="model/Argument.js" />
+				<file name="model/DebateManager.js" />
+				<file name="model/Edge.js" />
+				<file name="model/Group.js" />
+				<file name="model/HistoryState.js" />
+				<file name="model/Sentence.js" />
+				<file name="model/Thesis.js" />
+					
+				<file name="controller/ArborController.js" />
+				<file name="controller/ArborConfigurator.js" />
+				<file name="controller/BrowserRegistry.js" />
+				<file name="controller/DebateListController.js" />
+				<file name="controller/History.js" />
+					
+				<file name="view/SelectableView.js" />
+				<file name="view/ArgunetBrowserView.js" />
+				<file name="view/ArrowCanvasView.js" />
+				<file name="view/ArgumentCanvasView.js" />
+				<file name="view/ThesisCanvasView.js" />
+				<file name="view/ArborView.js" />
+				<file name="view/TooltipCanvasView.js" />
+				<file name="view/NavigationBarView.js" />
+				<file name="view/DebateListView.js" />
+				<file name="view/GroupCanvasView.js" />
+				<file name="view/ErrorMessageView.js" />
+					
+				
+				<file name="ArgunetBrowser.js" />					
+				<file name="LightningJsProvider.js" />
+			</filelist>
+			</concat>		
+		<concat destfile="lib/ArgunetBrowser.load.js">
+			<filelist id="filelist" dir="${basedir}/">				
+				<file name="src/lib/lightningjs-embed.min.js" />
+				<file name="src/LightningJsLoader.js" />
+			</filelist>
+		</concat>		
 		<pathconvert refid="filelist" property="converted" pathsep=" " />
 
 		<echo>Starting compressing JS... </echo>
 		<exec executable="/opt/local/bin/yuicompress" failonerror="true">
 			<arg line="-o ${basedir}/lib/ArgunetBrowser.min.js" />
 			<arg line="-f" />
-			<arg line="${converted}" />
+			<arg line="lib/ArgunetBrowser.combined.js" />
 		</exec>
 		<echo>Done!</echo>
 	</target>

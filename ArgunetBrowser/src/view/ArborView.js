@@ -41,10 +41,12 @@ argunet.ArborView= function(debateM){
 		particleSystem.screenPadding(40);
 	};
 	this.handleEvent= function(evt){
+		var doc= this.stage.canvas.ownerDocument;
+
 		if(evt.type == "select"){
 			this.dispatchEvent({type:"nodeSelection",nodeId:evt.target.nodeId},evt.target);
 		}else if(evt.type == "mouseover"){
-			document.body.style.cursor='pointer';
+			doc.body.style.cursor='pointer';
 
 			var tooltipText = "<h3>"+evt.target.title+"</h3><p>"+evt.target.text+"</p>";
 			var model;
@@ -64,12 +66,12 @@ argunet.ArborView= function(debateM){
 			}
 			this.dispatchEvent({type:"showTooltip",tooltip:tooltipText},evt.target);
 		}else if(evt.type == "mouseout"){
-			document.body.style.cursor='default';
+			doc.body.style.cursor='default';
 			this.dispatchEvent("hideTooltip",evt.target);
 		}else if(evt.type == "mousedown"){
 			this.dispatchEvent({type:"mousedown",nodeId:evt.target.nodeId},evt.target);
 		}else if(evt.type == "drag"){
-			document.body.style.cursor='move';
+			doc.body.style.cursor='move';
 			var draggedNodeView = evt.target;
 			var draggedNode = particleSystem.getNode(evt.target.nodeId);
 			draggedNode.fixed = true;
@@ -77,7 +79,7 @@ argunet.ArborView= function(debateM){
 			p = particleSystem.fromScreen(p);
 			draggedNode.p = p;
 		}else if(evt.type == "drop"){
-			document.body.style.cursor='default';
+			doc.body.style.cursor='default';
 			var draggedNodeView = evt.target;
 			var draggedNode = particleSystem.getNode(evt.target.nodeId);
 			draggedNode.fixed = false;
