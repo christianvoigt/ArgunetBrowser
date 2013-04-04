@@ -9,7 +9,7 @@
 	</target>
 
 	<target name="compressJs" depends="cleanJs"> 
-		<concat destfile="lib/ArgunetBrowser.combined.js">
+		<concat destfile="lib/ArgunetBrowser.standalone.js">
 			<filelist id="filelist" dir="${basedir}/src">
 				<file name="lib/modernizr.custom.12855.js" />
 				<file name="lib/jquery-1.8.3.min.js" />
@@ -53,7 +53,7 @@
 				<file name="ArgunetBrowser.js" />					
 			</filelist>
 			</concat>
-		<concat destfile="lib/ArgunetBrowser-embed.js">
+		<concat destfile="lib/ArgunetBrowser.embed.js">
 			<filelist id="filelist2" dir="${basedir}/src">
 				<file name="lib/lightningjs-bootstrap.min.js" />
 				
@@ -110,15 +110,26 @@
 				<file name="src/LightningJsLoader.js" />
 			</filelist>
 		</concat>		
-		<pathconvert refid="filelist" property="converted" pathsep=" " />
 
 		<echo>Starting compressing JS... </echo>
+		<echo>ArgunetBrowser.standalone.min.js</echo>
 		<exec executable="/opt/local/bin/yuicompress" failonerror="true">
-			<arg line="-o ${basedir}/lib/ArgunetBrowser.min.js" />
+			<arg line="-o ${basedir}/lib/ArgunetBrowser.standalone.min.js" />
 			<arg line="-f" />
-			<arg line="lib/ArgunetBrowser.combined.js" />
+			<arg line="lib/ArgunetBrowser.standalone.js" />
 		</exec>
-		<echo>Done!</echo>
+		<echo>ArgunetBrowser.load.min.js</echo>
+		<exec executable="/opt/local/bin/yuicompress" failonerror="true">
+			<arg line="-o ${basedir}/lib/ArgunetBrowser.load.min.js" />
+			<arg line="-f" />
+			<arg line="lib/ArgunetBrowser.load.js" />
+		</exec>
+		<echo>ArgunetBrowser.embed.min.js</echo>
+		<exec executable="/opt/local/bin/yuicompress" failonerror="true">
+			<arg line="-o ${basedir}/lib/ArgunetBrowser.embed.min.js" />
+			<arg line="-f" />
+			<arg line="lib/ArgunetBrowser.embed.js" />
+		</exec>		<echo>Done!</echo>
 	</target>
 
 	<target name="compressCss" depends="cleanCss">
