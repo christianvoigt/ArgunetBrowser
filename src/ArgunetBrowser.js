@@ -16,7 +16,6 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 		}		
 		width = width || 640;
 		height = height || 385;
-		jsUrl = jsUrl || "http://christianvoigt.github.com/ArgunetBrowser/lib/";
 		cssUrl = cssUrl || "http://christianvoigt.github.com/ArgunetBrowser/lib/ArgunetBrowser.min.css";
 				
 		// mix-ins:
@@ -58,7 +57,7 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			$("script").each(function(){
 				var src= $(this).attr("src");
 				var j = -1;
-				if(src) j = src.indexOf("ArgunetBrowser.min.js");
+				if(src) j = src.indexOf("ArgunetBrowser.embed.min.js");
 				if(j !== -1){
 					jsUrl = $(this).attr("src").substring(0,j);
 					return false;

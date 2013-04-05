@@ -119,7 +119,7 @@ argunet.NavigationBarView = function(htmlElement){
 	this.doc.addEventListener('webkitfullscreenchange', this);
 
 	
-	//$(this.htmlElement,this.doc).hide();
+	$(this.htmlElement,this.doc).hide();
 };
 argunet.NavigationBarView.prototype.handleEvent = function(evt){
 	if (evt.type == "fullscreenchange" || evt.type == "mozfullscreenchange" || evt.type == "webkitfullscreenchange" ){
