@@ -257,13 +257,14 @@ float:left;
 	border-collapse:collapse;
 	padding:0px;
 	margin:0px;
+	line-height:1em;
 }
 .argunetBrowser .argunet-tooltip td, tr{
 	border-collapse:collapse;
 	border:none;
 	padding:2px;
 	margin:0px;
-	vertical-align:center;
+	vertical-align:middle;
 }
 .argunetBrowser .argunet-tooltip .label{
 	padding:0px 2px;
@@ -301,9 +302,10 @@ float:left;
 	float:left;
 }
 .argunetBrowser .argunet-tooltip h3{
-	margin=0;
+	margin: 0;
 	margin-bottom:5px;
 	padding:0;
+	line-height:1.5em;
 }
 .argunetBrowser .tip{
 	font-style:italic;
