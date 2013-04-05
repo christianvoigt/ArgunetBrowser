@@ -1,7 +1,12 @@
 Argunet Browser
 ===============
 
-Argunet Browser is a Javascript application that visualizes Argunet argument maps (www.argunet.org) on the Html Canvas and allows the user to surf through complex debates. It reads .graphml maps that can be exported from Argunet Editor and creates a force directed graph using Arbor.js (http://arborjs.org/) and EaselJS (http://www.createjs.com/#!/EaselJS).
+Argunet Browser is an embeddable Javascript widget that visualizes Argunet argument maps (www.argunet.org) on the Html Canvas, allowing users to surf through complex debates. The widget reads .graphml maps that can be exported from Argunet Editor and creates a force directed graph using Arbor.js (http://arborjs.org/) and EaselJS (http://www.createjs.com/#!/EaselJS).
+
+Try out a Demo here: http://christianvoigt.github.com/ArgunetBrowser/
+
+For further information about Argument Maps, visit www.argunet.org
+
 
 1. License
 ----------
@@ -10,6 +15,39 @@ Argunet Browser is released under the MIT license. http://en.wikipedia.org/wiki/
 
 2. Deployment
 -------------
+There are three different ways in which Argunet Browser can be deployed.
+
+###2.1 The easy way
+
+First, you will need an argument map in Argunet's graphml format and decide, which node should be selected first. Look up the nodes' id in the graphml file and copy it. Then you only have to paste the following code into your page to load the map with ArgunetBrowser:
+
+```html
+	<script src="http://christianvoigt.github.com/ArgunetBrowser/lib/ArgunetBrowser.load.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		argunet("createArgunetBrowser",{debateUrl:"[PATH-TO-YOUR-MAP]", firstNode:"[ID-OF-FIRST-NODE-TO-SELECT]", embedded:true, jsUrl:"http://christianvoigt.github.com/ArgunetBrowser/lib/",cssUrl:"http://christianvoigt.github.com/ArgunetBrowser/lib/ArgunetBrowser.min.css"});
+	</script>		
+```	
+By default, Argunet Browser will be inserted after the script tag that loads ArgunetBrowser.load.min.js.
+
+###2.2 Hosting the files
+
+If you want to host all the files on your own server, you can also download the repository and upload the /lib directory to your own webspace. You can even put the ArgunetBrowser.min.css into your default css folder. To load Argunet Browser from your own webspace use the following embed code (after changing the paths in the code):
+
+```html
+	<script type="text/javascript">
+		window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};
+return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",
+i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,
+String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&q()})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.argunet = lightningjs.require("argunet", "[YOUR-PATH-TO-ArgunetBrowser.load.min.js]");
+		argunet("createArgunetBrowser",{debateUrl:"[PATH-TO-YOUR-MAP]", firstNode:"[ID-OF-FIRST-NODE-TO-SELECT]", embedded:true, jsUrl:"[YOUR-PATH-TO-THE-LIB-FOLDER]",cssUrl:"[YOUR-PATH-TO-ArgunetBrowser.min.css]"});
+	</script>		
+```	
+
+###2.3 Loading ArgunetBrowser directly
+
+By default, Argunet Browser is loaded into an iframe via the lightningjs-Loader. This prevents it from blocking the loading process of your site and interfering with your own code. But in some cases it may be useful to load ArgunetBrowser directly into your page. You can do this by using the following steps:
+
 
 1. Copy the contents of /lib to your webspace.
 3. Include ArgunetBrowser.min.js at the end of the body section of your html page:
@@ -28,7 +66,9 @@ Argunet Browser is released under the MIT license. http://en.wikipedia.org/wiki/
     	});	
     </script>
 ```
-In its default mode Google Chrome doesn't allow it to load local xml files with Javascript. If yout want to test Argunet Browser locally, please use another browser or start Chrome with the following parameters (this example is for OSX): 
+
+###2.4 Testing locally: Don't use Google Chrome
+In its default mode Google Chrome doesn't allow us to load local xml files with Javascript. If yout want to test Argunet Browser locally, please use another browser or start Chrome with the following parameters (this example is for OSX): 
 	
 ```
 		/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --allow-file-access-from-files --enable-webgl --ignore-gpu-blacklist %U    
@@ -36,11 +76,11 @@ In its default mode Google Chrome doesn't allow it to load local xml files with 
     
 ###Parameters
 
-ArgunetBrowser accepts the following parameters: 
+ArgunetBrowser accepts the following parameters/options: 
 
-**`new ArgunetBrowser(debateUrl, htmlElement, firstNode, width, height, cssPath)`**
-
-Only the first two parameters are required.
+**`argunet("createArgunetBrowser",{debateUrl: , htmlElement: , firstNode: , width: , height: , jsUrl, cssUrl: , embedd:})`**
+**`new ArgunetBrowser(debateUrl, htmlElement, firstNode, width, height, jsUrl, cssUrl, embedded)`**
+**`new ArgunetBrowser({debateUrl: , htmlElement: , firstNode: , width: , height: , jsUrl, cssUrl: , embedd:})`**
 				
 <dl>
 <dt>debateUrl:</dt> 
@@ -131,8 +171,10 @@ Jquery xColor: http://www.xarg.org/project/jquery-color-plugin-xcolor/
 
 Jquery zTree: http://www.ztree.me/v3/main.php#_zTreeInfo
 
+Lightningjs: http://www.lightningjs.com
+
 All of these are already included in ArgunetBrowser.min.js.
-If you are already using some of these libraries on your page, you should build a custom version of ArgunetBrowser.min.js without these libraries.
+If you are already using some of these libraries on your page, you could build a custom version of ArgunetBrowser.min.js without these libraries.
 
 4. Building
 -----------
