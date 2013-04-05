@@ -68,6 +68,8 @@ argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
 		that.showNavigationBar();
 	});
 	
+	this.resize();
+	
 };
 
 argunet.ArgunetBrowserView.prototype.showNavigationBar = function(){
@@ -139,18 +141,22 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 	    }
 	    else {
 			if(this.oldWidth && this.oldHeight && this.oldWidth == $(this.htmlElement).width() && this.oldHeight == this.canvas.height)return;
-			this.cWidth = $(this.htmlElement).width();
-			console.log(this.cWidth);
-			$(c).width(this.cWidth);
-	    	$(c).height(this.cHeight);
-	    	this.canvas.width = this.cWidth;
-	    	this.canvas.height = this.cHeight;
-	    	//this.debateListView.setHeight(this.cHeight-this.navigationBar.height+2);
-			this.oldWidth = this.canvas.width;
-			this.oldHeight = this.canvas.height;
-
+				this.resize();
 	    }		
 	}		
+};
+argunet.ArgunetBrowserView.prototype.resize = function(){
+	this.cWidth = $(this.htmlElement).width();
+	
+	if(this.cWidth<450)this.debateListView.setHeight(this.cHeight-100+2);
+	else this.debateListView.setHeight(this.cHeight-50+2);
+	
+	$(this.canvas).width(this.cWidth);
+	$(this.canvas).height(this.cHeight);
+	this.canvas.width = this.cWidth;
+	this.canvas.height = this.cHeight;
+	this.oldWidth = this.canvas.width;
+	this.oldHeight = this.canvas.height;	
 };
 argunet.ArgunetBrowserView.prototype.setCanvasView = function (view){
 	var that = this;

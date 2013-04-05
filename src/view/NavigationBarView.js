@@ -117,8 +117,9 @@ argunet.NavigationBarView = function(htmlElement){
 	this.doc.addEventListener('fullscreenchange', this);
 	this.doc.addEventListener('mozfullscreenchange', this);
 	this.doc.addEventListener('webkitfullscreenchange', this);
+	this.win.addEventListener('resize', this, false);
 
-	
+	this.updateHeight();
 	$(this.htmlElement,this.doc).hide();
 };
 argunet.NavigationBarView.prototype.handleEvent = function(evt){
@@ -130,8 +131,22 @@ argunet.NavigationBarView.prototype.handleEvent = function(evt){
 			this.fullscreenButton.button("option", "label", this.fullscreenLabel);			
 			this.fullscreenButton.button("option","icons",{primary:"ui-icon-open-fullscreen"});
 		}
+	}else if(evt.type == "resize"){
+		this.updateHeight();
 	}
 };
+argunet.NavigationBarView.prototype.updateHeight = function (){
+	var w = $(this.htmlElement).width();
+	if(w>580){
+		$(this.htmlElement).children(".logo").show();		
+	}else if(w<580 && w>450){
+		$(this.htmlElement).css("height","50px");		
+		$(this.htmlElement).children(".logo").hide();
+	}else{
+		$(this.htmlElement).children(".logo").hide();
+		$(this.htmlElement).css("height","100px");
+	}
+}
 argunet.NavigationBarView.prototype.show = function(){
 	//$(".navigationBar",this.doc).show(600);
 	$(this.htmlElement).show("slide", { direction: "down"}, 600);
