@@ -24,7 +24,7 @@ First, you will need an argument map in Argunet's graphml format and decide, whi
 ```html
 	<script src="http://christianvoigt.github.com/ArgunetBrowser/lib/ArgunetBrowser.load.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
-		argunet("createArgunetBrowser",{debateUrl:"[PATH-TO-YOUR-MAP]", firstNode:"[ID-OF-FIRST-NODE-TO-SELECT]", embedded:true, jsUrl:"http://christianvoigt.github.com/ArgunetBrowser/lib/",cssUrl:"http://christianvoigt.github.com/ArgunetBrowser/lib/ArgunetBrowser.min.css"});
+		argunet("createArgunetBrowser",{debateUrl:"[PATH-TO-YOUR-MAP]", firstNode:"[ID-OF-FIRST-NODE-TO-SELECT]"});
 	</script>		
 ```	
 By default, Argunet Browser will be inserted after the script tag that loads ArgunetBrowser.load.min.js.
@@ -40,7 +40,7 @@ return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="h
 i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,
 String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&q()})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
 window.argunet = lightningjs.require("argunet", "[YOUR-PATH-TO-ArgunetBrowser.load.min.js]");
-		argunet("createArgunetBrowser",{debateUrl:"[PATH-TO-YOUR-MAP]", firstNode:"[ID-OF-FIRST-NODE-TO-SELECT]", embedded:true, jsUrl:"[YOUR-PATH-TO-THE-LIB-FOLDER]",cssUrl:"[YOUR-PATH-TO-ArgunetBrowser.min.css]"});
+		argunet("createArgunetBrowser",{debateUrl:"[PATH-TO-YOUR-MAP]", firstNode:"[ID-OF-FIRST-NODE-TO-SELECT]", jsUrl:"[YOUR-PATH-TO-THE-LIB-FOLDER]",cssUrl:"[YOUR-PATH-TO-ArgunetBrowser.min.css]", htmlElement:"[#HTML-ID]"});
 	</script>		
 ```	
 
@@ -62,7 +62,7 @@ By default, Argunet Browser is loaded into an iframe via the lightningjs-Loader.
 ```html
     <script type="text/javascript">
     	$(function() { //Jquery's document ready event
-    		new argunet.ArgunetBrowser("yourmap.graphml",$("#htmlId"));
+    		new argunet.ArgunetBrowser({mapUrl: "yourmap.graphml", firstNode:"[NODE-ID]", htmlElement:"[#HTML-ID]", embedded:false);
     	});	
     </script>
 ```
