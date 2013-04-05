@@ -21,12 +21,11 @@ There are three different ways in which Argunet Browser can be deployed.
 
 First, you will need an argument map in Argunet's graphml format and decide, which node should be selected first. Look up the nodes' id in the graphml file and copy it. Then you only have to paste the following code into your page to load the map with ArgunetBrowser:
 
-```html
 	<script src="http://christianvoigt.github.com/ArgunetBrowser/lib/ArgunetBrowser.load.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		argunet("createArgunetBrowser",{debateUrl:"[PATH-TO-YOUR-MAP]", firstNode:"[ID-OF-FIRST-NODE-TO-SELECT]"});
 	</script>		
-```	
+
 By default, Argunet Browser will be inserted after the script tag that loads ArgunetBrowser.load.min.js.
 
 ###2.2 Hosting the files
