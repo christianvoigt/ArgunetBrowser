@@ -14,7 +14,7 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			cssUrl = _p.cssUrl;
 			embedded = _p.embedded || true;
 		}		
-		width = width || 640;
+		//width = width || 640;
 		height = height || 385;
 		cssUrl = cssUrl || "http://christianvoigt.github.com/ArgunetBrowser/lib/ArgunetBrowser.min.css";
 				

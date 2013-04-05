@@ -4,16 +4,23 @@ this.argunet = this.argunet||{};
 argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
 	this.canvasView= undefined;
 	
-	this.cWidth = width || 640;
+	this.cWidth = width;
 	this.cHeight = height || 385;
-	this.cWidth -=2;
 	this.cHeight -=2;
 	
 	var idString = "argunetBrowser-"+browserId;
 	
 	this.htmlElement = $("<div id='"+idString+"' class='argunetBrowser loading'></div>").appendTo(htmlElement).get(0);
 
-	$(this.htmlElement).width(this.cWidth);
+	if(this.cWidth){
+		this.cWidth-=2;
+		$(this.htmlElement).width(this.cWidth);
+	} else{
+		//$(this.htmlElement).css("width","100%");
+		this.cWidth = $(this.htmlElement).width();
+	}
+		
+
 	//$(htmlElement).height(this.cHeight);
 	//canvas
 		
@@ -131,8 +138,10 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 	    	//this.debateListView.setHeight(rect.height-this.navigationBar.height+2);
 	    }
 	    else {
-			if(this.oldWidth && this.oldHeight && this.oldWidth == this.canvas.width && this.oldHeight == this.canvas.height)return;
-	    	$(c).width(this.cWidth);
+			if(this.oldWidth && this.oldHeight && this.oldWidth == $(this.htmlElement).width() && this.oldHeight == this.canvas.height)return;
+			this.cWidth = $(this.htmlElement).width();
+			console.log(this.cWidth);
+			$(c).width(this.cWidth);
 	    	$(c).height(this.cHeight);
 	    	this.canvas.width = this.cWidth;
 	    	this.canvas.height = this.cHeight;
