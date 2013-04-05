@@ -248,6 +248,11 @@ float:left;
 	border-radius: 5px;
 	width:200px;
 }
+.argunetBrowser .argunet-tooltip p{
+	line-height:1.5em;
+	padding:0;
+	margin:0 0 10px 0;
+}
 .argunetBrowser .argunet-tooltip table{
 	border-collapse:collapse;
 	padding:0px;
@@ -262,6 +267,7 @@ float:left;
 }
 .argunetBrowser .argunet-tooltip .label{
 	padding:0px 2px;
+	margin:0;
 	display:block;
 	float:left;
 	color:#999;
@@ -295,9 +301,9 @@ float:left;
 	float:left;
 }
 .argunetBrowser .argunet-tooltip h3{
-	margin-top:0px;
+	margin=0;
 	margin-bottom:5px;
-	padding:0px;
+	padding:0;
 }
 .argunetBrowser .tip{
 	font-style:italic;
