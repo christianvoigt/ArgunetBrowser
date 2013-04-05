@@ -13,8 +13,7 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			jsUrl = _p.jsUrl;
 			cssUrl = _p.cssUrl;
 			embedded = _p.embedded || true;
-		}
-		
+		}		
 		width = width || 640;
 		height = height || 385;
 		jsUrl = jsUrl || "http://christianvoigt.github.com/ArgunetBrowser/lib/";
@@ -30,12 +29,13 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 		p.hasEventListener = null;
 		p._listeners = null;
 		createjs.EventDispatcher.initialize(p); // inject EventDispatcher methods.
-		
+
 		this.w = (embedded)? window.parent : window;
 		
 		//fix firefox iframe issue (show is not working if iframe is set to display:none)
-		$("#lightningjs-argunet",this.w.document).css("display","block");
+		$("#lightningjs-argunet",this.w.document).css("display","block").css("width","0").css("height","0").css("frameborder","0");
 		
+		//find htmlElement
 		this.browserId = argunet.BrowserRegistry.getInstance(this.w).registerBrowser(this);
 		if(htmlElement){
 			this.htmlElement = (typeof htmlElement == 'string')? $(htmlElement,this.w.document) : htmlElement;
@@ -44,6 +44,13 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			$(scriptTag).after("<div></div>");
 			this.htmlElement = $(scriptTag).next("div").get(0);
 		}
+		
+		//feature check
+		if(!Modernizr.canvas || !Modernizr.canvastext || !({}).__defineGetter__){
+			new argunet.ErrorMessageView(htmlElement,width,height, "Argunet Browser not initialized", "We detected that your browser lacks features <a href='http://www.argunet.org'>Argunet Browser</a> depends on. Please use an up-to-date browser that supports HTML5, CSS3 and the Canvas Element.");
+			return;
+		}		
+				
 		
 		//load css if this is the compiled version and the stylesheet has not been loaded yet
 		//check if this is the compiled version and get the path to Argunet
@@ -87,11 +94,6 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			}
 		}
 		
-		//feature check
-		if(!Modernizr.canvas || !Modernizr.canvastext || !({}).__defineGetter__){
-			new argunet.ErrorMessageView(htmlElement,width,height, "Argunet Browser not initialized", "We detected that your browser lacks features <a href='http://www.argunet.org'>Argunet Browser</a> depends on. Please use an up-to-date browser that supports HTML5, CSS3 and the Canvas Element.");
-			return;
-		}
 		//loading screen
 		this.argunetView = new argunet.ArgunetBrowserView(this.htmlElement,width,height, this.browserId);
 		
