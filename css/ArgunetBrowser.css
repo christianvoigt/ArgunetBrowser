@@ -92,6 +92,7 @@
 .argunetBrowser .navigationBar .label{
 	margin:5px 0px;
 	background-color:#fff;
+	color:black;
 }
 .argunetBrowser .navigationBar .menuItem{
 margin:10px 2px;
@@ -275,6 +276,7 @@ float:left;
 	float:left;
 	color:#999;
 	background-color:#fff;
+	font-size:12px;
 }
 .argunetBrowser .argunet-tooltip .icon-incoming-supports{
 	background: url(images/arrow-icons.png) no-repeat -52px 1px;
