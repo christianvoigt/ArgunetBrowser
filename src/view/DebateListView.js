@@ -13,7 +13,7 @@ argunet.DebateListView = function(htmlElement, browserId){
 	p._listeners = null;
 	createjs.EventDispatcher.initialize(p); // inject EventDispatcher methods.
 	
-	this.zTreeId = browserId+"-ztree";
+	this.zTreeId = "argunetBrowser"+browserId+"-ztree";
 	
 	htmlElement.append("<div class='debateList'><div id='"+this.zTreeId+"' class='tree ztree'></div></div>");
 	this.htmlElement = $(htmlElement).children(".debateList").get(0);
