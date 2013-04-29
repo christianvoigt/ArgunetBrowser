@@ -93,7 +93,7 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
     	this.tooltipTimeout = window.setTimeout( function(){
     		that.tooltip.setContent(evt.tooltip);
     		that.tooltip.setVisible(true);
-    		that.tooltip.x = Math.min(that.stage.canvas.width-5-that.tooltip.width, that.stage.mouseX+5);
+    		that.tooltip.x = Math.min($(that.stage.canvas).outerWidth()-5-that.tooltip.getWidth(), that.stage.mouseX+5);
     		that.tooltip.y = Math.min(that.stage.canvas.height-5-that.tooltip.height, that.stage.mouseY+5);
     		that.stage.update();
     		window.clearTimeout(this.tooltipTimeout);

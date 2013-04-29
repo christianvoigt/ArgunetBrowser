@@ -21,7 +21,6 @@ this.argunet = this.argunet||{};
         this.addChild(domElement);
      	this.x=50;
     	this.y=50;  
-    	this.width=$(this.tooltip).outerWidth();
     	//this.rotation=25;
     	this.setVisible(false);
     	
@@ -33,6 +32,9 @@ this.argunet = this.argunet||{};
     		that.dispatchEvent("mouseout",that);
     	});
     };
+    p.getWidth = function (){
+    	return $(this.tooltip).outerWidth();
+    }
     p.setContent = function(htmlElement){
     	$(this.tooltip).empty();
     	$(this.tooltip).append(htmlElement);
