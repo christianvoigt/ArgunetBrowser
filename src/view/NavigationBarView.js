@@ -45,11 +45,13 @@ argunet.NavigationBarView = function(htmlElement){
 	this.win= 'defaultView' in this.doc? this.doc.defaultView : this.doc.parentWindow;
 	
 	var that = this;
-	$(this.htmlElement).find(".slider").slider({min:1,max:5,change: function( event, ui ) {
+	var slider = $(this.htmlElement).find(".graphDepth .slider");
+
+	
+	$(slider).slider({min:1,max:5,change: function( event, ui ) {
 		$(that.htmlElement).find(".graphDepthLabel").text(ui.value);
 		that.dispatchEvent({type:"graphDepthChange", value:ui.value},that);
     }});
-	var slider = $(this.htmlElement).find(".graphDepth .slider");
 	
 	$(this.htmlElement).find(".buttons").buttonset();
 	openListButton = $(this.htmlElement).find(".openList");

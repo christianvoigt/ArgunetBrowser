@@ -17,6 +17,7 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 		//width = width || 640;
 		height = height || 385;
 		cssUrl = cssUrl || "http://christianvoigt.github.com/ArgunetBrowser/lib/ArgunetBrowser.min.css";
+		this.initialGraphDepth = 1;
 				
 		// mix-ins:
 		// EventDispatcher methods:
@@ -97,7 +98,7 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 		this.argunetView = new argunet.ArgunetBrowserView(this.htmlElement,width,height, this.browserId);
 		
 		
-		var firstNodeId = firstNode;	
+		this.firstNodeId = firstNode;	
 		var that = this;
 		
 		//Load XML File (this could cause problems with IE)
@@ -152,6 +153,7 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			this.argunetView.navigationBar.addEventListener("home",this.history);
 			this.argunetView.navigationBar.addEventListener("forward",this.history);
 			this.argunetView.navigationBar.addEventListener("graphDepthChange",this.arborController);
+			this.addEventListener("graphDepthChange",this.arborController);
 			
 			
 			this.arborView.addEventListener("showTooltip",this.argunetView);
@@ -177,16 +179,17 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			this.argunetView.removeLoadingSpinner();
 			
 			//Select first node
-			if(firstNodeId==undefined)$.each(this.debateManager.nodes,function(){
-				firstNodeId=this.id; 
+			if(this.firstNodeId==undefined) this.firstNodeId = $.each(this.debateManager.nodes,function(){
+				that.firstNodeId=this.id; 
 				return false;
-				});
+			});
+			this.initialized = true;
 			
-			//problem cases for testing:
-			//firstNodeId = "n1::n2";
-			//firstNodeId = "n26";
-
-			this.selectNode(firstNodeId);
+			this.selectNode(this.firstNodeId);
+			
+			this.setGraphDepth(this.initialGraphDepth);
+			
+			
 		};		
 
 			
@@ -207,6 +210,11 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 		};
 		
 		this.selectNode = function(nodeId){
-			this.history.selectNode(nodeId);
+			if(this.initialized)this.history.selectNode(nodeId);
+			else this.firstNodeId = nodeId;
+		};
+		this.setGraphDepth = function(depth){
+			if(this.initialized)this.dispatchEvent({type:"graphDepthChange", value:depth},this);
+			else this.initialGraphDepth = depth;
 		};
 	};
