@@ -181,6 +181,8 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			this.argunetView.navigationBar.addEventListener("forward",this.history);
 			this.argunetView.navigationBar.addEventListener("graphDepthChange",this.arborController);
 			this.addEventListener("graphDepthChange",this.arborController);
+			this.addEventListener("graphDepthChange", this.argunetView.navigationBar);
+			this.argunetView.navigationBar.addEventListener("graphDepthChange",this.argunetView.navigationBar);
 			
 			
 			this.arborView.addEventListener("showTooltip",this.argunetView);
@@ -241,7 +243,10 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			else this.firstNodeId = nodeId;
 		};
 		this.setGraphDepth = function(depth){
-			if(this.initialized)this.dispatchEvent({type:"graphDepthChange", value:depth},this);
-			else this.initialGraphDepth = depth;
+			if(this.initialized){
+				this.dispatchEvent({type:"graphDepthChange", value:depth},this);
+			}else{
+				this.initialGraphDepth = depth;
+			}
 		};
 	};

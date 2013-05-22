@@ -49,8 +49,7 @@ argunet.NavigationBarView = function(htmlElement){
 
 	
 	$(slider).slider({min:1,max:5,change: function( event, ui ) {
-		$(that.htmlElement).find(".graphDepthLabel").text(ui.value);
-		that.dispatchEvent({type:"graphDepthChange", value:ui.value},that);
+		that.dispatchEvent({type:"graphDepthChange", value:ui.value},that);	
     }});
 	
 	$(this.htmlElement).find(".buttons").buttonset();
@@ -135,6 +134,10 @@ argunet.NavigationBarView.prototype.handleEvent = function(evt){
 		}
 	}else if(evt.type == "resize"){
 		this.updateHeight();
+	}else if(evt.type == "graphDepthChange"){
+		$(this.htmlElement).find(".graphDepthLabel").text(evt.value);
+		var slider = $(this.htmlElement).find(".slider");
+		if($(slider).slider("value") != evt.value)$(slider).slider("value",evt.value);
 	}
 };
 argunet.NavigationBarView.prototype.updateHeight = function (){
@@ -148,7 +151,7 @@ argunet.NavigationBarView.prototype.updateHeight = function (){
 		$(this.htmlElement).children(".logo").hide();
 		$(this.htmlElement).css("height","100px");
 	}
-}
+};
 argunet.NavigationBarView.prototype.show = function(){
 	//$(".navigationBar",this.doc).show(600);
 	$(this.htmlElement).show("slide", { direction: "down"}, 600);
