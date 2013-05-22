@@ -2,6 +2,8 @@
 this.argunet = this.argunet||{};
 
 argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
+	var that = this;
+	
 	this.canvasView= undefined;
 	
 	this.cWidth = width;
@@ -18,6 +20,7 @@ argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
 	} else{
 		//$(this.htmlElement).css("width","100%");
 		this.cWidth = $(this.htmlElement).width();
+	
 	}
 		
 
@@ -174,6 +177,8 @@ argunet.ArgunetBrowserView.prototype.setCanvasView = function (view){
 	this.doc.addEventListener('mozfullscreenchange', this);
 	this.doc.addEventListener('webkitfullscreenchange', this);
 	this.win.addEventListener('resize', this, false);
+	
+
 	
 	this.navigationBar.addEventListener("openFullscreen",this);
 	this.navigationBar.addEventListener("closeFullscreen",this);

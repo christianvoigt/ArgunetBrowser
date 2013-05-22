@@ -94,42 +94,69 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			}
 		}
 		
-		//loading screen
-		this.argunetView = new argunet.ArgunetBrowserView(this.htmlElement,width,height, this.browserId);
-		
-		
-		this.firstNodeId = firstNode;	
-		var that = this;
-		
-		//Load XML File (this could cause problems with IE)
-		$.ajax({
-			type:'GET',
-			url: debateUrl,
-			dataType: "XML",
-					success : function(response) 
-					{
-						var xml;
-						if ( !window.DOMParser ) { //Internet Explorer
-							xml = new ActiveXObject("Microsoft.XMLDOM");
-							xml.async = false;
-							xml.loadXML(response);
-						} else {
-							xml = response;
+		this.loadDebate = function(){
+			
+			//loading screen
+			this.argunetView = new argunet.ArgunetBrowserView(this.htmlElement,width,height, this.browserId);
+			
+			
+			this.firstNodeId = firstNode;	
+			var that = this;
+			
+			//Load XML File (this could cause problems with IE)
+			$.ajax({
+				type:'GET',
+				url: debateUrl,
+				dataType: "XML",
+						success : function(response) 
+						{
+							var xml;
+							if ( !window.DOMParser ) { //Internet Explorer
+								xml = new ActiveXObject("Microsoft.XMLDOM");
+								xml.async = false;
+								xml.loadXML(response);
+							} else {
+								xml = response;
+							}
+							xml = $(response);
+							that.onDebateLoad(xml);
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown) 
+						{
+							//remove loading
+							that.argunetView.removeLoadingSpinner();
+							new argunet.ErrorMessageView(htmlElement,width,height, 'Data Could Not Be Loaded', textStatus);
 						}
-						xml = $(response);
-						that.onDebateLoad(xml);
-					},
-					error: function(XMLHttpRequest, textStatus, errorThrown) 
-					{
-						//remove loading
-						that.argunetView.removeLoadingSpinner();
-						new argunet.ErrorMessageView(htmlElement,width,height, 'Data Could Not Be Loaded', textStatus);
-					}
-		});				
+			});				
+	}
+		
+		var that = this;
+		//if ArgunetBrowser's parent element is hidden, the canvas width will be set to 0, because hidden elements have no widths and the ArgunetBrowser's width is set to 100%
+		//To avoid this, check if ArgunetBrowser is hidden. If so, poll for display event. This isn't nice, but there is no javascript event we could use
+		if($(this.htmlElement).is(":hidden")){
+			var hiddenTimeout;
+			
+			var checkIfHidden = function(){
+				console.log("timeout");
+				if(!$(that.htmlElement).is(":hidden")){
+					that.loadDebate();
+					
+					clearTimeout(hiddenTimeout);
+				}else{
+					hiddenTimeout = setTimeout(checkIfHidden,100);
+				}
+			}
+			checkIfHidden();
+		}else{
+			this.loadDebate();
+		}
+
+
 		this.onDebateLoad = function(xml){
 			//Models
 			this.debateManager = new argunet.DebateManager();	        	    
-			this.debateManager.loadDebate(xml);					
+			this.debateManager.loadDebate(xml);			
+
 			
 			//Views
 			this.debateListView = this.argunetView.debateListView;			

@@ -26,6 +26,7 @@
   width: 100% !important;
   border:0px;
 }
+
 .argunetBrowser:-moz-full-screen canvas{
     width: 100% !important;
     height: 100% !important;
