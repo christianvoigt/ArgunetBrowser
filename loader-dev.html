@@ -5,30 +5,23 @@
 <title>Argunet Browser Demo</title>
 
 </head>
-<body>
-<div class="content">
-	<h1>Argunet Browser Demo</h1>
-	<p id="test">This is some text.</p>
-	<p><a href="#" id="show">Show</a></p>
+<body style="margin:0px;">
+<div class="content" style="">
+	<div id="test" style="position:absolute; height:100%; width:100%; padding:0px;"></div>
 	<script src="src/lib/jquery-1.9.1.js" type="text/javascript"></script>
 	<script src="src/lib/lightningjs-embed.min.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
 	
 		var test = {};
-		$("#test").hide();
 		test.argunetLoader = lightningjs.require("argunet", "lib/ArgunetBrowser.embed.js");
-			test.argunetLoader("createArgunetBrowser",{debateUrl:"climate_engineering-20130423.graphml",htmlElement:"p:first", firstNode:"67883",jsUrl:"lib/",cssUrl:"lib/ArgunetBrowser.min.css"}).then(function(argunetBrowser){
+			test.argunetLoader("createArgunetBrowser",{debateUrl:"climate_engineering-20130423.graphml",htmlElement:"#test", firstNode:"67883",jsUrl:"lib/",cssUrl:"lib/ArgunetBrowser.min.css", height:"100%"}).then(function(argunetBrowser){
 				console.log("Sucessfully loaded Argunet Browser");
-				argunetBrowser.setGraphDepth(3);
 
 			}, function(error){
 				console.log("Failed to load Argunet Browser: "+error);
 			});
-			$("#show").click(function(){
-				$("#test").show();
-				return false;
-			});	 
+
 
 	</script>		
 </div>	

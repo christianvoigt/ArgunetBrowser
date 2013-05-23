@@ -6,6 +6,13 @@ argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
 	
 	this.canvasView= undefined;
 	
+	this.height100Percent = false;
+
+	if(height && height == "100%"){
+		height = $(htmlElement).innerHeight();
+		this.height100Percent = true;
+	}
+	
 	this.cWidth = width;
 	this.cHeight = height || 385;
 	this.cHeight -=2;
@@ -141,15 +148,17 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 	    	this.canvas.width = rect.width;
 	    	this.canvas.height = rect.height;
 	    	//this.debateListView.setHeight(rect.height-this.navigationBar.height+2);
-	    }
-	    else {
-			if(this.oldWidth && this.oldHeight && this.oldWidth == $(this.htmlElement).width() && this.oldHeight == this.canvas.height)return;
+	    }else {
+			if(this.oldWidth && this.oldHeight && this.oldWidth == $(this.htmlElement).innerWidth() && this.oldHeight == $(this.htmlElement).parent().innerHeight-2)return;
 				this.resize();
 	    }		
 	}		
 };
 argunet.ArgunetBrowserView.prototype.resize = function(){
-	this.cWidth = $(this.htmlElement).width();
+	this.cWidth = $(this.htmlElement).innerWidth();
+	if(this.height100Percent){
+		this.cHeight = $(this.htmlElement).parent().innerHeight() - 2;
+	}
 	
 	if(this.cWidth<450)this.debateListView.setHeight(this.cHeight-100+2);
 	else this.debateListView.setHeight(this.cHeight-50+2);

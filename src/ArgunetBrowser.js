@@ -15,6 +15,7 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			embedded = _p.embedded || true;
 		}		
 		//width = width || 640;
+
 		height = height || 385;
 		cssUrl = cssUrl || "http://christianvoigt.github.com/ArgunetBrowser/lib/ArgunetBrowser.min.css";
 		this.initialGraphDepth = 1;
@@ -44,6 +45,8 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			$(scriptTag).after("<div></div>");
 			this.htmlElement = $(scriptTag).next("div").get(0);
 		}
+
+
 		
 		//feature check
 		if(!Modernizr.canvas || !Modernizr.canvastext || !({}).__defineGetter__){
