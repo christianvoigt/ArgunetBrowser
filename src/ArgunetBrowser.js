@@ -1,12 +1,12 @@
 // namespace:
 this.argunet = this.argunet||{};
 
-argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, height, jsUrl, cssUrl, embedded){
-//also callable with ArgunetBrowser({debateUrl:, htmlElement:, firstNode:, width:, height:, jsUrl:, cssUrl:, embedded:});
-		if (typeof debateUrl=='object'){
-			var _p = debateUrl;
-			debateUrl = _p.debateUrl;
-			htmlElement = _p.htmlElement;
+argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsUrl, cssUrl, embedded){
+//also callable with ArgunetBrowser({data:, container:, firstNode:, width:, height:, jsUrl:, cssUrl:, embedded:});
+		if (typeof data=='object'){
+			var _p = data;
+			data = _p.data;
+			container = _p.container;
 			firstNode = _p.firstNode;
 			width = _p.width;
 			height = _p.height;
@@ -19,6 +19,11 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 		height = height || 385;
 		cssUrl = cssUrl || "http://christianvoigt.github.com/ArgunetBrowser/lib/ArgunetBrowser.min.css";
 		this.initialGraphDepth = 1;
+		var that = this;
+		
+		//if data is undefined, we will look for argument map data in container. This means we should hide everything there, since we will visualize it in Argunet Browser.
+		if(!data) $(container).children().hide();
+
 				
 		// mix-ins:
 		// EventDispatcher methods:
@@ -36,21 +41,21 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 		//fix firefox iframe issue (show is not working if iframe is set to display:none)
 		$("#lightningjs-argunet",this.w.document).css("display","block").css("width","0").css("height","0").css("frameborder","0");
 		
-		//find htmlElement
+		//find container
 		this.browserId = argunet.BrowserRegistry.getInstance(this.w).registerBrowser(this);
-		if(htmlElement){
-			this.htmlElement = (typeof htmlElement == 'string')? $(htmlElement,this.w.document) : htmlElement;
+		if(container){
+			this.container = (typeof container == 'string')? $(container,this.w.document).get(0) : container;
 		}else{
 			var scriptTag = argunet.BrowserRegistry.getInstance(this.w).getScriptTag(this.browserId);
 			$(scriptTag).after("<div></div>");
-			this.htmlElement = $(scriptTag).next("div").get(0);
+			this.container = $(scriptTag).next("div").get(0);
 		}
 
 
 		
 		//feature check
 		if(!Modernizr.canvas || !Modernizr.canvastext || !({}).__defineGetter__){
-			new argunet.ErrorMessageView(htmlElement,width,height, "Argunet Browser not initialized", "We detected that your browser lacks features <a href='http://www.argunet.org'>Argunet Browser</a> depends on. Please use an up-to-date browser that supports HTML5, CSS3 and the Canvas Element.");
+			new argunet.ErrorMessageView(container,width,height, "Argunet Browser not initialized", "We detected that your browser lacks features <a href='http://www.argunet.org'>Argunet Browser</a> depends on. Please use an up-to-date browser that supports HTML5, CSS3 and the Canvas Element.");
 			return;
 		}		
 				
@@ -97,70 +102,11 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 			}
 		}
 		
-		this.loadDebate = function(){
-			
-			//loading screen
-			this.argunetView = new argunet.ArgunetBrowserView(this.htmlElement,width,height, this.browserId);
-			
-			
-			this.firstNodeId = firstNode;	
-			var that = this;
-			
-			//Load XML File (this could cause problems with IE)
-			$.ajax({
-				type:'GET',
-				url: debateUrl,
-				dataType: "XML",
-						success : function(response) 
-						{
-							var xml;
-							if ( !window.DOMParser ) { //Internet Explorer
-								xml = new ActiveXObject("Microsoft.XMLDOM");
-								xml.async = false;
-								xml.loadXML(response);
-							} else {
-								xml = response;
-							}
-							xml = $(response);
-							that.onDebateLoad(xml);
-						},
-						error: function(XMLHttpRequest, textStatus, errorThrown) 
-						{
-							//remove loading
-							that.argunetView.removeLoadingSpinner();
-							new argunet.ErrorMessageView(htmlElement,width,height, 'Data Could Not Be Loaded', textStatus);
-						}
-			});				
-	}
+
+
+
+		this.onDebateLoad = function(){
 		
-		var that = this;
-		//if ArgunetBrowser's parent element is hidden, the canvas width will be set to 0, because hidden elements have no widths and the ArgunetBrowser's width is set to 100%
-		//To avoid this, check if ArgunetBrowser is hidden. If so, poll for display event. This isn't nice, but there is no javascript event we could use
-		if($(this.htmlElement).is(":hidden")){
-			var hiddenTimeout;
-			
-			var checkIfHidden = function(){
-				console.log("timeout");
-				if(!$(that.htmlElement).is(":hidden")){
-					that.loadDebate();
-					
-					clearTimeout(hiddenTimeout);
-				}else{
-					hiddenTimeout = setTimeout(checkIfHidden,100);
-				}
-			}
-			checkIfHidden();
-		}else{
-			this.loadDebate();
-		}
-
-
-		this.onDebateLoad = function(xml){
-			//Models
-			this.debateManager = new argunet.DebateManager();	        	    
-			this.debateManager.loadDebate(xml);			
-
-			
 			//Views
 			this.debateListView = this.argunetView.debateListView;			
 			this.debateListController = new argunet.DebateListController(this.debateListView, this.debateManager);
@@ -226,7 +172,13 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 
 			
 		this.handleEvent = function(evt){
-			if(evt.type == "historyChange"){
+			if(evt.type == "debateLoaded"){
+				this.onDebateLoad();
+			}else if(evt.type == "error"){
+				//remove loading
+				this.argunetView.removeLoadingSpinner();
+				new argunet.ErrorMessageView(container,width,height, 'Error', evt.textStatus);				
+			}else if(evt.type == "historyChange"){
 				this.argunetView.navigationBar.setBackwardEnabled(this.history.backwardEnabled);
 				this.argunetView.navigationBar.setForwardEnabled(this.history.forwardEnabled);
 				this.argunetView.navigationBar.setHomeEnabled(this.history.homeEnabled);
@@ -252,4 +204,36 @@ argunet.ArgunetBrowser = function(debateUrl, htmlElement, firstNode, width, heig
 				this.initialGraphDepth = depth;
 			}
 		};
+
+		this.loadDebate = function(){			
+			//loading screen
+			this.argunetView = new argunet.ArgunetBrowserView(this.container,width,height, this.browserId);
+			this.firstNodeId = firstNode;	
+			
+			//Models
+			this.debateManager = new argunet.DebateManager(this.container);	  
+			this.debateManager.addEventListener("debateLoaded",this);
+			this.debateManager.addEventListener("error",this);
+			this.debateManager.loadDebate(data);	
+		};		
+		//if ArgunetBrowser's parent element is hidden, the canvas width will be set to 0, because hidden elements have no widths and the ArgunetBrowser's width is set to 100%
+		//To avoid this, check if ArgunetBrowser is hidden. If so, poll for display event. This isn't nice, but there is no javascript event we could use
+		if($(this.container).is(":hidden")){
+			var hiddenTimeout;
+			
+			var checkIfHidden = function(){
+				console.log("timeout");
+				if(!$(that.container).is(":hidden")){
+					that.loadDebate();
+					
+					clearTimeout(hiddenTimeout);
+				}else{
+					hiddenTimeout = setTimeout(checkIfHidden,100);
+				}
+			}
+			checkIfHidden();
+		}else{
+			this.loadDebate();
+		}		
+		
 	};

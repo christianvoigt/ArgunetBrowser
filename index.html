@@ -11,7 +11,7 @@
 	<script type="text/javascript">
 		window.argunet = lightningjs.require("argunet", "lib/ArgunetBrowser.embed.min.js");	
 		var browser = undefined;
-		argunet("createArgunetBrowser",{debateUrl:"climate_engineering-20130423.graphml",firstNode:"67883",cssUrl:"lib/ArgunetBrowser.min.css"}).then(function(argunetBrowser){
+		argunet("createArgunetBrowser",{data:"climate_engineering-20130423.graphml",firstNode:"67883",cssUrl:"lib/ArgunetBrowser.min.css"}).then(function(argunetBrowser){
 			browser = argunetBrowser;
 		});
 		var link = document.getElementById("nodeSelectionTest");

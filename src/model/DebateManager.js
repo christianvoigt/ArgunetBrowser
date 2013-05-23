@@ -1,18 +1,78 @@
 // namespace:
 this.argunet = this.argunet||{};
 
-(function(){
-	
-var DebateManager = function() {
-    	this.nodes={};
-    	this.colors=[];
-    	this.groups={};
-    	this.edgesBySource={};
-    	this.edgesByTarget={};
+argunet.DebateManager = function(container) {
+	this.doc= $(container).get(0).ownerDocument;
+
+	this.nodes={};
+	this.colors=[];
+	this.groups={};
+	this.edgesBySource={};
+	this.edgesByTarget={};
+	var that = this;
+
+
+// mix-ins:
+// EventDispatcher methods:
+var p= argunet.DebateManager.prototype;
+
+p.addEventListener = null;
+p.removeEventListener = null;
+p.removeAllEventListeners = null;
+p.dispatchEvent = null;
+p.hasEventListener = null;
+p._listeners = null;
+createjs.EventDispatcher.initialize(p); // inject EventDispatcher methods.
+
+this.loadDebate = function(data){
+
+	var suffix = ".graphml";
+	if(data && data.toLowerCase().indexOf(suffix, data.length - suffix.length) !== -1){
+		//graphml
+		this.loadGraphml(data);
+	}else{
+		var el;
+		if(!data){
+			el = $(container, this.doc).get(0);
+		}else el = $(data, this.doc).get(0);
+		
+		if(el && $(el).is(".argument-map")){
+			//html
+			this.parseHtml(el);
+		}else{
+			this.dispatchEvent({type:"error", textStatus:"Could not find argument map html."},this);		
+		}
+	}
 };
-var p=DebateManager.prototype;
-p.loadDebate= function(xml){
-    		var that= this;
+
+this.loadGraphml = function(url){
+	console.log("loading graphml");
+	//Load XML File (this could cause problems with IE)
+	$.ajax({
+		type:'GET',
+		url: url,
+		dataType: "XML",
+				success : function(response) 
+				{
+					var xml;
+					if ( !window.DOMParser ) { //Internet Explorer
+						xml = new ActiveXObject("Microsoft.XMLDOM");
+						xml.async = false;
+						xml.loadXML(response);
+					} else {
+						xml = response;
+					}
+					xml = $(response);
+					that.parseGraphml(xml);
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) 
+				{
+					this.dispatchEvent({type:"error", textStatus:textStatus, errorThrown: errorThrown},this);
+				}
+	});			
+};
+
+this.parseGraphml = function(xml){
 		   //colorTable (Problem mit Namespace. Siehe: http://www.steveworkman.com/html5-2/javascript/2011/improving-javascript-xml-node-finding-performance-by-2000/ und http://bugs.jquery.com/ticket/10377)
  		   var debate = $(xml).find('arg\\:debate, debate').get(0);
  		   this.debateTitle = $(debate).children("arg\\:title").text();
@@ -22,9 +82,7 @@ p.loadDebate= function(xml){
 			   var colorIndex= $(this).attr('colorIndex');
 			   var colorDescription= $(this).attr('description');
 		   var baseColor=$(this).attr('colorCode');
-		   var lightColor= $.xcolor.lighten(baseColor,80,1).getHex();
-		   var darkColor= $.xcolor.darken(baseColor,45,3).getHex();
-		   that.colors[colorIndex]={index:colorIndex, description:colorDescription,base:baseColor, light:lightColor, dark:darkColor};
+		   that.colors[colorIndex]= that.getColorObject(colorIndex, colorDescription, baseColor);
 		   //$.style.insertRule(['.color'+color.colorIndex], 'background-color:'+color.colorCode+';');
 		   //$.style.insertRule(['.borderColor'+color.colorIndex], 'border-color:'+color.colorCode+'; color:'+color.colorCode+';');
 			//$.style.insertRule(['.lightColor'+color.colorIndex], 'background-color:'+lightColor+';');
@@ -97,32 +155,117 @@ p.loadDebate= function(xml){
 		   $(xml).find('edge:parent').each(function(){ //problem: without the :parent jquery will find all <edge> and <arg:edge> elements (at least in chrome)
 			   var edgeXML = $(this).children("data:first").children("arg\\:edge");
 			   var edgeType= edgeXML.attr("type");
-			   edge = new argunet.Edge($(edgeXML).attr('sourceNodeId'),$(edgeXML).attr('targetNodeId'), edgeType,"#00CC00",$(edgeXML).attr('sourcePropositionId'),$(edgeXML).attr('targetPropositionId'));
-		       if(that.edgesBySource[edge.source] == undefined){
-		    		that.edgesBySource[edge.source]={};
-		       }
-		       if(that.edgesByTarget[edge.target] == undefined){
-		    		that.edgesByTarget[edge.target]={};
-		       }		       
-		       that.edgesBySource[edge.source][edge.target] = edge;
-		       that.edgesByTarget[edge.target][edge.source] = edge;
+			   that.addEdge($(edgeXML).attr('sourceNodeId'), $(edgeXML).attr('targetNodeId'), edgeType, $(edgeXML).attr('sourcePropositionId'),$(edgeXML).attr('targetPropositionId'));
 		   });		   
 		   
+			this.dispatchEvent({type:"debateLoaded"},this);
+		   
     };
-    p.getNode= function(nodeId){
+    
+    this.addEdge = function(sourceNodeId, targetNodeId, edgeType, sourcePropositionId, targetPropositionId){
+		   edge = new argunet.Edge(sourceNodeId,targetNodeId, edgeType, sourcePropositionId, targetPropositionId);
+	       if(this.edgesBySource[edge.source] == undefined){
+	    		this.edgesBySource[edge.source]={};
+	       }
+	       if(this.edgesByTarget[edge.target] == undefined){
+	    		this.edgesByTarget[edge.target]={};
+	       }		       
+	       this.edgesBySource[edge.source][edge.target] = edge;
+	       this.edgesByTarget[edge.target][edge.source] = edge;
+	       return edge;
+    };
+    
+    this.parseHtml = function(el){
+    	console.log("parsing html argument map");
+	   this.debateTitle = $(el).children("h3").text();
+	   this.debateSubtitle = "";
+	   
+	   //default colors
+	   var defaultColor1 = "#63aef2";
+	   this.colors[0]=this.getColorObject(0, "default 1", defaultColor1);
+	   var defaultColor2 = "#f2d863";
+	   this.colors[1]=this.getColorObject(1, "default 2", defaultColor2);
+	   
+
+    	
+    	//nodes
+    	$(el).find(".argument, .thesis").each(function(){
+    		var id = $(this).attr("id");
+    		if(!id){
+    			this.dispatchEvent("error", "Found node without id, which is a required attribute.", undefined);
+    			return;
+    		}
+    		
+    		var title = $(this).children("h4")? $(this).children("h4").filter(":first").text() : "Untitled";
+    		var description = $(this).children("p")?  $(this).children("p").filter(":first").text() : "";
+    		var colorIndex = that.lookupOrAddColor($(this).data("color")) || 0;
+    		var group;
+    		var relations = {
+					   incomingAttacks : 0,
+					   incomingSupports : 0,
+					   outgoingAttacks : 0,
+					   outgoingSupports : 0    				
+    		};
+    		
+    		var node;
+    		if($(this).is(".argument"))
+    			node= new argunet.Argument(id,title,description, colorIndex, group, relations);
+    		else
+    			node = new argunet.Thesis(id, title,description, colorIndex, group,relations);
+    		
+			that.nodes[id]= node;				   
+
+    	});
+    	
+    	//edges
+    	$(el).find(".support, .attack").each(function(){
+    		var fromNodeId = $(this).data("from");
+    		var toNodeId = $(this).data("to");
+    		var edgeType = $(this).is(".support")? "support" : "attack";
+    		that.addEdge(fromNodeId, toNodeId, edgeType);
+    	});
+    	
+		this.dispatchEvent({type:"debateLoaded"},this);
+
+    };
+
+    this.lookupOrAddColor = function(color){
+    	var colorIndex;
+    	if(!color) return colorIndex; // if color is undefined return
+    	if(! (color != color)) color = color.toString();
+    	if(color.indexOf("#") == -1) return this.colors[color]? color : colorIndex; //if color is a color index, look it up
+    	
+    	$(this.colors).each(function(){ //color is a hex value
+    		if(this.baseColor == color){
+    			colorIndex = this.index;
+    			return false;
+    		}
+    	});
+    	if(!colorIndex){
+    		this.colors.push(this.getColorObject(this.colors.length, "", color));
+    		colorIndex = this.colors.length-1;
+    	}
+    	return colorIndex;
+    };
+    this.getColorObject = function(index, description, baseColor){
+		var lightColor= $.xcolor.lighten(baseColor,80,1).getHex();
+		var darkColor= $.xcolor.darken(baseColor,45,3).getHex();
+
+    	return {index:index, description:description,base:baseColor, light:lightColor, dark:darkColor};
+    }
+    this.getNode= function(nodeId){
     	return this.nodes[nodeId];
     };
-    p.getColor= function(colorIndex){
+    this.getColor= function(colorIndex){
     	return this.colors[colorIndex];
     };
-    p.getEdge= function(from,to){
+    this.getEdge= function(from,to){
     	return this.edgesBySource[from][to];
     };
-    p.getEdgesFrom= function(from){
+    this.getEdgesFrom= function(from){
     	return this.edgesBySource[from];
     };
-    p.getEdgesTo= function(to){
+    this.getEdgesTo= function(to){
     	return this.edgesByTarget[to];
     };
-    argunet.DebateManager = DebateManager;
-}());
+};

@@ -23,6 +23,7 @@
 		<p>	
 			<a href='' id='nodeSelectionTest'>Select Node</a>
 		</p>
+
 		
 	</div>
 	<script src="src/lib/modernizr.custom.48218.js" type="text/javascript"></script>
@@ -70,7 +71,7 @@
 	<script type="text/javascript">
 	$(function() {
 		//var argunetBrowser = new argunet.ArgunetBrowser("Konsultation.graphml",$("#content1"));
-		var argunetBrowser = new argunet.ArgunetBrowser({debateUrl:"climate_engineering-20130423.graphml",htmlElement:$("#content1"),firstNode:"67883",jsUrl:"src/lib/",embedded:false});
+		var argunetBrowser = new argunet.ArgunetBrowser({data:"climate_engineering-20130423.graphml",container:$("#content1"),firstNode:"67883",jsUrl:"src/lib/",embedded:false});
 
 		
 		//Events
