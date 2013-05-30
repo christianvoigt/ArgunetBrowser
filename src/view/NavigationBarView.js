@@ -48,9 +48,9 @@ argunet.NavigationBarView = function(htmlElement){
 	var slider = $(this.htmlElement).find(".graphDepth .slider");
 
 	
-	$(slider).slider({min:1,max:5,change: function( event, ui ) {
-		that.dispatchEvent({type:"graphDepthChange", value:ui.value},that);	
-    }});
+//	$(slider).slider({min:1,max:5,change: function( event, ui ) {
+//		that.dispatchEvent({type:"graphDepthChange", value:ui.value},that);	
+//    }});
 	
 	$(this.htmlElement).find(".buttons").buttonset();
 	openListButton = $(this.htmlElement).find(".openList");
@@ -86,13 +86,17 @@ argunet.NavigationBarView = function(htmlElement){
         primary: "ui-icon-circle-minus"
     },
     text: false}).click(function() {
-		slider.slider("value",slider.slider("value")-1);
+		//slider.slider("value",slider.slider("value")-1);
+    	var depth = parseInt($(that.htmlElement).find(".graphDepthLabel").text());
+    	that.dispatchEvent({type:"graphDepthChange", value:depth-1},that);	
 	});	
 	$(this.htmlElement).find(".increaseDepth").button({icons: {
         primary: "ui-icon-circle-plus"
     },
     text: false}).click(function() {
-		slider.slider("value",slider.slider("value")+1);
+		//slider.slider("value",slider.slider("value")+1);
+    	var depth = parseInt($(that.htmlElement).find(".graphDepthLabel").text());
+    	that.dispatchEvent({type:"graphDepthChange", value:depth+1},that);	
 	});		
 	
 	if(this.fullscreenApiImplemented){
@@ -136,8 +140,8 @@ argunet.NavigationBarView.prototype.handleEvent = function(evt){
 		this.updateHeight();
 	}else if(evt.type == "graphDepthChange"){
 		$(this.htmlElement).find(".graphDepthLabel").text(evt.value);
-		var slider = $(this.htmlElement).find(".slider");
-		if($(slider).slider("value") != evt.value)$(slider).slider("value",evt.value);
+		//var slider = $(this.htmlElement).find(".slider");
+		//if($(slider).slider("value") != evt.value)$(slider).slider("value",evt.value);
 	}
 };
 argunet.NavigationBarView.prototype.updateHeight = function (){

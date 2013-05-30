@@ -5,8 +5,10 @@
 <title>Argunet Browser Demo</title>
 </head>
 <body>
+<div style="width:800px; margin:auto;">
 	<h1>Argunet Browser Demo</h1>
-	<a id="nodeSelectionTest">Select Node</a>	
+	<a id="nodeSelectionTest" href="#">Select Node</a>	
+	<p>
 	<script src="lib/ArgunetBrowser.load.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		window.argunet = lightningjs.require("argunet", "lib/ArgunetBrowser.embed.min.js");	
@@ -17,7 +19,10 @@
 		var link = document.getElementById("nodeSelectionTest");
 		link.onclick = function(){
 			browser.selectNode("501839");
+			return false;
 		};
 		</script>	
+		</p>
+</div>
 </body>
 </html>
