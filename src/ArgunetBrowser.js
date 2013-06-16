@@ -1,8 +1,8 @@
 // namespace:
 this.argunet = this.argunet||{};
 
-argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsUrl, cssUrl, embedded){
-//also callable with ArgunetBrowser({data:, container:, firstNode:, width:, height:, jsUrl:, cssUrl:, embedded:});
+argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsUrl, cssUrl, embedded, graphType){
+//also callable with ArgunetBrowser({data:, container:, firstNode:, width:, height:, jsUrl:, cssUrl:, embedded:, graphType:});
 		if (typeof data=='object'){
 			var _p = data;
 			data = _p.data;
@@ -13,11 +13,14 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 			jsUrl = _p.jsUrl;
 			cssUrl = _p.cssUrl;
 			embedded = _p.embedded || true;
+			graphType = _p.graphType;
 		}		
 		//width = width || 640;
 
 		height = height || 385;
 		cssUrl = cssUrl || "http://christianvoigt.github.com/ArgunetBrowser/lib/ArgunetBrowser.min.css";
+		this.graphType = graphType || "arbor";
+		
 		this.initialGraphDepth = 1;
 		var that = this;
 		
@@ -51,15 +54,12 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 			this.container = $(scriptTag).next("div").get(0);
 		}
 
-
-		
 		//feature check
 		if(!Modernizr.canvas || !Modernizr.canvastext || !({}).__defineGetter__){
 			new argunet.ErrorMessageView(container,width,height, "Argunet Browser not initialized", "We detected that your browser lacks features <a href='http://www.argunet.org'>Argunet Browser</a> depends on. Please use an up-to-date browser that supports HTML5, CSS3 and the Canvas Element.");
 			return;
 		}		
-				
-		
+						
 		//load css if this is the compiled version and the stylesheet has not been loaded yet
 		//check if this is the compiled version and get the path to Argunet
 		if(!jsUrl){
@@ -101,57 +101,76 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 			    this.w.document.getElementsByTagName("head")[0].appendChild(css);
 			}
 		}
-		
 
-
-
-		this.onDebateLoad = function(){
-		
+		this.onDebateLoad = function(){		
 			//Views
 			this.debateListView = this.argunetView.debateListView;			
 			this.debateListController = new argunet.DebateListController(this.debateListView, this.debateManager);
 			
-			
-			this.arborView = new argunet.ArborView(this.debateManager);
-			this.argunetView.setCanvasView(this.arborView);
-			
-			console.log("scriptPath: "+this.jsUrl+"arbor.js");
-			//Controllers
-			this.arborController = new argunet.ArborController(this.arborView,this.debateManager, this.jsUrl+"arbor.js");
-			this.debateListView.addEventListener("nodeSelection",this.arborController);
-			
+			//History
 			this.history = new argunet.History();
 			
-			//deactivate tooltip on mousedown
-			this.arborView.addEventListener("mousedown",this.argunetView);
+			//Select Graph View
+			if(this.graphType.toLowerCase() == "arbor"){ //Arbor
+				this.arborView = new argunet.ArborView(this.debateManager, this.argunetView.stage);
+				
+				this.arborController = new argunet.ArborController(this.arborView,this.debateManager, this.jsUrl+"arbor.js");
+				
+				//deactivate tooltip on mousedown
+				this.arborView.addEventListener("mousedown",this.argunetView);
+				this.arborView.addEventListener("nodeSelection",this);
+				this.arborView.addEventListener("mousedown",this);
+				this.arborView.addEventListener("dblclick",this);			
+				this.arborView.addEventListener("showTooltip",this.argunetView);
+				this.arborView.addEventListener("hideTooltip",this.argunetView);
+				this.arborView.addEventListener("mousedown",this.argunetView);
+				this.arborView.addEventListener("openGroup",this.arborController);
+	
+				
+				this.debateListView.addEventListener("nodeSelection",this.arborController);
+				this.argunetView.navigationBar.addEventListener("graphDepthChange",this.arborController);
+				this.addEventListener("graphDepthChange",this.arborController);
+				this.history.addEventListener("historyChange",this.arborController);
+				this.debateListView.addEventListener("openGroup",this.arborController);
+				this.debateListView.addEventListener("closeGroup",this.arborController);
+				this.debateListView.addEventListener("openAllGroups",this.arborController);
+				this.debateListView.addEventListener("closeAllGroups",this.arborController);
+			}else{ //Static
+				this.staticGraphView = new argunet.StaticGraphView(this.argunetView.stage);
+				
+				this.staticGraphController = new argunet.StaticGraphController(this.staticGraphView,this.debateManager);
+				
+				//deactivate tooltip on mousedown
+				this.staticGraphView.addEventListener("mousedown",this.argunetView);
+				this.staticGraphView.addEventListener("nodeSelection",this);
+				this.staticGraphView.addEventListener("mousedown",this);
+				this.staticGraphView.addEventListener("dblclick",this);			
+				this.staticGraphView.addEventListener("showTooltip",this.argunetView);
+				this.staticGraphView.addEventListener("hideTooltip",this.argunetView);
+				this.staticGraphView.addEventListener("mousedown",this.argunetView);
+				this.staticGraphView.addEventListener("openGroup",this.staticGraphController);
+	
+				
+				this.debateListView.addEventListener("nodeSelection",this.staticGraphController);
+				this.argunetView.navigationBar.addEventListener("graphDepthChange",this.staticGraphController);
+				this.addEventListener("graphDepthChange",this.staticGraphController);
+				this.history.addEventListener("historyChange",this.staticGraphController);
+				this.debateListView.addEventListener("openGroup",this.staticGraphController);
+				this.debateListView.addEventListener("closeGroup",this.staticGraphController);
+				this.debateListView.addEventListener("openAllGroups",this.staticGraphController);
+				this.debateListView.addEventListener("closeAllGroups",this.staticGraphController);
+			}
 			
 			this.argunetView.navigationBar.addEventListener("back",this.history);
 			this.argunetView.navigationBar.addEventListener("home",this.history);
 			this.argunetView.navigationBar.addEventListener("forward",this.history);
-			this.argunetView.navigationBar.addEventListener("graphDepthChange",this.arborController);
-			this.addEventListener("graphDepthChange",this.arborController);
 			this.addEventListener("graphDepthChange", this.argunetView.navigationBar);
 			this.argunetView.navigationBar.addEventListener("graphDepthChange",this.argunetView.navigationBar);
 			
-			
-			this.arborView.addEventListener("showTooltip",this.argunetView);
-			this.arborView.addEventListener("hideTooltip",this.argunetView);
-			this.arborView.addEventListener("mousedown",this.argunetView);
-
-			
 			this.history.addEventListener("historyChange",this);			
-			this.history.addEventListener("historyChange",this.arborController);
 
 			this.debateListView.addEventListener("nodeSelection",this);
-			this.debateListView.addEventListener("openGroup",this.arborController);
-			this.arborView.addEventListener("openGroup",this.arborController);
-			this.debateListView.addEventListener("closeGroup",this.arborController);
-			this.debateListView.addEventListener("openAllGroups",this.arborController);
-			this.debateListView.addEventListener("closeAllGroups",this.arborController);
 			
-			this.arborView.addEventListener("nodeSelection",this);
-			this.arborView.addEventListener("mousedown",this);
-			this.arborView.addEventListener("dblclick",this);			
 			
 			//remove loading
 			this.argunetView.removeLoadingSpinner();
@@ -166,8 +185,7 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 			this.selectNode(this.firstNodeId);
 			
 			this.setGraphDepth(this.initialGraphDepth);
-			
-			
+						
 		};		
 
 			
@@ -210,12 +228,12 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 			this.argunetView = new argunet.ArgunetBrowserView(this.container,width,height, this.browserId);
 			this.firstNodeId = firstNode;	
 			
-			//Models
 			this.debateManager = new argunet.DebateManager(this.container);	  
 			this.debateManager.addEventListener("debateLoaded",this);
 			this.debateManager.addEventListener("error",this);
 			this.debateManager.loadDebate(data);	
-		};		
+		};
+		
 		//if ArgunetBrowser's parent element is hidden, the canvas width will be set to 0, because hidden elements have no widths and the ArgunetBrowser's width is set to 100%
 		//To avoid this, check if ArgunetBrowser is hidden. If so, poll for display event. This isn't nice, but there is no javascript event we could use
 		if($(this.container).is(":hidden")){

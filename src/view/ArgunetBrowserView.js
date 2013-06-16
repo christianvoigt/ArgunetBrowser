@@ -78,6 +78,24 @@ argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
 		that.showNavigationBar();
 	});
 	
+	this.tooltip.addEventListener("mouseover",this);
+	this.tooltip.addEventListener("mouseout",this);
+	
+	this.stage.addEventListener("stagemousemove",this);
+	this.navigationBar.addEventListener("openDebateList",this);
+	this.navigationBar.addEventListener("closeDebateList",this);
+	
+	this.doc.addEventListener('fullscreenchange', this);
+	this.doc.addEventListener('mozfullscreenchange', this);
+	this.doc.addEventListener('webkitfullscreenchange', this);
+	this.win.addEventListener('resize', this, false);
+	
+
+	
+	this.navigationBar.addEventListener("openFullscreen",this);
+	this.navigationBar.addEventListener("closeFullscreen",this);
+	
+	
 	this.resize();
 	
 };
@@ -169,28 +187,6 @@ argunet.ArgunetBrowserView.prototype.resize = function(){
 	this.canvas.height = this.cHeight;
 	this.oldWidth = this.canvas.width;
 	this.oldHeight = this.canvas.height;	
-};
-argunet.ArgunetBrowserView.prototype.setCanvasView = function (view){
-	var that = this;
-	this.stage.clear();
-	this.canvasView = view;	
-	this.canvasView.initialize(this.stage);
-	this.tooltip.addEventListener("mouseover",this);
-	this.tooltip.addEventListener("mouseout",this);
-	
-	this.stage.addEventListener("stagemousemove",this);
-	this.navigationBar.addEventListener("openDebateList",this);
-	this.navigationBar.addEventListener("closeDebateList",this);
-	
-	this.doc.addEventListener('fullscreenchange', this);
-	this.doc.addEventListener('mozfullscreenchange', this);
-	this.doc.addEventListener('webkitfullscreenchange', this);
-	this.win.addEventListener('resize', this, false);
-	
-
-	
-	this.navigationBar.addEventListener("openFullscreen",this);
-	this.navigationBar.addEventListener("closeFullscreen",this);
 };
 argunet.ArgunetBrowserView.prototype.removeLoadingSpinner = function(){
 	$(this.canvas).parent().removeClass("loading");

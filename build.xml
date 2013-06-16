@@ -36,6 +36,7 @@
 				<file name="model/Thesis.js" />
 					
 				<file name="controller/ArborController.js" />
+				<file name="controller/StaticGraphController.js" />
 				<file name="controller/ArborConfigurator.js" />
 				<file name="controller/BrowserRegistry.js" />
 				<file name="controller/DebateListController.js" />
@@ -47,6 +48,7 @@
 				<file name="view/ArgumentCanvasView.js" />
 				<file name="view/ThesisCanvasView.js" />
 				<file name="view/ArborView.js" />
+				<file name="view/StaticGraphView.js" />
 				<file name="view/TooltipCanvasView.js" />
 				<file name="view/NavigationBarView.js" />
 				<file name="view/DebateListView.js" />
@@ -89,6 +91,8 @@
 				<file name="model/Thesis.js" />
 					
 				<file name="controller/ArborController.js" />
+				<file name="controller/StaticGraphController.js" />
+				
 				<file name="controller/ArborConfigurator.js" />
 				<file name="controller/BrowserRegistry.js" />
 				<file name="controller/DebateListController.js" />
@@ -100,6 +104,7 @@
 				<file name="view/ArgumentCanvasView.js" />
 				<file name="view/ThesisCanvasView.js" />
 				<file name="view/ArborView.js" />
+				<file name="view/StaticGraphView.js" />				
 				<file name="view/TooltipCanvasView.js" />
 				<file name="view/NavigationBarView.js" />
 				<file name="view/DebateListView.js" />

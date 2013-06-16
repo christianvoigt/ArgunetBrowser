@@ -1,7 +1,7 @@
 //namespace:
 this.argunet = this.argunet||{};
 
-argunet.ArborView= function(debateM){
+argunet.ArborView= function(debateM, stage){
 
 	var debateManager = debateM;
 
@@ -24,15 +24,13 @@ argunet.ArborView= function(debateM){
 	var nodeLayer = undefined;
 	var edgeLayer = undefined;
 
-	//ArgunetBrowserView calls this
-	this.initialize = function(createjsStage){
-		this.stage = createjsStage; 
+	this.stage = stage; 
+	this.stage.clear();
 
-		edgeLayer= new createjs.Container();
-		this.stage.addChild(edgeLayer);
-		nodeLayer= new createjs.Container();
-		this.stage.addChild(nodeLayer);			
-	};
+	edgeLayer= new createjs.Container();
+	this.stage.addChild(edgeLayer);
+	nodeLayer= new createjs.Container();
+	this.stage.addChild(nodeLayer);			
 
 	//Arbor calls this
 	this.init= function(system){

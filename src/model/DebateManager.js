@@ -90,20 +90,20 @@ this.parseGraphml = function(xml){
 		   
 		   //node list
 		   $(xml).find('node').each(function(){
+			   var node;
 			   
-			   if($(this).children("data:first").children("arg\\:group").length){ //groups
-				   var groupXML = $(this).children("data:first").children("arg\\:group");
+			   if($(this).children("data").children("arg\\:group").length){ //Groups
+				   var groupXML = $(this).children("data").children("arg\\:group").get(0);
 				   var gTitle = $(groupXML).children("arg\\:title").text();
 				   var numberOfArguments = $(groupXML).attr("numberOfArguments");
 				   var numberOfTheses = $(groupXML).attr("numberOfTheses");
 				   var gColor = $(groupXML).attr("color");
 				   var gId = $(groupXML).attr("id");
-				   var group = new argunet.Group(gId, gTitle,gColor,numberOfArguments,numberOfTheses);
-				   that.groups[gId] = group;
-			   //var group = new Group(gTitle);
-			   }else if($(this).children("data:first").children("arg\\:argument").length){ //Arguments
+				   node = new argunet.Group(gId, gTitle,gColor,numberOfArguments,numberOfTheses);
+				   that.groups[gId] = node;
+			   }else if($(this).children("data").children("arg\\:argument").length){ //Arguments
 				   
-				   var argumentXML= $(this).children("data:first").children("arg\\:argument:first");
+				   var argumentXML= $(this).children("data").children("arg\\:argument").get(0);
 				   //var nodeId=$(this).attr("id");
 				   var argunetId=$(argumentXML).attr("id");
 				   var title=$(argumentXML).children("arg\\:title").text();
@@ -122,10 +122,10 @@ this.parseGraphml = function(xml){
 					   group = gId;
 				   }
 
-				   var argument= new argunet.Argument(argunetId,title,description, colorIndex, group, relations);
-				   that.nodes[argunetId]=argument;
-			   }else if($(this).children("data:first").children("arg\\:thesis").length){ //Theses
-				   var thesisXML= $(this).children("data:first").children("arg\\:thesis:first");
+				   node= new argunet.Argument({id: argunetId,title:title,description:description, colorIndex:colorIndex, group:group, relations:relations});
+				   that.nodes[argunetId]=node;
+			   }else if($(this).children("data").children("arg\\:thesis").length){ //Theses
+				   var thesisXML= $(this).children("data").children("arg\\:thesis:first").get(0);
 				   //var nodeId=$(this).attr("id");
 				   var argunetId=$(thesisXML).attr("id");
 				   var title=$(thesisXML).children("arg\\:title").text();
@@ -140,15 +140,26 @@ this.parseGraphml = function(xml){
 						   };
 				   
 				   if($(this).parents("node:first").length){
-					   var gId = $(this).parents("node:first").children("data:first").children("arg\\:group").attr("id");
+					   var gId = $(this).parents("node:first").children("data").children("arg\\:group").first().attr("id");
 					   that.groups[gId].addNode(argunetId);
 					   group = gId;
 				   }
 				   
 				   					 
-				   var thesis= new argunet.Thesis(argunetId, title,content, colorIndex, group,relations);
-				   that.nodes[argunetId]= thesis;				   
+				   node= new argunet.Thesis({id:argunetId, title:title,content:content, colorIndex:colorIndex, group:group,relations:relations});
+				   that.nodes[argunetId]= node;				   
 			   }
+			   
+			   //y:ShapeNode
+			   if($(this).children("data").children("y\\:ShapeNode").length){
+				   var shapeNode = $(this).children("data").children("y\\:ShapeNode").first();
+				   var geometry = shapeNode.children("y\\:Geometry").first();
+				   node.x = geometry.attr("x");
+				   node.y = geometry.attr("y");
+				   node.width = geometry.attr("width");
+				   node.height = geometry.attr("height");
+			   }
+			   
 		   });
 		   
 		   //edges
@@ -209,9 +220,9 @@ this.parseGraphml = function(xml){
     		
     		var node;
     		if($(this).is(".argument"))
-    			node= new argunet.Argument(id,title,description, colorIndex, group, relations);
+    			node= new argunet.Argument({id:id,title:title,description:description, colorIndex:colorIndex, group:group, relations:relations});
     		else
-    			node = new argunet.Thesis(id, title,description, colorIndex, group,relations);
+    			node = new argunet.Thesis({id:id, title:title,description:description, colorIndex:colorIndex, group:group,relations:relations});
     		
 			that.nodes[id]= node;				   
 
