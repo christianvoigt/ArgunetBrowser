@@ -17,6 +17,11 @@
 	font-family: Helvetica, Arial, sans-serif;
 	overflow:hidden;
 }
+.argunet.dialog img{
+	background-color:#fff;
+	display:block;
+	margin:0 auto;
+}
 .argunetBrowser:-moz-full-screen {
   width: 100% !important;
   height: 100% !important;

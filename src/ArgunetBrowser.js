@@ -103,6 +103,9 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 		}
 
 		this.onDebateLoad = function(){		
+			if(this.initialized == true){
+				this.dispatchEvent({type:"update"},this);
+			}else{
 			//Views
 			this.debateListView = this.argunetView.debateListView;			
 			this.debateListController = new argunet.DebateListController(this.debateListView, this.debateManager);
@@ -130,6 +133,7 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 				this.debateListView.addEventListener("nodeSelection",this.arborController);
 				this.argunetView.navigationBar.addEventListener("graphDepthChange",this.arborController);
 				this.addEventListener("graphDepthChange",this.arborController);
+				this.addEventListener("update",this.arborController);
 				this.history.addEventListener("historyChange",this.arborController);
 				this.debateListView.addEventListener("openGroup",this.arborController);
 				this.debateListView.addEventListener("closeGroup",this.arborController);
@@ -153,6 +157,7 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 				
 				this.debateListView.addEventListener("nodeSelection",this.staticGraphController);
 				this.argunetView.navigationBar.addEventListener("graphDepthChange",this.staticGraphController);
+				this.argunetView.navigationBar.addEventListener("update",this.staticGraphController);
 				this.addEventListener("graphDepthChange",this.staticGraphController);
 				this.history.addEventListener("historyChange",this.staticGraphController);
 				this.debateListView.addEventListener("openGroup",this.staticGraphController);
@@ -185,6 +190,7 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 			this.selectNode(this.firstNodeId);
 			
 			this.setGraphDepth(this.initialGraphDepth);
+			}
 						
 		};		
 
@@ -233,6 +239,9 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 			this.debateManager.addEventListener("error",this);
 			this.debateManager.loadDebate(data);	
 		};
+		this.reload = function(){
+			this.debateManager.loadDebate(data);
+		}
 		
 		//if ArgunetBrowser's parent element is hidden, the canvas width will be set to 0, because hidden elements have no widths and the ArgunetBrowser's width is set to 100%
 		//To avoid this, check if ArgunetBrowser is hidden. If so, poll for display event. This isn't nice, but there is no javascript event we could use

@@ -178,6 +178,8 @@ Arbor then calculates the position of the nodes and calls the redraw method of A
 			}else if(evt.type == "graphDepthChange"){
 				this.graphDepth = evt.value;
 				this.update();
+			}else if(evt.type == "update"){
+				this.update();
 			}else if(evt.type == "openGroup"){
 				this.debateManager.groups[evt.id].open = true;
 				this.update();

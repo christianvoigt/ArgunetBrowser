@@ -4,11 +4,6 @@ this.argunet = this.argunet||{};
 argunet.DebateManager = function(container) {
 	this.doc= $(container).get(0).ownerDocument;
 
-	this.nodes={};
-	this.colors=[];
-	this.groups={};
-	this.edgesBySource={};
-	this.edgesByTarget={};
 	var that = this;
 
 
@@ -24,7 +19,17 @@ p.hasEventListener = null;
 p._listeners = null;
 createjs.EventDispatcher.initialize(p); // inject EventDispatcher methods.
 
+this.init = function(){
+	this.nodes={};
+	this.colors=[];
+	this.groups={};
+	this.edgesBySource={};
+	this.edgesByTarget={};
+}
+
+
 this.loadDebate = function(data){
+	this.init();
 
 	var suffix = ".graphml";
 	if(data && data.toLowerCase().indexOf(suffix, data.length - suffix.length) !== -1){
@@ -222,7 +227,7 @@ this.parseGraphml = function(xml){
     		if($(this).is(".argument"))
     			node= new argunet.Argument({id:id,title:title,description:description, colorIndex:colorIndex, group:group, relations:relations});
     		else
-    			node = new argunet.Thesis({id:id, title:title,description:description, colorIndex:colorIndex, group:group,relations:relations});
+    			node = new argunet.Thesis({id:id, title:title,content:description, colorIndex:colorIndex, group:group,relations:relations});
     		
 			that.nodes[id]= node;				   
 

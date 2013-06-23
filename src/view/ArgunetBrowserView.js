@@ -90,6 +90,7 @@ argunet.ArgunetBrowserView = function(htmlElement, width, height, browserId){
 	this.doc.addEventListener('webkitfullscreenchange', this);
 	this.win.addEventListener('resize', this, false);
 	
+	this.navigationBar.addEventListener("screenshot",this);
 
 	
 	this.navigationBar.addEventListener("openFullscreen",this);
@@ -131,6 +132,8 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 			window.clearTimeout(this.tooltipTimeout);
 			this.tooltip.setVisible(false);
 			this.stage.update();
+	}else if(evt.type == "screenshot"){
+		this.takeScreenshot();
 	}else if(evt.type == "mousedown"){
 		if(!this.mouseOverTooltip){
 			window.clearTimeout(this.tooltipTimeout);
@@ -191,3 +194,20 @@ argunet.ArgunetBrowserView.prototype.resize = function(){
 argunet.ArgunetBrowserView.prototype.removeLoadingSpinner = function(){
 	$(this.canvas).parent().removeClass("loading");
 };
+argunet.ArgunetBrowserView.prototype.takeScreenshot = function(replaceCanvas){
+	var dataUrl = this.canvas.toDataURL();
+	$(this.screenshot).children("img").attr("src",dataUrl);
+	if(replaceCanvas){
+		var w = $(this.htmlElement).css("width");
+		$(this.htmlElement).hide();
+		var screenshot = $("<div class='argunetBrowser screenshot'><img src='"+dataUrl+"' /></div>").insertAfter(this.htmlElement);
+		$(screenshot).css("width",w);
+		$(screenshot).css("height","auto");
+	}else{
+		$("<div class='argunet dialog screenshot' title='Screenshot of the current argument map'><img src='"+dataUrl+"' /></div>",this.doc).dialog(
+				{width:"auto"}
+		    ).children("img").css("max-width","100%");
+		
+	}
+}
+

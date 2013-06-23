@@ -35,6 +35,7 @@ argunet.NavigationBarView = function(htmlElement){
 				"<div class='slider'></div>" +
 			"</div>" +
 			"<div class='increaseDepth menuItem'>Increase Depth</div>" +
+			"<div class='screenshot menuItem'>Screenshot</div>" +
 			fullscreenHtml +
 			"</div>" +
 			"<a href='http://www.argunet.org' class='logo'><span>Argunet</span></a>" +
@@ -98,6 +99,13 @@ argunet.NavigationBarView = function(htmlElement){
     	var depth = parseInt($(that.htmlElement).find(".graphDepthLabel").text());
     	that.dispatchEvent({type:"graphDepthChange", value:depth+1},that);	
 	});		
+	
+	$(this.htmlElement).find(".screenshot").button({icons: {
+        primary: "ui-icon-image"
+    },
+    text: false}).click(function() {
+		that.dispatchEvent({type:"screenshot"},that);
+	});
 	
 	if(this.fullscreenApiImplemented){
 		this.fullscreenLabel = "Fullscreen";
