@@ -133,7 +133,7 @@ argunet.ArgunetBrowserView.prototype.handleEvent = function(evt){
 			this.tooltip.setVisible(false);
 			this.stage.update();
 	}else if(evt.type == "screenshot"){
-		this.takeScreenshot();
+		this.takeScreenshot(evt.replaceCanvas);
 	}else if(evt.type == "mousedown"){
 		if(!this.mouseOverTooltip){
 			window.clearTimeout(this.tooltipTimeout);
@@ -200,6 +200,9 @@ argunet.ArgunetBrowserView.prototype.takeScreenshot = function(replaceCanvas){
 	if(replaceCanvas){
 		var w = $(this.htmlElement).css("width");
 		$(this.htmlElement).hide();
+		if($(this.htmlElement).next().is(".argunetBrowser.screenshot")){
+			$(this.htmlElement).next().remove();
+		}
 		var screenshot = $("<div class='argunetBrowser screenshot'><img src='"+dataUrl+"' /></div>").insertAfter(this.htmlElement);
 		$(screenshot).css("width",w);
 		$(screenshot).css("height","auto");

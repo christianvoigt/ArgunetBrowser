@@ -171,6 +171,7 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 			this.argunetView.navigationBar.addEventListener("forward",this.history);
 			this.addEventListener("graphDepthChange", this.argunetView.navigationBar);
 			this.argunetView.navigationBar.addEventListener("graphDepthChange",this.argunetView.navigationBar);
+			this.addEventListener("screenshot",this.argunetView);
 			
 			this.history.addEventListener("historyChange",this);			
 
@@ -228,6 +229,9 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 				this.initialGraphDepth = depth;
 			}
 		};
+		this.showScreenshot = function(){
+			this.dispatchEvent({type:"screenshot", replaceCanvas:true},this);			
+		}
 
 		this.loadDebate = function(){			
 			//loading screen
