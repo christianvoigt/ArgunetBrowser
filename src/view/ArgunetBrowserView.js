@@ -207,8 +207,8 @@ argunet.ArgunetBrowserView.prototype.takeScreenshot = function(replaceCanvas){
 		$(screenshot).css("width",w);
 		$(screenshot).css("height","auto");
 	}else{
-		$("<div class='argunet dialog screenshot' title='Screenshot of the current argument map'><img src='"+dataUrl+"' /></div>",this.doc).dialog(
-				{width:"auto"}
+		$("<div class='argunet dialog screenshot' title='Screenshot of the current argument map'><img src='"+dataUrl+"' /></div>").dialog(
+				{width:"auto", document:this.doc, window:this.win}
 		    ).children("img").css("max-width","100%");
 		
 	}

@@ -10,6 +10,14 @@
 	width:0;
 	height:0;
 }
+
+[class^="icon-"], [class*=" icon-"] {
+  background-image: url("images/glyphicons-halflings.png");
+}
+[class^="icon-white"], [class*=" icon-white"] {
+  background-image: url("images/glyphicons-halflings-white.png");
+}
+
 .argunetBrowser{
 	position:relative;
 	border:1px solid #999;

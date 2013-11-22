@@ -11,39 +11,36 @@
 			<div class="argument-map" data-node="thesis1" style="height:100%;" id="test-map">
 			
 				<div class="argument" id="arg1">
-				<h4>Argument Titel</h4>
-				<p>Argument Description</p>
+				<h4>Selected Argument</h4>
+				<p>c1 is true, because of c2, c3 and c4.</p>
 				</div>		
 
 				<div class="argument" id="arg2">
-				<h4>Argument 2</h4>
+				<h4>Attacking Argument: Contra c2</h4>
 				<p> Description</p>
 				</div>	
 				
 				<div class="argument" id="arg3">
-				<h4>Argument 3</h4>
+				<h4>Supporting Argument: Pro c3</h4>
 				<p> Description</p>
 				</div>					
 				
 				<div class="thesis" id="thesis1">
-					<h4>These Titel</h4>
+					<h4>Attacked Thesis: c1 is false.</h4>
 					<p>These Satz</p>
 				</div>	
 
 				<div class="thesis" id="thesis2">
-					<h4>These Titel</h4>
+					<h4>Supporting Thesis: c4</h4>
 					<p>These Satz</p>
 				</div>	
 				
-				<div class="thesis" id="thesis3" data-color="1">
-					<h4>These Titel</h4>
-					<p>These Satz</p>
-				</div>	
+	
 								
-				<div class="support" data-from="arg1" data-to="thesis1"></div>
-				<div class="attack" data-from="arg1" data-to="thesis3"></div>
-				<div class="attack" data-from="arg2" data-to="thesis3"></div>
-				<div class="attack" data-from="arg3" data-to="thesis3"></div>
+				<div class="support" data-from="arg3" data-to="arg1"></div>
+				<div class="attack" data-from="arg2" data-to="arg1"></div>
+				<div class="attack" data-from="arg1" data-to="thesis1"></div>
+				<div class="support" data-from="thesis2" data-to="arg1"></div>
 					
 			</div>	
 	</div>
@@ -54,7 +51,7 @@
 	
 		var test = {};
 		test.argunetLoader = lightningjs.require("argunet", "lib/ArgunetBrowser.embed.js");
-			test.argunetLoader("createArgunetBrowser",{container:"#test-map", firstNode:"thesis3",jsUrl:"lib/",cssUrl:"lib/ArgunetBrowser.min.css", height:"100%"}).then(function(argunetBrowser){
+			test.argunetLoader("createArgunetBrowser",{container:"#test-map", firstNode:"thesis3",jsUrl:"lib/",cssUrl:"lib/ArgunetBrowser.min.css"}).then(function(argunetBrowser){
 				console.log("Sucessfully loaded Argunet Browser");
 
 			}, function(error){
