@@ -12,6 +12,28 @@
 <body>
 	<h1>Argunet Browser Demo</h1>
 	<div id="content1">
+	<div class="argument-map" id="argument-map">
+	  <div class="thesis" id="thesis1">
+	    <h4>thesis 1 title</h4>
+	    <p>thesis 1 text.</p>
+	  </div>
+	  <div class="argument" id="argument1">
+	    <h4>argument 1 title</h4>
+	  </div>
+	  <div class="argument" id="argument2">
+	    <h4>Argument 2 title</h4>
+	    <p>argument 2 description</p>
+	  </div>
+	  <div class="argument" id="argument3">
+	    <h4>argument 3 title</h4>
+	    <p>argument 3 description</p>
+	  </div>
+	 
+	  <div class="support" data-from="argument1" data-to="thesis1"></div>
+	  <div class="attack" data-from="argument2" data-to="thesis1"></div>
+	  <div class="attack" data-from="argument3" data-to="argument1"></div>
+	  <div class="support" data-from="argument3" data-to="argument2"></div>
+	</div>	
 		<h2>Argunet in a 16:9 format</h2>
 		<p>
 			This is a Demo page for Argunet Browser. The size of this Widget is
@@ -19,7 +41,7 @@
 				href="http://support.google.com/youtube/bin/answer.py?hl=en&answer=178264">recommended
 				size</a> for 16:9 content. 640px is also a common width of blog content,
 			but many blogs have smaller widths.
-		</p>
+		</p>		
 		<p>	
 			<a href='' id='nodeSelectionTest'>Select Node</a>
 		</p>
@@ -70,10 +92,11 @@
 	<script src="src/view/GroupCanvasView.js" type="text/javascript"></script>
 	<script src="src/view/ErrorMessageView.js" type="text/javascript"></script>
 		
-	<script type="text/javascript">
+	<script type="text/javascript">	
+	
 	$(function() {
 		//var argunetBrowser = new argunet.ArgunetBrowser("Konsultation.graphml",$("#content1"));
-		var argunetBrowser = new argunet.ArgunetBrowser({data:"climate_engineering-20130423.graphml",container:$("#content1"),firstNode:"67883",jsUrl:"src/lib/",embedded:false});
+		var argunetBrowser = new argunet.ArgunetBrowser({container:"#argument-map",firstNode:"thesis1",jsUrl:"src/lib/",embedded:false});
 
 		
 		//Events
@@ -91,10 +114,6 @@
 			argunetBrowser.selectNode("501839");
 			evt.preventDefault();
 		});
-		
-        //So far, it's not possible to instantiate ArgunetBrowser more than once, since arbor.js is implemented as a singleton (most things work, but dragging is buggy).
-		//new argunet.ArgunetBrowser("greatmap.graphml",$("#content2"),null,480,385);
-		//new argunet.ArgunetBrowser("greatmap.graphml",$("#content3"),null,1280,754);
 	    });	
 	</script>
 </body>
