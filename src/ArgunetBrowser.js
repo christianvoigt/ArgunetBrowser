@@ -52,7 +52,7 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 		}
 		
 		//if data is undefined, we will look for argument map data in container. This means we should hide everything there, since we will visualize it in Argunet Browser.
-		if(!data) $(container).children().hide();
+		if(!data) $(this.container).children().hide();
 
 		//feature check
 		if(!Modernizr.canvas || !Modernizr.canvastext || !({}).__defineGetter__){

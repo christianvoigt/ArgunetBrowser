@@ -13,7 +13,7 @@
 	<script type="text/javascript">
 		window.argunet = lightningjs.require("argunet", "lib/ArgunetBrowser.embed.min.js");	
 		var browser = undefined;
-		argunet("createArgunetBrowser",{data:"climate_engineering-20130423.graphml",firstNode:"67883",cssUrl:"lib/ArgunetBrowser.min.css"}).then(function(argunetBrowser){
+		argunet("createArgunetBrowser",{container:"#argument-map",firstNode:"thesis1",cssUrl:"lib/ArgunetBrowser.min.css"}).then(function(argunetBrowser){
 			browser = argunetBrowser;
 		});
 		var link = document.getElementById("nodeSelectionTest");
@@ -24,5 +24,41 @@
 		</script>	
 		</p>
 </div>
+	<div class="argument-map" id="argument-map">
+	  <div class="thesis" id="thesis1">
+	    <h4>thesis 1 title</h4>
+	    <p>thesis 1 text.</p>
+	  </div>
+	  <div class="argument" id="argument1">
+	    <h4>argument 1 title</h4>
+	  </div>
+	  <div class="argument" id="argument2">
+	    <h4>Argument 2 title</h4>
+	    <p>argument 2 description</p>
+	  </div>
+	  <div class="argument" id="argument3">
+	    <h4>argument 3 title</h4>
+	    <p>argument 3 description</p>
+	  </div>
+	 
+	  <div class="support" data-from="argument1" data-to="thesis1"></div>
+	  <div class="attack" data-from="argument2" data-to="thesis1"></div>
+	  <div class="attack" data-from="argument3" data-to="argument1"></div>
+	  <div class="support" data-from="argument3" data-to="argument2"></div>
+	</div>	
+		<h2>Argunet in a 16:9 format</h2>
+		<p>
+			This is a Demo page for Argunet Browser. The size of this Widget is
+			640x385px, which is Youtube's <a
+				href="http://support.google.com/youtube/bin/answer.py?hl=en&answer=178264">recommended
+				size</a> for 16:9 content. 640px is also a common width of blog content,
+			but many blogs have smaller widths.
+		</p>		
+		<p>	
+			<a href='' id='nodeSelectionTest'>Select Node</a>
+		</p>
+
+		
+	</div>
 </body>
 </html>
