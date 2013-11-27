@@ -112,7 +112,7 @@ argunet.NavigationBarView = function(htmlElement){
 		this.exitFullscreenLabel = "Exit Fullscreen";
 		this.fullscreenButton = $(this.htmlElement).find(".fullscreen");
 		this.fullscreenButton.button({icons: {
-	        primary: "ui-icon-open-fullscreen"
+	        primary: "ui-icon-arrow-4-diag"
 	    },
 	    text: false}).click(function() {
 			var label = $(this).button("option","label");
@@ -142,7 +142,7 @@ argunet.NavigationBarView.prototype.handleEvent = function(evt){
 			this.fullscreenButton.button("option","icons",{primary:"ui-icon-exit-fullscreen"});
 		}else{
 			this.fullscreenButton.button("option", "label", this.fullscreenLabel);			
-			this.fullscreenButton.button("option","icons",{primary:"ui-icon-open-fullscreen"});
+			this.fullscreenButton.button("option","icons",{primary:"ui-icon-arrow-4-diag"});
 		}
 	}else if(evt.type == "resize"){
 		this.updateHeight();

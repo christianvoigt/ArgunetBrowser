@@ -125,10 +125,7 @@ margin:0px;
 float:left;
 }
 .argunetBrowser .ui-button-icon-only .ui-icon-exit-fullscreen { 
-	background: url(images/ui-icons_ef8c08_256x240.png) -128px -80px; 
-}
-.argunetBrowser .ui-button-icon-only .ui-icon-open-fullscreen { 
-	background: url(images/ui-icons_ef8c08_256x240.png) -144px -80px; 
+	background: url(images/exit-fullscreen.png) -128px -80px; 
 }
 .argunetBrowser .debateList{
 	width:370px;
