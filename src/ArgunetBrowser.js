@@ -183,10 +183,7 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 			this.argunetView.removeLoadingSpinner();
 			
 			//Select first node
-			if(this.firstNodeId==undefined) this.firstNodeId = $.each(this.debateManager.nodes,function(){
-				that.firstNodeId=this.id; 
-				return false;
-			});
+			if(!this.firstNodeId) this.firstNodeId = this.debateManager.firstNodeId;
 			this.initialized = true;
 			
 			this.selectNode(this.firstNodeId);
@@ -245,6 +242,7 @@ argunet.ArgunetBrowser = function(data, container, firstNode, width, height, jsU
 			this.debateManager.loadDebate(data);	
 		};
 		this.reload = function(){
+			this.firstNodeId = null;
 			this.debateManager.loadDebate(data);
 		}
 		

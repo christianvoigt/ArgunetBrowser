@@ -25,6 +25,7 @@ this.init = function(){
 	this.groups={};
 	this.edgesBySource={};
 	this.edgesByTarget={};
+	this.firstNodeId = null;
 }
 
 
@@ -111,6 +112,8 @@ this.parseGraphml = function(xml){
 				   var argumentXML= $(this).children("data").children("arg\\:argument").get(0);
 				   //var nodeId=$(this).attr("id");
 				   var argunetId=$(argumentXML).attr("id");
+				   if(!that.firstNodeId)that.firstNodeId = argunetId;
+				   
 				   var title=$(argumentXML).children("arg\\:title").text();
 				   var description=$(argumentXML).children("arg\\:description").text();
 				   var colorIndex=$(argumentXML).attr('colorIndex');	
@@ -207,6 +210,7 @@ this.parseGraphml = function(xml){
     	//nodes
     	$(el).find(".argument, .thesis").each(function(){
     		var id = $(this).attr("id");
+    		if(!that.firstNodeId)that.firstNodeId = id;
     		if(!id){
     			this.dispatchEvent("error", "Found node without id, which is a required attribute.", undefined);
     			return;
